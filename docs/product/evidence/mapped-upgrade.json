@@ -1,0 +1,1206 @@
+{
+  "startedAt": "2026-09-20T17:17:17.122Z",
+  "target": "kafou_upgrade_1789924637119_81783",
+  "container": "supabase_db_kafou-local",
+  "mode": "local_populated_mapped_schema_reconstruction",
+  "mapSha256": "bc6dd715080e85397375fa8024afc09a138b726d3284c7c4140cc4e6b3cdfdf6",
+  "fixtureSha256": "10d9deb018b9bc06fe4dc501a7cc9fcdf3ce5d3b874b1205bb8f1b6db19bd4f2",
+  "baseline": [
+    {
+      "file": "supabase/migrations/20260919202722_foundation.sql",
+      "remoteVersion": "20260919202722",
+      "normalizedHash": "76b56f763bbd630a0c3c7abc34aab6905f7d1be70451d4626d2232c151f03b34"
+    },
+    {
+      "file": "supabase/migrations/20260919204128_foundation_boundaries.sql",
+      "remoteVersion": "20260919204128",
+      "normalizedHash": "94264f4a2c5f545cc173364b66f526844b7c1fe0c847731881ec8beba68c6463"
+    },
+    {
+      "file": "supabase/migrations/20260919210046_foundation_hardening.sql",
+      "remoteVersion": "20260919210046",
+      "normalizedHash": "43418ef6bcfda5df0cf996e1a28593e97350f5f32c6dad94744ec7cf63696bb8"
+    },
+    {
+      "file": "supabase/migrations/20260919210048_foundation_access.sql",
+      "remoteVersion": "20260919210048",
+      "normalizedHash": "e17cd083a834c5776255cbe5c36e679ba500b41ec1091d34dc5029477f6e58f4"
+    },
+    {
+      "file": "supabase/migrations/20260919210049_foundation_review_fixes.sql",
+      "remoteVersion": "20260919210049",
+      "normalizedHash": "5b7de684cf47bbd0766511f8ac02a3d7718d867e96efed0a269f98bf4fc77d6c"
+    },
+    {
+      "file": "supabase/migrations/20260919210254_foundation_indexes.sql",
+      "remoteVersion": "20260919210254",
+      "normalizedHash": "55b527e4f63d589464435aac4b6aaba883f1c5635122070aa56ff928ddc2854b"
+    },
+    {
+      "file": "supabase/migrations/20260919215239_scheduling_core.sql",
+      "remoteVersion": "20260919215239",
+      "normalizedHash": "cd0e182932de65049560a43627c26f4a6452528cb06abc91ef6fba19d720ae4d"
+    },
+    {
+      "file": "supabase/migrations/20260919215251_scheduling_access.sql",
+      "remoteVersion": "20260919215251",
+      "normalizedHash": "df8401e513b285f60b0f5a37f3689c06286f32c2d57ed4c5a9905446543b426c"
+    },
+    {
+      "file": "supabase/migrations/20260919215359_scheduling_claim_indexes.sql",
+      "remoteVersion": "20260919215359",
+      "normalizedHash": "c93ca55b6f7325badb5de8e39ad5d73e40cca25042e227689540f302693f0124"
+    },
+    {
+      "file": "supabase/migrations/20260919233807_product_shared_core.sql",
+      "remoteVersion": "20260920011339",
+      "normalizedHash": "ec358f3b78235c471d55d823fe6836b93ab714de04fa2444702be74dfb07143c"
+    },
+    {
+      "file": "supabase/migrations/20260919233857_product_commercial.sql",
+      "remoteVersion": "20260920011342",
+      "normalizedHash": "3022ac609cdc9eb00991e6f385ccec82e62722b957b5f00857c1c5564a702090"
+    },
+    {
+      "file": "supabase/migrations/20260919233935_product_development.sql",
+      "remoteVersion": "20260920011345",
+      "normalizedHash": "a6dd6371c42c9d4aca9d29a1f5c6d6f00f42d802eaaf51e2636722ef5690fdc3"
+    },
+    {
+      "file": "supabase/migrations/20260919234250_product_academy.sql",
+      "remoteVersion": "20260920011347",
+      "normalizedHash": "1cbf735d44a19bfdbf26b163d4f878d7ddc49ea22aedf40e02091630e9901c67"
+    },
+    {
+      "file": "supabase/migrations/20260919235028_product_community.sql",
+      "remoteVersion": "20260920011351",
+      "normalizedHash": "0bf2c749fd4a82f8bda00b31b62047dd0398405c450d766fb8edc83fa9c8c7dc"
+    },
+    {
+      "file": "supabase/migrations/20260919235818_product_engagement.sql",
+      "remoteVersion": "20260920011422",
+      "normalizedHash": "3fb14dcf917e8a5a8919463751972955051399a6def7819ad1bc361b86bc2b3a"
+    },
+    {
+      "file": "supabase/migrations/20260920001903_product_operations_revised.sql",
+      "remoteVersion": "20260920011424",
+      "normalizedHash": "f906cff8a76eeff3e1593b5db6bc0a2f74f6ccf4771cff3d988c9b2e529d39a4"
+    },
+    {
+      "file": "supabase/migrations/20260920001904_product_communications_revised.sql",
+      "remoteVersion": "20260920011426",
+      "normalizedHash": "f498f1dd67db83800ec16e77bbec5616d1105a098862a72e671496aa6523e7c4"
+    },
+    {
+      "file": "supabase/migrations/20260920001905_product_private_files.sql",
+      "remoteVersion": "20260920011429",
+      "normalizedHash": "612eb4f6c966cff78bd3c47f3a19d8cbece043211c8d6bff1a2b106facec3464"
+    },
+    {
+      "file": "supabase/migrations/20260920001906_product_policy_validation.sql",
+      "remoteVersion": "20260920011431",
+      "normalizedHash": "fb586debd55b7809d394877e3baaf52e475ec176874ea617f4661af9caddead7"
+    },
+    {
+      "file": "supabase/migrations/20260920003441_product_advisor_hardening.sql",
+      "remoteVersion": "20260920011458",
+      "normalizedHash": "ee8fbf5ff242729b1b5197cc884476fe96ffcad32e1df7b0d14d7421dc56a109"
+    },
+    {
+      "file": "supabase/migrations/20260920003746_product_development_history.sql",
+      "remoteVersion": "20260920011501",
+      "normalizedHash": "72e0ca3909215d0466a326d915469376a0ed8ef924a0bae04bed15172ec3ba94"
+    },
+    {
+      "file": "supabase/migrations/20260920003857_product_events.sql",
+      "remoteVersion": "20260920011503",
+      "normalizedHash": "e6e56f251289b307c520451a08e552e767eace2f8ee7102e0fc89904bc0a30dc"
+    },
+    {
+      "file": "supabase/migrations/20260920004427_product_training_guidance.sql",
+      "remoteVersion": "20260920011505",
+      "normalizedHash": "3ea61ec6343fdd7a5f4623c53a1d40a277a0cb4291b1addb2144f45262b67d13"
+    },
+    {
+      "file": "supabase/migrations/20260920004925_product_coach_attendance.sql",
+      "remoteVersion": "20260920011508",
+      "normalizedHash": "59bf8674734a77737eec4895cc3ee828a3f425e32cf9d77cd91bcb092e764a94"
+    },
+    {
+      "file": "supabase/migrations/20260920012510_product_workspace_search.sql",
+      "remoteVersion": "20260920015011",
+      "normalizedHash": "9fad8f3ee11dc20ffaf67215879d19e7d76dbb974449f38924b7075ebfb7579c"
+    },
+    {
+      "file": "supabase/migrations/20260920012626_product_coach_emergency.sql",
+      "remoteVersion": "20260920015014",
+      "normalizedHash": "2f21dd470fd1b4758d4b4b2c342c6767f7cc2fb0d236f349c13b12520841c22e"
+    },
+    {
+      "file": "supabase/migrations/20260920012833_product_compensation_settlements.sql",
+      "remoteVersion": "20260920015017",
+      "normalizedHash": "a3af88a82afd173fe5684b553d66ba863d4d0cc050c5cc1f368642deba38de4c"
+    },
+    {
+      "file": "supabase/migrations/20260920013226_product_training_targets.sql",
+      "remoteVersion": "20260920015019",
+      "normalizedHash": "f624b9c3cde7aed0e59c6aeefb1d2487752d7a9ed53055dff3699d23a560e017"
+    },
+    {
+      "file": "supabase/migrations/20260920014110_product_guest_trial_capability.sql",
+      "remoteVersion": "20260920015021",
+      "normalizedHash": "7c2e2c60a64461753293f02128eb4a2ade6bc860c63330ce83623b987bf4034c"
+    },
+    {
+      "file": "supabase/migrations/20260920020648_product_durable_jobs.sql",
+      "remoteVersion": "20260920022746",
+      "normalizedHash": "f8ab2d77e896a4c5b002b271b59ea52b960bab3e3377f52e73bde41a3c60aec9"
+    },
+    {
+      "file": "supabase/migrations/20260920021233_product_standalone_invoices.sql",
+      "remoteVersion": "20260920024011",
+      "normalizedHash": "e9f9a37a35583fa063209b621bc78ef5576a0174888aa8b423db7fa24fb55123"
+    },
+    {
+      "file": "supabase/migrations/20260920021338_product_event_camps.sql",
+      "remoteVersion": "20260920024014",
+      "normalizedHash": "2b60150be1f07d937c123ec9dcd16c5ea617ac108358edf10a6a30423f3da796"
+    }
+  ],
+  "pending": [
+    {
+      "file": "supabase/migrations/20260920022143_product_commercial_amendments.sql",
+      "sha256": "25fc1df569e9022372d73edb336e349e0c24057f0ec4130a679cc91fd9b2c8ab"
+    },
+    {
+      "file": "supabase/migrations/20260920030000_product_coach_profile.sql",
+      "sha256": "9f4bbfa81056a22bfaeef193ec8cd657da351b9045adbaf57052f32e52801ade"
+    },
+    {
+      "file": "supabase/migrations/20260920031000_product_audit_reason.sql",
+      "sha256": "5839baba6a8211bcf1693dfe511a8ad7d7d722bd7e6792b8f33f34a478c5a94d"
+    },
+    {
+      "file": "supabase/migrations/20260920032000_product_sibling_payment_allocation.sql",
+      "sha256": "7055cfcf2c07d726829fcdebe1a29ae1ba92729e2b203d3773f2a804cb15afd5"
+    },
+    {
+      "file": "supabase/migrations/20260920040000_complete_business_reports.sql",
+      "sha256": "e5f42e67a1b9a563f20d8b0f531e439599148ff1a4853fc8b41beb906c89388d"
+    },
+    {
+      "file": "supabase/migrations/20260920041000_lead_registration_links.sql",
+      "sha256": "c11509e2595bab837e133dd030d9038bcd0ec528e8b4bfb6f9f6e34b690dd235"
+    },
+    {
+      "file": "supabase/migrations/20260920042000_development_automation.sql",
+      "sha256": "49299c629da2dfd710836766a8439cf5a3d333e12677e1380a3cb023f408c211"
+    },
+    {
+      "file": "supabase/migrations/20260920043000_coach_conversations.sql",
+      "sha256": "312af50a53d0e21b426d6df15fea4a8b9359b3cf3b94e848ef7d457d8e401c25"
+    },
+    {
+      "file": "supabase/migrations/20260920044000_synthetic_migration_executor.sql",
+      "sha256": "99c22d70644148cab6e7a2b8c53692fea948486dd3d217df8b4277c130575606"
+    },
+    {
+      "file": "supabase/migrations/20260920045000_message_history_guard.sql",
+      "sha256": "045d8ac67359772d6a55b60fe1796d00838adf0cf3a4753dbc2dd8660daa9d3a"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Reconstruction begins with zero Auth users and storage objects",
+      "result": "pass"
+    },
+    {
+      "name": "Populated legacy membership is active after exact offline payment",
+      "result": "pass"
+    },
+    {
+      "name": "Legacy financial fixture contains exact money",
+      "result": "pass"
+    },
+    {
+      "name": "Isolated pre-upgrade backup restores original records exactly",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920022143_product_commercial_amendments.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920030000_product_coach_profile.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920031000_product_audit_reason.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920032000_product_sibling_payment_allocation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920040000_complete_business_reports.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920041000_lead_registration_links.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920042000_development_automation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920043000_coach_conversations.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920044000_synthetic_migration_executor.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Applied supabase/migrations/20260920045000_message_history_guard.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Upgrade preserves every original table row and column value",
+      "result": "pass"
+    },
+    {
+      "name": "All activation controls remain empty",
+      "result": "pass"
+    },
+    {
+      "name": "Complete report reconciles preserved legacy payment",
+      "result": "pass"
+    },
+    {
+      "name": "Current guardian sees original family",
+      "result": "pass"
+    },
+    {
+      "name": "Unrelated parent denied original children",
+      "result": "pass"
+    },
+    {
+      "name": "Normal owner MFA denied at AAL1 without demo exemption",
+      "result": "pass"
+    },
+    {
+      "name": "Preserved old recovery copy still matches before upgrade",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919202722_foundation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919204128_foundation_boundaries.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919210046_foundation_hardening.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919210048_foundation_access.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919210049_foundation_review_fixes.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919210254_foundation_indexes.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919215239_scheduling_core.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919215251_scheduling_access.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919215359_scheduling_claim_indexes.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919233807_product_shared_core.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919233857_product_commercial.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919233935_product_development.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919234250_product_academy.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919235028_product_community.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260919235818_product_engagement.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920001903_product_operations_revised.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920001904_product_communications_revised.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920001905_product_private_files.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920001906_product_policy_validation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920003441_product_advisor_hardening.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920003746_product_development_history.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920003857_product_events.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920004427_product_training_guidance.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920004925_product_coach_attendance.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920012510_product_workspace_search.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920012626_product_coach_emergency.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920012833_product_compensation_settlements.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920013226_product_training_targets.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920014110_product_guest_trial_capability.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920020648_product_durable_jobs.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920021233_product_standalone_invoices.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920021338_product_event_camps.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920022143_product_commercial_amendments.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920030000_product_coach_profile.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920031000_product_audit_reason.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920032000_product_sibling_payment_allocation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920040000_complete_business_reports.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920041000_lead_registration_links.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920042000_development_automation.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920043000_coach_conversations.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920044000_synthetic_migration_executor.sql",
+      "result": "pass"
+    },
+    {
+      "name": "Source unchanged: supabase/migrations/20260920045000_message_history_guard.sql",
+      "result": "pass"
+    }
+  ],
+  "result": "populated_mapped_upgrade_and_isolated_database_recovery_passed",
+  "limitations": [
+    "Not a hosted data backup, PITR or hosted restore rehearsal.",
+    "Auth/storage schema bootstrap is from the local Supabase infrastructure; hosted drift outside stored migration statements is not covered.",
+    "SQL permission fixtures use explicit transaction claims; no actual restored Auth/HTTP/Storage service is started.",
+    "Private file bytes, provider configuration, cluster globals and deployed previous Worker compatibility are not covered."
+  ],
+  "seedSha256": "5b600b4df404cb81c839361058e93d1d091e1abc834edefcfc5bed78a10c3230",
+  "before": [
+    {
+      "table": "auth.audit_log_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.custom_oauth_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.flow_state",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.identities",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.instances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_amr_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_factors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_authorizations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_client_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_clients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.one_time_tokens",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.refresh_tokens",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_relay_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.schema_migrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sessions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_domains",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.users",
+      "rows": 6,
+      "sha256": "64fc2fdadf8654b221353f40c5878bcee1037b68af79528928bb333aad7f0238"
+    },
+    {
+      "table": "auth.webauthn_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.webauthn_credentials",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.family_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_link_origins",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_offers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.product_requests",
+      "rows": 3,
+      "sha256": "a115ef98f69da51c3a5db83f1012a2b7922a47b500849e372dabdd56780b83de"
+    },
+    {
+      "table": "private.rate_limits",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.request_keys",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_controls",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_effects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_jobs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_classes",
+      "rows": 1,
+      "sha256": "a4845d82f75367958c78abad2961df0d68b026a98dd74423f1b279fd3a4f1beb"
+    },
+    {
+      "table": "public.academy_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.age_groups",
+      "rows": 1,
+      "sha256": "67881fd70869a30e00a612355eb5a26d474f79016a29848b31634e9e8b398682"
+    },
+    {
+      "table": "public.attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.audit_events",
+      "rows": 88,
+      "sha256": "16249b44d387c0441a50e12618e21a18dd1066e99dbea9c9beabcfb3f0227222"
+    },
+    {
+      "table": "public.branch_permissions",
+      "rows": 1,
+      "sha256": "4ef14e6ae775f02a398eadd513e4faa06760301e8946454c0026149ca14c97fd"
+    },
+    {
+      "table": "public.branch_sports",
+      "rows": 1,
+      "sha256": "fa6c50e63c03825d1f1010971156976ae3ee1cf79735659ecbac0ae87c794dcb"
+    },
+    {
+      "table": "public.branches",
+      "rows": 8,
+      "sha256": "34d6bbd0b8146c83953f06ba84cf8104391de5862233c140fb0424b456e97d68"
+    },
+    {
+      "table": "public.child_sports",
+      "rows": 2,
+      "sha256": "7b324bdb1bf3f91eacabe89ff9ccde458d207b4732f80584068f19f1a7f50949"
+    },
+    {
+      "table": "public.children",
+      "rows": 2,
+      "sha256": "5d4ead05f861b2cdf30b1a14f173f8d71dcab73ac2e8eef7b9aadd40b726b764"
+    },
+    {
+      "table": "public.class_sessions",
+      "rows": 10,
+      "sha256": "fca283d1f16629c63bf849854dd97315202963bd5762677984c51b1ea2951aa2"
+    },
+    {
+      "table": "public.coach_substitutions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_adjustments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_allocations",
+      "rows": 1,
+      "sha256": "9e61ce93b067d6e9fd973b9573e1fa3160033dd45dd7c975a12f738d60a08dbc"
+    },
+    {
+      "table": "public.commercial_compensation_accruals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_rates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_settlements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_credit_approvals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_freezes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_invoice_lines",
+      "rows": 1,
+      "sha256": "8cdb1e2fdb82634f464589460c8e3365ae44a2d4107c170e1aa1acf922e2c1cc"
+    },
+    {
+      "table": "public.commercial_invoices",
+      "rows": 1,
+      "sha256": "ded0aef67c4639a1ec949b7a73724a82fb1e6be519f13a83d8fc1689034c7455"
+    },
+    {
+      "table": "public.commercial_memberships",
+      "rows": 1,
+      "sha256": "9365ae0617bbee85b961896519fc46238cb3a2b52406ef5141ec1efe2e25d0b8"
+    },
+    {
+      "table": "public.commercial_packages",
+      "rows": 1,
+      "sha256": "4ddfa9c4816bfe9b76ae864c550f795cec8df061a00057331c9455259aec2724"
+    },
+    {
+      "table": "public.commercial_payments",
+      "rows": 1,
+      "sha256": "f48c8e78677f7eae6e40c84a7feb3c17cf608f9d8747e33abacba9f023dc7251"
+    },
+    {
+      "table": "public.commercial_receipts",
+      "rows": 1,
+      "sha256": "9ee351a10ea8acdf0a53931957f835e8438430a3f8ff109beb3dd1fb8c240f45"
+    },
+    {
+      "table": "public.commercial_refunds",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_renewal_reminders",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_recipients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_templates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.consent_records",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.delivery_outbox",
+      "rows": 6,
+      "sha256": "2ce47a6a5d13b40d48195ffc3957fcb9928777caa0e092ab12edfc2fa2dfd013"
+    },
+    {
+      "table": "public.development_assessment_notes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_assessments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificate_revocations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_criteria",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_emergency_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_history",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_reversals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reports",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_results",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_safety_instructions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_session_plans",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_targets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_acceptances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_completions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_campaigns",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_codes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_ledger",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_rules",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.enrollments",
+      "rows": 2,
+      "sha256": "0884845cd4a94d229527d3d717c335640da767e9c75744b227d2b1975762f3b0"
+    },
+    {
+      "table": "public.entitlement_ledger",
+      "rows": 2,
+      "sha256": "95a7e1e9b3c4095c8327364f51b1cfc4efd03dedeed4955c319038819514524d"
+    },
+    {
+      "table": "public.event_attendance",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_occurrences",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.families",
+      "rows": 1,
+      "sha256": "a39a0443e82134307a2d8ecda6c39839d1faa017619399626c2b2cad7551e50c"
+    },
+    {
+      "table": "public.family_branches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_emergency_contacts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_files",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.file_access_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.guardians",
+      "rows": 1,
+      "sha256": "fa7f7d2aa190001dedc5acab46bd3d51df069dbc6f1fd293d0cf7cebf26ab4c8"
+    },
+    {
+      "table": "public.lead_activities",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.leads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.makeup_bookings",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.makeup_credits",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.notifications",
+      "rows": 2,
+      "sha256": "b9be66d0ed41a290fd38d172fdc03028d23d6dd7a525d359806a3f5d62c34747"
+    },
+    {
+      "table": "public.operation_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.operational_acknowledgements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.organizations",
+      "rows": 1,
+      "sha256": "0f2a9f7bc9184df1206b58ed238a7fa528398ecaddaed7222011ec4d7badd625"
+    },
+    {
+      "table": "public.product_events",
+      "rows": 2,
+      "sha256": "d526f3f617eba06180fa54a00290ecf557bbd9e4606cb336041f2b33d0ed3c2c"
+    },
+    {
+      "table": "public.product_permissions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.profiles",
+      "rows": 6,
+      "sha256": "ed517db37a144c23144603681a389d9b5db3b4265283fde669828ea3c39c8cd0"
+    },
+    {
+      "table": "public.recognition_nominations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.role_assignments",
+      "rows": 6,
+      "sha256": "1388b3451de444a264cce4bf5868a92ef4b72e2c83e969f9c26d1f0f672a4c86"
+    },
+    {
+      "table": "public.session_changes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.session_roster",
+      "rows": 10,
+      "sha256": "de671e1a7a12fa8d0386ead14af805b22da1216d7c103940d5418de410a18b73"
+    },
+    {
+      "table": "public.shift_handovers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.sport_levels",
+      "rows": 1,
+      "sha256": "14df0367c4ea3a3220690cb2d517c206fbe1c80d3586367d80ed70540e63a9bd"
+    },
+    {
+      "table": "public.staff_invitations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_messages",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_tickets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_decisions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_requests",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_bookings",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_enquiries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.venues",
+      "rows": 1,
+      "sha256": "4439968730b5fdb4aaae43ad2dcfd4e4db940f8b5563f9c16c54473e5f4bdff2"
+    },
+    {
+      "table": "public.waitlist_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_analytics",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_vectors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_namespaces",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_tables",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.migrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.objects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads_parts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.vector_indexes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "backupSha256": "2b554164e02078a84cc40713033a97c0a6c01cd885828edfcccc90f42e69d40f",
+  "backupBytes": 1003753,
+  "originalTablesCompared": 143,
+  "originalRowsCompared": 171,
+  "cleanup": [
+    {
+      "database": "kafou_upgrade_1789924637119_81783_recovery",
+      "result": "dropped"
+    },
+    {
+      "database": "kafou_upgrade_1789924637119_81783",
+      "result": "dropped"
+    }
+  ],
+  "finishedAt": "2026-09-20T17:17:55.033Z"
+}

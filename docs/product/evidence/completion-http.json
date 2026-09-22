@@ -1,0 +1,213 @@
+{
+  "environment": "http://127.0.0.1:3101",
+  "database": "http://127.0.0.1:56321",
+  "synthetic": true,
+  "at": "2026-09-21T11:48:04.976Z",
+  "checks": [
+    {
+      "name": "parent authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "parent named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "parent persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "parent product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "parent reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "parent conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "parent logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "sales authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "sales named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "sales persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "sales product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "sales reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "sales financial aggregate excluded",
+      "result": "pass"
+    },
+    {
+      "name": "sales conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "sales logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "branch authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "branch named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "branch persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "branch product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "branch reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "branch conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "branch logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "coach authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "coach named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "coach persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "coach product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "coach reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "coach financial aggregate excluded",
+      "result": "pass"
+    },
+    {
+      "name": "coach conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "coach logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "admin authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "admin named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "admin persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "admin product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "admin reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "Head Office total independent of next detail page",
+      "result": "pass"
+    },
+    {
+      "name": "admin conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "admin logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin authenticated HTTP session",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin named role confirmed",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin persisted workspace loaded",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin product with added tables loaded",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin reporting boundary",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin conversation options cannot enable inactive policy",
+      "result": "pass"
+    },
+    {
+      "name": "super_admin logout and reauthentication",
+      "result": "pass"
+    },
+    {
+      "name": "Sales issues private registration capability",
+      "result": "pass"
+    },
+    {
+      "name": "Authenticated parent continues original enquiry",
+      "result": "pass"
+    },
+    {
+      "name": "Continuation retry idempotent",
+      "result": "pass"
+    },
+    {
+      "name": "Staff revokes capability",
+      "result": "pass"
+    },
+    {
+      "name": "Revoked capability refused over HTTP",
+      "result": "pass"
+    },
+    {
+      "name": "Published certificate retained after linking",
+      "result": "pass"
+    }
+  ],
+  "externalDelivery": "not_configured"
+}

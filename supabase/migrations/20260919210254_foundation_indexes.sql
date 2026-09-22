@@ -1,0 +1,18 @@
+create index branch_permission_branch on public.branch_permissions(branch_id);
+create index branch_organization on public.branches(organization_id);
+create index consent_actor on public.consent_records(actor_id);
+create index consent_family on public.consent_records(family_id,created_at desc);
+create index family_organization on public.families(organization_id);
+create index family_branch_branch on public.family_branches(branch_id);
+create index guardian_user on public.guardians(user_id);
+create index activity_actor on public.lead_activities(actor_id);
+create index lead_assignee on public.leads(assigned_to);
+create index lead_family on public.leads(family_id);
+create index profile_organization on public.profiles(organization_id);
+create index invitation_actor on public.staff_invitations(invited_by);
+create index enquiry_child on public.trial_enquiries(child_id);
+create index venue_branch on public.venues(branch_id);
+alter policy read_profiles on public.profiles using(id=(select auth.uid()) or (select private.super_admin()));
+alter policy read_roles on public.role_assignments using((user_id=(select auth.uid()) and (select private.active())) or (select private.super_admin()));
+alter policy read_permissions on public.branch_permissions using((user_id=(select auth.uid()) and (select private.active())) or (select private.super_admin()));
+alter policy read_enquiries on public.trial_enquiries using((submitted_by=(select auth.uid()) and (select private.active())) or exists(select 1 from public.leads l where l.id=lead_id and private.branch_access(l.branch_id)));

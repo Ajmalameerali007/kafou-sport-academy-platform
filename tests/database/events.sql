@@ -1,0 +1,123 @@
+begin;
+select no_plan();
+insert into auth.users(id,email,raw_user_meta_data,email_confirmed_at) values
+('fa100000-0000-4000-8000-000000000001','events-parent@example.test','{"name":"Parent"}',now()),
+('fa100000-0000-4000-8000-000000000002','events-other@example.test','{"name":"Other"}',now()),
+('fa100000-0000-4000-8000-000000000003','events-owner@example.test','{"name":"Owner"}',now()),
+('fa100000-0000-4000-8000-000000000004','events-coach@example.test','{"name":"Coach"}',now()),
+('fa100000-0000-4000-8000-000000000005','events-branch@example.test','{"name":"Branch"}',now()),
+('fa100000-0000-4000-8000-000000000006','events-sales@example.test','{"name":"Sales"}',now());
+delete from public.role_assignments where user_id in ('fa100000-0000-4000-8000-000000000004','fa100000-0000-4000-8000-000000000005','fa100000-0000-4000-8000-000000000006');
+insert into public.role_assignments values('fa100000-0000-4000-8000-000000000003','super_admin'),('fa100000-0000-4000-8000-000000000004','coach'),('fa100000-0000-4000-8000-000000000005','branch'),('fa100000-0000-4000-8000-000000000006','sales');
+insert into public.branches(id,slug,name,provisional) values('fa200000-0000-4000-8000-000000000001','events-test','Synthetic events',false),('fa200000-0000-4000-8000-000000000007','events-other','Other branch',false);
+insert into public.branch_sports(branch_id,sport) values('fa200000-0000-4000-8000-000000000001','swimming');
+insert into public.branch_permissions(user_id,branch_id) select id,'fa200000-0000-4000-8000-000000000001' from public.profiles where id in ('fa100000-0000-4000-8000-000000000004','fa100000-0000-4000-8000-000000000005','fa100000-0000-4000-8000-000000000006');
+insert into public.product_permissions(user_id,permission,branch_id) select id,'events.manage','fa200000-0000-4000-8000-000000000001' from public.profiles where id in ('fa100000-0000-4000-8000-000000000004','fa100000-0000-4000-8000-000000000005','fa100000-0000-4000-8000-000000000006');
+insert into public.venues(id,branch_id,name,address) values('fa200000-0000-4000-8000-000000000002','fa200000-0000-4000-8000-000000000001','Synthetic pool','Test');
+insert into public.sport_levels(id,sport,name,rank) values('fa200000-0000-4000-8000-000000000003','swimming','Events level',20);
+insert into public.age_groups(id,name,min_age,max_age) values('fa200000-0000-4000-8000-000000000004','Events age',5,12);
+insert into public.document_versions(id,title,purpose,version,body,created_by) values('fa200000-0000-4000-8000-000000000005','Synthetic waiver','waiver','events-v1','Synthetic consent only. No legal activation.','fa100000-0000-4000-8000-000000000003');
+insert into public.families(id,name) values('fa300000-0000-4000-8000-000000000001','Events family'),('fa300000-0000-4000-8000-000000000002','Other family');
+insert into public.guardians values('fa300000-0000-4000-8000-000000000001','fa100000-0000-4000-8000-000000000001'),('fa300000-0000-4000-8000-000000000002','fa100000-0000-4000-8000-000000000002');
+insert into public.children(id,family_id,name,reported_age,age_captured_on) values
+('fa400000-0000-4000-8000-000000000001','fa300000-0000-4000-8000-000000000001','Sibling A',7,current_date),
+('fa400000-0000-4000-8000-000000000002','fa300000-0000-4000-8000-000000000001','Sibling B',8,current_date),
+('fa400000-0000-4000-8000-000000000003','fa300000-0000-4000-8000-000000000002','Other child',8,current_date);
+insert into public.child_sports(child_id,sport,level_id,status) select id,'swimming','fa200000-0000-4000-8000-000000000003','reviewed' from public.children where id in ('fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000002','fa400000-0000-4000-8000-000000000003');
+insert into public.academy_classes(id,branch_id,venue_id,coach_id,sport,level_id,age_group_id,name,capacity,weekdays,local_time,duration_minutes) values('fa500000-0000-4000-8000-000000000001','fa200000-0000-4000-8000-000000000001','fa200000-0000-4000-8000-000000000002','fa100000-0000-4000-8000-000000000004','swimming','fa200000-0000-4000-8000-000000000003','fa200000-0000-4000-8000-000000000004','Event overlap class',10,array[0],'12:00',60);
+insert into public.class_sessions(id,class_id,starts_at,ends_at,capacity) values('fa500000-0000-4000-8000-000000000002','fa500000-0000-4000-8000-000000000001',(current_date+7)::timestamptz+interval '8 hours',(current_date+7)::timestamptz+interval '9 hours',10);
+insert into public.enrollments(id,child_id,class_id) values('fa500000-0000-4000-8000-000000000003','fa400000-0000-4000-8000-000000000001','fa500000-0000-4000-8000-000000000001');
+insert into public.session_roster(id,session_id,enrollment_id,kind,cancelled) values('fa500000-0000-4000-8000-000000000004','fa500000-0000-4000-8000-000000000002','fa500000-0000-4000-8000-000000000003','enrollment',false);
+create function pg_temp.ev(a text,d jsonb) returns jsonb language sql as $$select public.product_command(a,d,gen_random_uuid())$$;
+create function pg_temp.registration(childs uuid[]) returns jsonb language sql as $$select jsonb_build_object('event_id',current_setting('test.event'),'family_id','fa300000-0000-4000-8000-000000000001','children',(select jsonb_agg(jsonb_build_object('child_id',c,'document_id','fa200000-0000-4000-8000-000000000005','accepted',true)) from unnest(childs) c))$$;
+grant execute on function pg_temp.ev(text,jsonb),pg_temp.registration(uuid[]) to authenticated;
+select set_config('test.create',jsonb_build_object('branch_id','fa200000-0000-4000-8000-000000000001','venue_id','fa200000-0000-4000-8000-000000000002','sport','swimming','level_id','fa200000-0000-4000-8000-000000000003','age_group_id','fa200000-0000-4000-8000-000000000004','document_id','fa200000-0000-4000-8000-000000000005','title','Synthetic sibling event','starts_at',(current_date+7)::timestamptz+interval '8 hours','ends_at',(current_date+7)::timestamptz+interval '10 hours','capacity',2,'policy_acknowledged',true)::text,true);
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.create',current_setting('test.create')::jsonb)$$,'42501',null,'Owner requires MFA');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal2"}',true);
+select throws_ok($$select pg_temp.ev('events.create',current_setting('test.create')::jsonb-'policy_acknowledged')$$,'22023',null,'Synthetic policy must be acknowledged');
+select lives_ok($$select pg_temp.ev('events.create',current_setting('test.create')::jsonb)$$,'Owner creates one-off event');
+select set_config('test.event',(select id::text from public.academy_events where title='Synthetic sibling event'),true);
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.create',current_setting('test.create')::jsonb)$$,'42501',null,'Coach cannot manage even with explicit permission');
+select is((select count(*)::int from public.academy_events),0,'Coach cannot read event catalogue');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000006","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.create',current_setting('test.create')::jsonb)$$,'42501',null,'Sales cannot manage even with explicit permission');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000003','fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'42501',null,'One foreign sibling aborts the whole batch');
+select is((select count(*)::int from public.event_registrations),0,'Failed mixed batch creates no registration');
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'22023',null,'Duplicate child rejected');
+select throws_ok($$select pg_temp.ev('events.register',jsonb_set(pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]),'{children,0,accepted}','false'))$$,'22023',null,'False consent rejected');
+select throws_ok($$select pg_temp.ev('events.register',jsonb_set(pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]),'{children,0,document_id}','"fa200000-0000-4000-8000-000000000004"'))$$,'22023',null,'Wrong waiver version rejected');
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'P0409',null,'Existing regular session blocks overlapping event');
+reset role;
+update public.session_roster set cancelled=true where id='fa500000-0000-4000-8000-000000000004';
+set local role authenticated;
+select set_config('test.key',gen_random_uuid()::text,true);
+select lives_ok($$select public.product_command('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000002']::uuid[]),current_setting('test.key')::uuid)$$,'Both siblings register atomically');
+select lives_ok($$select public.product_command('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000002']::uuid[]),current_setting('test.key')::uuid)$$,'Exact retry is safe');
+select is((select count(*)::int from public.event_registrations),2,'Retry consumes no extra places');
+select is((select count(*)::int from public.event_consents where guardian_id='fa100000-0000-4000-8000-000000000001' and document_version='events-v1'),2,'Each sibling has attributable versioned consent');
+select set_config('test.batch',(select id::text from public.event_registration_batches limit 1),true);
+reset role;
+select throws_ok($$update public.session_roster set cancelled=false where id='fa500000-0000-4000-8000-000000000004'$$,'P0409',null,'Later class placement cannot overlap registered event');
+update public.class_sessions set starts_at=(current_date+8)::timestamptz+interval '8 hours',ends_at=(current_date+8)::timestamptz+interval '9 hours' where id='fa500000-0000-4000-8000-000000000002';
+update public.session_roster set cancelled=false where id='fa500000-0000-4000-8000-000000000004';
+select throws_ok($$update public.class_sessions set starts_at=(current_date+7)::timestamptz+interval '8 hours',ends_at=(current_date+7)::timestamptz+interval '9 hours' where id='fa500000-0000-4000-8000-000000000002'$$,'P0409',null,'Session reschedule cannot overlap registered event');
+set local role authenticated;
+
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_registrations),0,'Unrelated family cannot read registrations');
+select is((select count(*)::int from public.event_consents),0,'Unrelated family cannot read waivers');
+select throws_ok($$select pg_temp.ev('events.cancel_registration',jsonb_build_object('batch_id',current_setting('test.batch')))$$,'42501',null,'Unrelated family cannot cancel');
+select throws_ok($$select pg_temp.ev('events.register',jsonb_build_object('event_id',current_setting('test.event'),'family_id','fa300000-0000-4000-8000-000000000002','children',jsonb_build_array(jsonb_build_object('child_id','fa400000-0000-4000-8000-000000000003','document_id','fa200000-0000-4000-8000-000000000005','accepted',true))))$$,'P0409',null,'Capacity prevents third registration');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000005","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_registrations),2,'Authorized branch sees its event registrations');
+reset role;
+delete from public.family_branches where family_id='fa300000-0000-4000-8000-000000000001' and branch_id='fa200000-0000-4000-8000-000000000001';
+set local role authenticated;
+select is((select count(*)::int from public.event_registrations),0,'Removing explicit family branch link removes event record access');
+reset role;
+insert into public.family_branches values('fa300000-0000-4000-8000-000000000001','fa200000-0000-4000-8000-000000000001');
+set local role authenticated;
+
+reset role;
+update public.branch_permissions set branch_id='fa200000-0000-4000-8000-000000000007' where user_id='fa100000-0000-4000-8000-000000000005';
+set local role authenticated;
+select is((select count(*)::int from public.event_registrations),0,'Live branch reassignment removes access');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select lives_ok($$select pg_temp.ev('events.cancel_registration',jsonb_build_object('batch_id',current_setting('test.batch')))$$,'Parent cancels entire sibling batch');
+select is((select count(*)::int from public.event_registrations where status='registered'),0,'Batch cancellation releases every place');
+select is((select count(*)::int from public.event_consents),2,'Cancellation preserves consent history');
+reset role;
+select throws_ok($$update public.event_consents set document_body='changed'$$,'42501',null,'Consent snapshots cannot be overwritten');
+select throws_ok($$delete from public.event_consents$$,'42501',null,'Consent snapshots cannot be deleted');
+update public.child_sports set status='interest' where child_id='fa400000-0000-4000-8000-000000000002';
+set local role authenticated;
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000002']::uuid[]))$$,'P0409',null,'One unassessed sibling rejects entire batch');
+select is((select count(*)::int from public.event_registration_batches),1,'Rejected eligibility creates no batch');
+reset role;
+update public.child_sports set status='reviewed' where child_id='fa400000-0000-4000-8000-000000000002';
+update public.branches set active=false where id='fa200000-0000-4000-8000-000000000001';
+set local role authenticated;
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'P0409',null,'Live inactive branch stops registration');
+reset role;
+update public.branches set active=true where id='fa200000-0000-4000-8000-000000000001';
+set local role authenticated;
+select lives_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'Released place can be booked with fresh consent');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal2"}',true);
+select lives_ok($$select pg_temp.ev('events.cancel',jsonb_build_object('event_id',current_setting('test.event'),'reason','Synthetic cancellation'))$$,'Owner cancels event');
+select is((select count(*)::int from public.event_registrations where status='registered'),0,'Event cancellation releases all batches');
+select is((select count(*)::int from public.event_consents),3,'Event cancellation keeps every historical acceptance');
+select set_config('request.jwt.claims','{"sub":"fa100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001']::uuid[]))$$,'P0409',null,'Cancelled events reject registration');
+select is((select count(*)::int from public.notifications n join public.product_events e on e.id=n.event_id where e.kind='event_cancelled'),1,'Cancellation notifies current guardian once');
+reset role;
+delete from public.role_assignments where user_id='fa100000-0000-4000-8000-000000000001';
+set local role authenticated;
+select is((select count(*)::int from public.event_registrations),0,'Revoked parent role removes family event access');
+select throws_ok($$select public.product_command('events.register',pg_temp.registration(array['fa400000-0000-4000-8000-000000000001','fa400000-0000-4000-8000-000000000002']::uuid[]),current_setting('test.key')::uuid)$$,'42501',null,'Cached command cannot bypass role revocation');
+select throws_ok($$insert into public.event_registration_batches(event_id,family_id,guardian_id) values(current_setting('test.event')::uuid,'fa300000-0000-4000-8000-000000000001','fa100000-0000-4000-8000-000000000001')$$,'42501',null,'Direct write cannot bypass RPC');
+select * from finish();
+rollback;

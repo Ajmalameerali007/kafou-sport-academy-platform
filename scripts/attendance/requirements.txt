@@ -1,0 +1,4 @@
+# Local synthetic evaluation only; model clearance remains separate.
+opencv-python-headless==4.13.0.92
+Pillow==12.1.1
+numpy==2.5.3

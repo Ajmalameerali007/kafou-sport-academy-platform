@@ -1,0 +1,255 @@
+{
+  "scope": "Synthetic local portal screenshots; no Auth network traces",
+  "screenshots": [
+    {
+      "path": "screenshots/admin-arabic-mobile.png",
+      "sha256": "42fd8ec2cf237ffb65aadf1eb81588016ccc7e7e0d40b3315a8cace6f7a3f06e",
+      "bytes": 46327
+    },
+    {
+      "path": "screenshots/admin-business-reports-desktop.png",
+      "sha256": "154e6a4af6955f17bf5db5a58d4202ace491926a3ab1bf66c977c9ddb21bbd63",
+      "bytes": 110594
+    },
+    {
+      "path": "screenshots/admin-business-reports-mobile.png",
+      "sha256": "3596c45508cbc0eccc45ae41ecbdd8bb772bd5019a40d4623038aa56ed44de75",
+      "bytes": 49098
+    },
+    {
+      "path": "screenshots/admin-finance-desktop.png",
+      "sha256": "ef1679fec033779cf394553f21fc6b8881bdae2f3d495a33a4eff4c42956c664",
+      "bytes": 147850
+    },
+    {
+      "path": "screenshots/admin-finance-mobile.png",
+      "sha256": "2db7a520182aecea228538a5d8f8e882a37b09538c2ef5efee0691ba517ba6bd",
+      "bytes": 59496
+    },
+    {
+      "path": "screenshots/admin-overview-desktop.png",
+      "sha256": "baff0ad00e5e5a0e845bbceeca878ea70f2e43d4c6ecdaf3840acd8fcf69d945",
+      "bytes": 124710
+    },
+    {
+      "path": "screenshots/admin-overview-mobile.png",
+      "sha256": "3abfd9041be77f5b1e0c43df4afde2ea571679324eb529a7eb3f73d737ecfe4d",
+      "bytes": 42416
+    },
+    {
+      "path": "screenshots/admin-reports-arabic-mobile.png",
+      "sha256": "dac003123eb18c5ebcfb10f8a23e06a7c282238e5420a84651948df22a4fded9",
+      "bytes": 47235
+    },
+    {
+      "path": "screenshots/branch-arabic-mobile.png",
+      "sha256": "d541585e288ddbaee10eb169da4adef5a42bdc40ca2661d8b5826b7d1ded902c",
+      "bytes": 47929
+    },
+    {
+      "path": "screenshots/branch-attendance-desktop.png",
+      "sha256": "dde151924ec18d02dd0c475a492f7303117a3c11b054e09ed8df8d1829256e08",
+      "bytes": 134161
+    },
+    {
+      "path": "screenshots/branch-attendance-editor-desktop.png",
+      "sha256": "b6b7f328248b4d44d288540b1257ebbb62b8da609630153531c41480e3302d66",
+      "bytes": 118159
+    },
+    {
+      "path": "screenshots/branch-attendance-editor-mobile.png",
+      "sha256": "00b3538c0f5273a7b396ef9ee049628f711cdc0f246016508ed65ecbc90ce9fb",
+      "bytes": 60858
+    },
+    {
+      "path": "screenshots/branch-attendance-mobile.png",
+      "sha256": "b175328dba859ac933f140ceddae41a53ec55c38134debd330e53627bd0ca933",
+      "bytes": 53805
+    },
+    {
+      "path": "screenshots/branch-business-reports-desktop.png",
+      "sha256": "5fea6815113152ce55e7fa91a3c056b9e10632233286165861dc7c3e709a4259",
+      "bytes": 94188
+    },
+    {
+      "path": "screenshots/branch-business-reports-mobile.png",
+      "sha256": "252b192e4e704af08e28d680a8e64373bcca45bfc057bd49740ecd8781e2a7b4",
+      "bytes": 45436
+    },
+    {
+      "path": "screenshots/branch-overview-desktop.png",
+      "sha256": "58ef3541bf111a8437819ff90976eef76265f8b93283ba55846bc57fcdf11fb6",
+      "bytes": 151911
+    },
+    {
+      "path": "screenshots/branch-overview-mobile.png",
+      "sha256": "43ae7f916683754511a688d01694aab0178d647157309b4b085cbcf69695b7c5",
+      "bytes": 51777
+    },
+    {
+      "path": "screenshots/branch-reports-arabic-mobile.png",
+      "sha256": "2f71373105575d81a166d6cc2e87c3429ef5ae5ae6a940bb4de03619fba6f647",
+      "bytes": 44760
+    },
+    {
+      "path": "screenshots/coach-arabic-mobile.png",
+      "sha256": "71e58296da2cfa46f1c8452da8e5202bd92a7a315a4955c633a05c15c37d9afe",
+      "bytes": 57393
+    },
+    {
+      "path": "screenshots/coach-assessment-desktop.png",
+      "sha256": "390e662375ac95059ae82ae3077f6f9b0cbd541f89818c8f3fbe954ff86fa79e",
+      "bytes": 113228
+    },
+    {
+      "path": "screenshots/coach-assessment-mobile.png",
+      "sha256": "9470ae84f51dbb23b9b20272e9c4fab30815ba0c4ff811bf1b9311eca03034c7",
+      "bytes": 43287
+    },
+    {
+      "path": "screenshots/coach-assigned-sessions-desktop.png",
+      "sha256": "27d93dbb629b8f77594668cd42d067d611457b9431962f197c9226b9dd1e0eda",
+      "bytes": 136023
+    },
+    {
+      "path": "screenshots/coach-assigned-sessions-mobile.png",
+      "sha256": "0fdd455ecf2e0fd877a2514d5d62877b016993d0bee5ca05096099dd1564283a",
+      "bytes": 59698
+    },
+    {
+      "path": "screenshots/coach-business-reports-desktop.png",
+      "sha256": "ecf4db18d69e9fe16aebcd16bb4c14663b6ddb9ec20907a0d5f72d0452e13304",
+      "bytes": 133219
+    },
+    {
+      "path": "screenshots/coach-business-reports-mobile.png",
+      "sha256": "6ce918872bf853463830706a8368740fe982e2645c9d6c49e0848025424346c6",
+      "bytes": 49968
+    },
+    {
+      "path": "screenshots/coach-coaching-desktop.png",
+      "sha256": "ef11cf5b1c2e448bfaf6b8f87d1726711d7380a514db413aa0c988d26810c8c9",
+      "bytes": 131882
+    },
+    {
+      "path": "screenshots/coach-coaching-mobile.png",
+      "sha256": "8b9fb732a0ea595c3c3a893d90fbe4fbdc2463215e5541e975dd80bdf2ea0029",
+      "bytes": 62267
+    },
+    {
+      "path": "screenshots/coach-reports-arabic-mobile.png",
+      "sha256": "59eb26f6f55657145fbdcc16af60e3533e7c731e7f22ed6caccaf6ec5331734e",
+      "bytes": 47329
+    },
+    {
+      "path": "screenshots/owner-action-centre-desktop.png",
+      "sha256": "6d6e69939f016c410ff482ceb15c161aaecd924480877c8167243221f86eac22",
+      "bytes": 364119
+    },
+    {
+      "path": "screenshots/owner-action-centre-mobile.png",
+      "sha256": "608d9c38591b90b72857418455c7df53a2bbbf78fe756d13bcef0b46dccc3c1e",
+      "bytes": 275883
+    },
+    {
+      "path": "screenshots/parent-arabic-mobile.png",
+      "sha256": "8880da8729d81121e3920ed39c4d4801f21b68a85dadc08e2c26fea836711f19",
+      "bytes": 48040
+    },
+    {
+      "path": "screenshots/parent-child-journey-desktop.png",
+      "sha256": "bbfe7674fb91fbd43d654acd5ca348ef24edd5c4da464e815e9d2d1d2be2de31",
+      "bytes": 132667
+    },
+    {
+      "path": "screenshots/parent-child-journey-mobile.png",
+      "sha256": "0d3006f65429f7fe9a01a0a44c76e4027899495c396005dc0da3adfde24bf259",
+      "bytes": 72529
+    },
+    {
+      "path": "screenshots/parent-finance-desktop.png",
+      "sha256": "d1ab7bc88ae50d1703a21554062a0ea26333d5aff4944255043cab5bb695af63",
+      "bytes": 145006
+    },
+    {
+      "path": "screenshots/parent-finance-mobile.png",
+      "sha256": "b49768d7e9497ee53c5e249f1e23208640077f2de72866c7022a06050c2261b3",
+      "bytes": 51742
+    },
+    {
+      "path": "screenshots/parent-makeups-desktop.png",
+      "sha256": "19589b5e38af835bd1952ba12b7729f003822fceb42e787db60810f1945a3d77",
+      "bytes": 133104
+    },
+    {
+      "path": "screenshots/parent-makeups-mobile.png",
+      "sha256": "372f8174039066dcfacbe9c3490867109070ffd76e0b395ec3f2fdf3aca4691f",
+      "bytes": 62086
+    },
+    {
+      "path": "screenshots/parent-overview-desktop.png",
+      "sha256": "525aec6cea580059d66afb3f580e0c0e774d25ef894006a4f944e0ecedc74f6f",
+      "bytes": 127365
+    },
+    {
+      "path": "screenshots/parent-overview-mobile.png",
+      "sha256": "b054105cfd445126830a3a36661e51e2daa2d3841423f5cfeaff6ca7f7cc462e",
+      "bytes": 53341
+    },
+    {
+      "path": "screenshots/parent-progress-desktop.png",
+      "sha256": "e1bead917eb3b504b6315c47eb26cea18d8a4219f7ec53fdb1d781d47eebbd9b",
+      "bytes": 132134
+    },
+    {
+      "path": "screenshots/parent-progress-mobile.png",
+      "sha256": "75d873e0d322f3953076dbc628b44730f62e75f29569fc6182fe5f4cbb1d6b95",
+      "bytes": 54639
+    },
+    {
+      "path": "screenshots/parent-schedule-desktop.png",
+      "sha256": "e4bb68e819f5a4507cbfe9be3fcb2c056c9ef86e351ebd380bfbbf8ab2ef3057",
+      "bytes": 140003
+    },
+    {
+      "path": "screenshots/parent-schedule-mobile.png",
+      "sha256": "2228d3a22c8d49836a2f370fcbd4fe8fd09ec8a10842ac237375373ce514099b",
+      "bytes": 58976
+    },
+    {
+      "path": "screenshots/sales-business-reports-desktop.png",
+      "sha256": "e16d722b78192fa04f6f778485f58bd1b19d87f1825c36fdddf4bb791b155fc1",
+      "bytes": 95272
+    },
+    {
+      "path": "screenshots/sales-business-reports-mobile.png",
+      "sha256": "45ec1328fc3705db9f5df26c692d028d8a9106edf70962c684ffeb75abce1671",
+      "bytes": 47294
+    },
+    {
+      "path": "screenshots/sales-enquiries-desktop.png",
+      "sha256": "9c2c1969926c95b3bb9b9754f2030f69eb164e1e311a533813d2fb7a3888b703",
+      "bytes": 99733
+    },
+    {
+      "path": "screenshots/sales-enquiries-mobile.png",
+      "sha256": "9ad2785b963ad31a3690d30dd0386526a2e4ce07d013b26e11b6e588a5cc7a58",
+      "bytes": 40771
+    },
+    {
+      "path": "screenshots/sales-overview-desktop.png",
+      "sha256": "1801ac98986bfb878101d1ab822d86e5f660ab2684cb05fa8f234bee3b45bfd6",
+      "bytes": 111358
+    },
+    {
+      "path": "screenshots/sales-overview-mobile.png",
+      "sha256": "21775adcf76249d0d530c301bd0e54e0e4982f970fd008485ad237e97d622b37",
+      "bytes": 48438
+    },
+    {
+      "path": "screenshots/sales-reports-arabic-mobile.png",
+      "sha256": "7b482ce9880f57251a5fb79d8972fcf93d1df4da8ac0516bf0d552b338ed21c7",
+      "bytes": 44627
+    }
+  ]
+}

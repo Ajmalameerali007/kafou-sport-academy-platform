@@ -1,0 +1,23 @@
+# Phase 2 implementation ledger
+
+Scope: the user's approved Customer Journey + Scheduling Core. Extend Phase 1 in the existing clean feature checkout, base f2bffb4. Keep visual design, bilingual routes, MFA and current-record permissions. No finance, messaging, biometrics or progression engine.
+
+Plan: (1) transactional schema and security tests; (2) typed operations APIs; (3) staff scheduling/CRM/rosters and parent booking/status; (4) public availability; (5) local acceptance, independent review and private staging release.
+
+Ruling: execute the explicit build request inline without another design approval cycle; the supplied scope is authoritative. Use this tracked plan/ledger for durable decisions.
+Ruling: no owner identity, SMTP credentials or confirmed academy timetable was supplied. These activation items remain pending; do not promote an arbitrary account or invent operational records. The user subsequently explicitly authorized six hosted staging demo identities and synthetic families. Seed them with protected synthetic flags, isolated from production; keep real-owner and SMTP activation pending.
+Ruling: attendance status (present/absent/late/excused) is separate from participation kind (trial/enrollment/make-up). This preserves trial history.
+Ruling: classes have configurable age groups, sport levels and weekly Dubai-time schedules. Materialization creates immutable dated session snapshots over a bounded range. Existing occurrences are not silently rewritten.
+Ruling: all bookings lock class then session and enquiry, count active roster places, validate current branch/sport/level/age and authorization, then commit booking, roster and lead activity atomically. Conversion locks the class, preserves identity and creates one active enrollment plus pending-package state without financial effects.
+Ruling: exact DOB enables exact age on session date. Reported age is a lower-bound estimate with capture date; uncertain eligibility requires a staff override with reason, never an invented DOB.
+Ruling: existing interested/trial_offered leads migrate to contacted with explicit timeline preservation. Booked/attended/converted are derived by domain actions, never arbitrary CRM selectors.
+Ruling: confirmed, active branches and venues are required for bookable classes. Seven provisional enquiry labels remain preferences until management confirms their actual records.
+
+Review focus: concurrent final-seat booking, concurrent conversion, cancellations, overlap, stale roles, family access, direct RPC bypass, roster privacy, past dates, age boundaries, repeated finalization and retry idempotency. Local tests may use isolated synthetic records, hosted acceptance must not claim real academy configuration.
+
+Review fixes: no-show trials now move to missed and return their lead to contacted, permitting another booking while keeping attendance history. A booked/attended child identity cannot be reassociated; link first or cancel an unstarted booking. Staff may issue a verified-account-bound, single-use family access offer, accepted by that exact parent, to give access to a staff-created family without copying its child. Conversion and materialization check child overlaps and current coach/branch/sport/level availability.
+Ruling: serialize operational mutations with a single academy advisory lock in addition to row locks. This prevents cross-class scheduling/identity races in this single-organization staging phase; very high write throughput would require finer lock partitioning before scaling.
+Ruling: reported-age uncertainty filters conservatively. Staff age/level exceptions require recorded reasons and cannot override sport, branch, live availability, capacity or schedule conflicts.
+Initial verification: 12 unit tests, 65 database checks, four new Worker journeys including concurrent last-seat booking passed. Independent review reproduced five assertions failing before fixes; those regressions now pass (70 total DB checks). Full public suite first run found two stale expectations (seven branches vs nine with isolated demo fixtures, and pre-booking Arabic copy) plus a test selecting a previous finalized session; adjusted expectations/selection to current behavior, rerun required.
+
+Final local acceptance: 12/12 unit/service tests, 78/78 database checks, 38/38 compiled Worker browser tests, TypeScript/lint/build passed. Empty-database replay passed using remote-aligned migration versions. Final reviewer findings addressed; additional recorded-age regression reproduced two failures before fixing source-of-truth selection. No deferred reviewer findings. Owner-only staging release and hosted checks follow.

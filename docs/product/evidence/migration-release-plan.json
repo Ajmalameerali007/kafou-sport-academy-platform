@@ -1,0 +1,143 @@
+{
+  "recordedAt": "2026-09-20T17:20:05.887075+00:00",
+  "target": "cwdazidovxqeevmpicng",
+  "execution": "deferred_local_only_by_user",
+  "remoteWritesPerformed": false,
+  "comparison": "Exact stored SQL equivalence map, not filenames",
+  "orderedAdditiveSet": [
+    {
+      "file": "supabase/migrations/20260920022143_product_commercial_amendments.sql",
+      "sha256": "25fc1df569e9022372d73edb336e349e0c24057f0ec4130a679cc91fd9b2c8ab",
+      "normalizedSha256": "732b4def12ef68e6b856f234d6a98d2f5eacf107634a696c93aeeaf29ade7bd9",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 1,
+      "purpose": "Commercial amendments and corrections; retains original contract values and append-only history",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920030000_product_coach_profile.sql",
+      "sha256": "9f4bbfa81056a22bfaeef193ec8cd657da351b9045adbaf57052f32e52801ade",
+      "normalizedSha256": "72d3de8da2ac301ad68f9dfa1ca8b3170fe95689739fcbe535894f4d08a660bb",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 2,
+      "purpose": "Coach bio, qualifications and availability; adds defaulted profile fields",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920031000_product_audit_reason.sql",
+      "sha256": "5839baba6a8211bcf1693dfe511a8ad7d7d722bd7e6792b8f33f34a478c5a94d",
+      "normalizedSha256": "c51b0a1138e5ab7b4e2da8bc1fab1d2e3014460a7053868480cfd0c213b0271a",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 3,
+      "purpose": "Optional audit reason; preserves previous audit rows",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920032000_product_sibling_payment_allocation.sql",
+      "sha256": "7055cfcf2c07d726829fcdebe1a29ae1ba92729e2b203d3773f2a804cb15afd5",
+      "normalizedSha256": "75dfc3c1d9230aa3e76587f3f9f4bfab3f2603da35b4f4931d964355e4a4e545",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 4,
+      "purpose": "Atomic sibling invoice allocation through existing commercial command boundary",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920040000_complete_business_reports.sql",
+      "sha256": "e5f42e67a1b9a563f20d8b0f531e439599148ff1a4853fc8b41beb906c89388d",
+      "normalizedSha256": "120aecbad6a5ea69d49053bc65b1debdd18febad03563db3b4b74b18082b46f8",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 5,
+      "purpose": "Complete authorized report aggregates",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920041000_lead_registration_links.sql",
+      "sha256": "c11509e2595bab837e133dd030d9038bcd0ec528e8b4bfb6f9f6e34b690dd235",
+      "normalizedSha256": "7537adc8c50682adbcc32606cfa07d4f3f1429418a0ca97aa54b8dcc78af329a",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 6,
+      "purpose": "Revocable lead registration capability handoff",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920042000_development_automation.sql",
+      "sha256": "49299c629da2dfd710836766a8439cf5a3d333e12677e1380a3cb023f408c211",
+      "normalizedSha256": "bb5db8128a8e2d7ee9777eaa499cae2e751176c3c0fcfc7a5af35be054afdb36",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 7,
+      "purpose": "Disabled-by-default development automation through existing durable worker",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920043000_coach_conversations.sql",
+      "sha256": "312af50a53d0e21b426d6df15fea4a8b9359b3cf3b94e848ef7d457d8e401c25",
+      "normalizedSha256": "70d079cef3ea7ff0cade38a08f6e70c617beeda9741095aea284adebe33396a4",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 8,
+      "purpose": "Disabled-by-default enrollment-linked coach communication",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920044000_synthetic_migration_executor.sql",
+      "sha256": "99c22d70644148cab6e7a2b8c53692fea948486dd3d217df8b4277c130575606",
+      "normalizedSha256": "53115be78e301c4388f2e03ad169f388ed0bda5d293da5ffd221ed847c326a48",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 9,
+      "purpose": "Private synthetic import executor; no operational cutover activation",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    },
+    {
+      "file": "supabase/migrations/20260920045000_message_history_guard.sql",
+      "sha256": "045d8ac67359772d6a55b60fe1796d00838adf0cf3a4753dbc2dd8660daa9d3a",
+      "normalizedSha256": "24a3a46b97c38b98e0e276c829dc5a38740a52b0b0ae20926edae6e7a1942a0c",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates",
+      "order": 10,
+      "purpose": "Message body/history immutability guard",
+      "dependsOn": "32 matched baseline migrations and preceding entries",
+      "transaction": "One reviewed transaction per migration; preserve checkpoint/history on failure"
+    }
+  ],
+  "mappedRehearsal": {
+    "result": "populated_mapped_upgrade_and_isolated_database_recovery_passed",
+    "source": "mapped-upgrade.json",
+    "originalTablesCompared": 143,
+    "originalRowsCompared": 171,
+    "recoveryScope": "Populated local reconstruction, not actual hosted backup"
+  },
+  "beforeAnyHostedWrite": [
+    "User requests hosted work again and publishing access matches the preserved private Site",
+    "Fresh map and schema drift inspection still match reviewed files",
+    "Authorized hosted backup and separate restore destination, protected-file inventory and recovery evidence",
+    "Retain current deployed source/artifact/configuration revision and verify older Worker compatibility with additive schema",
+    "Review lock/maintenance window, responsible operator and forward-correction/rollback plan"
+  ],
+  "applicationOrder": "Review and apply only missing schema in listed order before routing the new Worker. Validate schema independently of /api/release expected hashes. Then publish exact reviewed pushed source through Sites and repeat hosted acceptance.",
+  "prohibited": [
+    "Blind db push",
+    "History repair based on version IDs alone",
+    "Duplicate equivalent migrations",
+    "Hosted reset/truncation",
+    "Database down-migration as an unreviewed rollback",
+    "Provider activation or audience change"
+  ],
+  "rollback": "Retain existing application until schema verification succeeds. Revert traffic only to a separately proven compatible prior artifact; preserve additive database state and use reviewed forward correction. Real data recovery requires approved restored backup and reconciliation; local rehearsal is not that approval."
+}

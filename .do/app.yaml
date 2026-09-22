@@ -1,0 +1,44 @@
+name: kafou-sport-academy
+region: nyc
+services:
+  - name: web
+    github:
+      repo: Ajmalameerali007/kafou-sport-academy-platform
+      branch: main
+      deploy_on_push: false
+    dockerfile_path: Dockerfile
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    health_check:
+      http_path: /healthz
+      initial_delay_seconds: 20
+      period_seconds: 30
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
+    envs:
+      - key: NODE_ENV
+        scope: RUN_TIME
+        value: production
+      - key: SUPABASE_URL
+        scope: RUN_TIME
+        type: SECRET
+      - key: SUPABASE_PUBLISHABLE_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: SUPABASE_SECRET_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: RATE_LIMIT_SECRET
+        scope: RUN_TIME
+        type: SECRET
+      - key: APP_URL
+        scope: RUN_TIME
+        value: ${APP_URL}
+      - key: KAFOU_STAGING
+        scope: RUN_TIME
+        value: "true"
+      - key: AUTH_EMAIL_ENABLED
+        scope: RUN_TIME
+        value: "false"

@@ -1,0 +1,24 @@
+{
+  "siteId": "appgprj_6aaeb83ca7cc8191a4db59b84670602c",
+  "getSite": {
+    "errorCode": "NOT_FOUND",
+    "errorType": "project_not_found",
+    "status": 404
+  },
+  "search": {
+    "query": "kafou",
+    "items": 0,
+    "nextCursor": null
+  },
+  "accountContext": "Selected workspace search succeeded but no account/workspace identity metadata is exposed by available Sites tools; owning account cannot be established.",
+  "mutations": false,
+  "activationReadOnly": {
+    "active_real_owners": 0,
+    "cron_installed": false,
+    "enabled_scheduler_approvals": 0,
+    "external_outbox_active": 0,
+    "recorded_job_runs": 0
+  },
+  "latestUserDirection": "Local work only; no further hosted recovery or deployment attempted",
+  "recordedAt": "2026-09-20T17:20:05.887824+00:00"
+}

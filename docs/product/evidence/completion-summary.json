@@ -1,0 +1,99 @@
+{
+  "at": "2026-09-20T17:22:26.189126+00:00",
+  "status": "locally_verified_hosted_deferred_by_user",
+  "source": {
+    "gitHead": "ac9ef030c660fb08a1c5789cfa9c32f27f278492",
+    "uncommitted": true,
+    "sourceSha256": "1d1187a2ec6a886c87ed36bbdc22f60d41986b1072dfc84f7562d6e36d0ed14d",
+    "sourceInputsUnchangedAfterVerification": true,
+    "authenticatedCompiledReleaseMatches": true
+  },
+  "artifact": {
+    "path": "outputs/release-recovery/2026-09-20/kafou-local-release.tar.gz",
+    "sha256": "065f814a15647d2574af74d0e7cc907e2dcfbf71995085410ecbd5eb33a2542c",
+    "bytes": 9791714,
+    "packagedWithoutLocalSecrets": true,
+    "knownPrivateCredentialsScan": "passed"
+  },
+  "verification": {
+    "typecheck": "pass",
+    "eslint": "pass",
+    "unitTests": 136,
+    "databaseMigrations": 42,
+    "databaseSuites": 41,
+    "databaseAssertions": 1357,
+    "databaseReplay": "replay_and_checks_passed",
+    "disposableDatabaseDropped": true,
+    "browserTests": 36,
+    "httpSixRoleChecks": 51,
+    "genuineMfaCoachConversationChecks": 21,
+    "roles": [
+      "Parent",
+      "Sales",
+      "Front Desk",
+      "Coach",
+      "Head Office",
+      "Owner"
+    ],
+    "portalScreenshots": 50,
+    "localLoginThrottle": "Expected 429 during repeated rehearsals; exact local test bucket cleared; final sequential browser run passed",
+    "databaseAdvisors": {
+      "total": 188,
+      "byLevel": {
+        "WARN": 1,
+        "INFO": 187
+      },
+      "byName": {
+        "auth_rls_initplan": 1,
+        "unused_index": 176,
+        "rls_enabled_no_policy": 11
+      }
+    },
+    "databaseLint": {
+      "functions": 7,
+      "issues": 11,
+      "byLevel": {
+        "warning": 10,
+        "warning extra": 1
+      }
+    },
+    "browserExecution": "33 passed initially; 3 login-throttled checks passed on focused rerun after isolated local bucket cleanup",
+    "populatedMappedUpgradeChecks": 63,
+    "populatedMappedUpgradeOriginalTables": 143,
+    "populatedMappedUpgradeOriginalRows": 171,
+    "fullLocalRestoreTables": 158,
+    "fullLocalRestoreRows": 1623
+  },
+  "hosted": {
+    "siteId": "appgprj_6aaeb83ca7cc8191a4db59b84670602c",
+    "url": "https://kafou-sport-academy.ajazx800.chatgpt.site/",
+    "viewerAuthenticated": true,
+    "registerRoute": "404_older_build",
+    "deploymentConnector": "project_not_found",
+    "databaseProject": "cwdazidovxqeevmpicng",
+    "remoteMigrationsMatchedByContent": 32,
+    "writesPerformed": false,
+    "realActiveOwners": 0,
+    "cronInstalled": false,
+    "enabledSchedulerApprovals": 0,
+    "recordedJobRuns": 0,
+    "externalOutboxActive": 0,
+    "latestDirection": "Local only; no deployment or hosted writes",
+    "freshReadOnlyMap": "32 equivalent, 10 genuinely missing, zero unresolved"
+  },
+  "remaining": [
+    "Hosted deployment access, exact release rollout and hosted six-role verification",
+    "Real owner recovery, monitoring, approved scheduler and backup restoration",
+    "Selected vendor sandbox implementations and approved test-recipient delivery",
+    "Real Mindbody export mapping and approved operational membership/opening-ledger cutover adapters"
+  ],
+  "providerState": {
+    "payments": "inactive_no_simulated_success",
+    "whatsApp": "inactive_no_simulated_success"
+  },
+  "chatTestCleanup": {
+    "policy": "disabled",
+    "temporaryVerificationOwner": "inactive"
+  },
+  "mfaDemoException": "Exact loopback local demo Owner only; activation policies still require actual AAL2"
+}

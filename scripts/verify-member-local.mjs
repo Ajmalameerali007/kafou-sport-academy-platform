@@ -1,0 +1,88 @@
+import assert from 'node:assert/strict';
+import {createClient} from '@supabase/supabase-js';
+import {randomBytes,randomUUID} from 'node:crypto';
+import {readFileSync,writeFileSync} from 'node:fs';
+const url='http://127.0.0.1:56321',origin='http://127.0.0.1:3102';
+if(process.env.SUPABASE_URL!==url||!process.env.KAFOU_DEMO_PASSWORD)throw Error('Local private configuration required');
+const fixture=JSON.parse(readFileSync('outputs/member/demo.json','utf8')),old=JSON.parse(readFileSync('outputs/product/local-meeting-tuning-2026-09-20.json','utf8'));
+const admin=createClient(url,process.env.SUPABASE_SECRET_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
+const newClient=()=>createClient(url,process.env.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
+const checks=[];const check=(name,value)=>{assert.ok(value,name);checks.push({name,result:'pass'});console.log('PASS '+name)};
+const cookies={};
+async function web(role,path,body){const r=await fetch(origin+'/api/'+path,{method:body?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json',...(cookies[role]?{Cookie:cookies[role]}:{})},...(body?{body:JSON.stringify(body)}:{})});const c=r.headers.getSetCookie();if(c.length)cookies[role]=c.map(x=>x.split(';')[0]).join('; ');return {status:r.status,...await r.json()};}
+async function member(token,path,body,headers={}){const r=await fetch(origin+'/api/member/v1/'+path,{method:body?'POST':'GET',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{}),...headers},...(body?{body:JSON.stringify(body)}:{})});const type=r.headers.get('content-type')||'';return type.includes('json')?{status:r.status,...await r.json()}:{status:r.status,bytes:(await r.arrayBuffer()).byteLength};}
+const cmd=(action,data,key=randomUUID())=>({action,data,key});
+let freshUser,removedGuardian=false;
+try {
+ const fresh=newClient(),email='member-'+randomUUID()+'@example.invalid',password=randomBytes(4).toString('hex');
+ const signup=await fresh.auth.signUp({email,password,options:{data:{role:'super_admin'}}});freshUser=signup.data.user?.id;
+ check('Eight-character local signup establishes session without confirmation',!signup.error&&Boolean(signup.data.session));
+ await admin.from('profiles').update({synthetic:true}).eq('id',freshUser);
+ const freshToken=signup.data.session.access_token;
+ const ctx=await member(freshToken,'context');check('Signup metadata cannot grant staff authority',ctx.ok&&ctx.data.roles.length===1&&ctx.data.roles[0]==='parent');
+ check('New account has an honest empty family', (await member(freshToken,'children')).data.items.length===0);
+ const duplicate=await newClient().auth.signUp({email,password});check('Duplicate signup rejected',Boolean(duplicate.error));
+ const familyCommand=cmd('family.create',{name:'Synthetic native test family',mobile:'+971500000000',email});
+ const family=await member(freshToken,'commands',familyCommand);check('Family setup uses existing command',family.ok);
+ const repeated=await member(freshToken,'commands',familyCommand);check('Family setup retry is idempotent',repeated.ok&&repeated.data.id===family.data.id);
+ check('Changed payload cannot reuse idempotency key',(await member(freshToken,'commands',{...familyCommand,data:{...familyCommand.data,name:'Changed test family'}})).status===409);
+ const childCommand=cmd('child.save',{family_id:family.data.id,name:'Synthetic native child',reported_age:7});
+ const child=await member(freshToken,'commands',childCommand);check('Child setup is guardian-owned',child.ok);
+ check('Repeated child request creates one child',(await member(freshToken,'commands',childCommand)).data.id===child.data.id&&(await member(freshToken,'children')).data.items.length===1);
+ const demo=newClient(),login=await demo.auth.signInWithPassword({email:'demo@kafou.com',password:process.env.KAFOU_DEMO_PASSWORD});check('Demo login uses real local Auth',!login.error);let token=login.data.session.access_token;
+ check('Forged bearer is rejected',(await member('not.a.token','children')).status===401);
+ check('Cookie-only request is rejected',(await member(null,'children')).status===401);
+ check('Cross-family child read denied',(await member(freshToken,'sessions?child='+fixture.memberFixture.childId)).status===403);
+ check('Cross-family mutation denied',(await member(freshToken,'commands',cmd('child.save',{id:fixture.children[0],family_id:fixture.familyId,name:'Denied',reported_age:7}))).status===403);
+ check('Attendance is excluded from native allowlist',(await member(token,'commands',cmd('attendance.finalize',{session_id:fixture.memberFixture.sourceSessionId,entries:[]}))).status===400);
+ check('Financial posting is excluded from native allowlist',(await member(token,'commands',cmd('commercial.payment.record',{}))).status===400);
+ check('Foreign browser origin remains blocked',(await member(token,'commands',cmd('community.notification.read',{id:randomUUID()}),{Origin:'https://untrusted.invalid'})).status===403);
+ const allChildren=await member(token,'children');check('Demo has synthetic siblings',allChildren.ok&&allChildren.data.items.length>=2);
+ const pageOne=await member(token,'children?limit=1'),pageTwo=await member(token,'children?limit=1&cursor=1');check('Pagination has stable disjoint records',pageOne.data.next_cursor===1&&pageOne.data.items[0].id!==pageTwo.data.items[0].id);
+ for(const resource of ['families','sessions','progress','memberships','notifications','documents','credits','waitlist','levels','invoices','receipts','support','consents','events','challenges','recognition','trials'])check('Typed RLS read: '+resource,(await member(token,resource)).ok);
+ const nativeSessions=(await member(token,'sessions?child='+fixture.memberFixture.childId)).data.items;
+ check('Finalized branch attendance appears in native projection',nativeSessions.some(x=>x.session_id===fixture.memberFixture.sourceSessionId&&x.attendance==='excused'));
+ const branchLogin=await web('branch','auth/login',{identifier:old.accounts.branch.email,password:process.env.KAFOU_DEMO_PASSWORD,remember:false});check('Separate branch web session authenticated',branchLogin.ok);
+ const parentLogin=await web('parent','auth/login',{identifier:old.accounts.parent.email,password:process.env.KAFOU_DEMO_PASSWORD,remember:false});check('Separate parent web session authenticated',parentLogin.ok);
+ const webProduct=await web('parent','product');check('Web parent shares authorized family facts',webProduct.ok&&webProduct.data.makeup_credits.some(c=>c.id===fixture.memberFixture.creditId));
+ const options=await member(token,'makeup-options?id='+fixture.memberFixture.creditId);check('Issued credit exposes eligible session',options.ok&&options.data.some(x=>x.id===fixture.memberFixture.sessionId));
+ const bookingCommand=cmd('academy.makeup.book',{credit_id:fixture.memberFixture.creditId,session_id:fixture.memberFixture.sessionId});
+ const [book,duplicateBook]=await Promise.all([member(token,'commands',bookingCommand),member(token,'commands',bookingCommand)]);
+ check('Concurrent duplicate native booking returns one booking',book.ok&&duplicateBook.ok&&book.data.id===duplicateBook.data.id);
+ const webAfter=await web('parent','product');check('Native booking appears in separate web parent session',webAfter.ok&&webAfter.data.makeup_bookings.some(x=>x.id===book.data.id&&x.status==='reserved'));
+ check('Native booking appears in branch web session',(await web('branch','product')).data.makeup_bookings.some(x=>x.id===book.data.id));
+ check('Cancellation succeeds',(await member(token,'commands',cmd('academy.makeup.cancel',{id:book.data.id}))).ok);
+ check('Cancellation is visible to web parent',(await web('parent','product')).data.makeup_bookings.some(x=>x.id===book.data.id&&x.status==='cancelled'));
+ const refreshed=await demo.auth.refreshSession();check('Refresh token rotates and remains authorized',!refreshed.error&&Boolean(refreshed.data.session));token=refreshed.data.session.access_token;
+ const progress=(await member(token,'progress')).data.items;check('Only published assessments are returned',progress.length>0&&progress.every(x=>x.status==='published'));
+ const sourceAssessments=await admin.from('development_assessments').select('id,status').in('child_id',fixture.children);
+ check('Unpublished assessment IDs excluded',sourceAssessments.data.filter(x=>x.status!=='published').every(x=>!progress.some(y=>y.id===x.id)));
+ const receipts=(await member(token,'receipts')).data.items;check('Recorded receipts match separate parent web accounting',receipts.length>0&&receipts.every(x=>webAfter.data.commercial_receipts.some(y=>y.id===x.id)));
+ const receipt=receipts[0];check('Authorized receipt downloads', (await member(token,receipt.document_path)).status===200);
+ check('Another account cannot download receipt',(await member(freshToken,receipt.document_path)).status===404);
+ const unlink=await admin.from('guardians').delete().eq('family_id',fixture.familyId).eq('user_id',fixture.userId);if(unlink.error)throw Error('Synthetic guardian revocation failed');removedGuardian=true;
+ check('Revoked guardian loses child access immediately',(await member(token,'sessions?child='+fixture.memberFixture.childId)).status===403);
+ check('Revoked guardian loses document access immediately',(await member(token,receipt.document_path)).status===404);
+ check('Revoked guardian cannot replay earlier booking',(await member(token,'commands',bookingCommand)).status===409);
+ const restore=await admin.from('guardians').insert({family_id:fixture.familyId,user_id:fixture.userId});if(restore.error)throw Error('Synthetic guardian restore failed');removedGuardian=false;
+ const recover=await fresh.auth.resetPasswordForEmail(email,{redirectTo:'kafou-members://auth/recovery'});check('Password recovery accepted by local mail service',!recover.error);
+ let message;
+ for(let attempt=0;attempt<10;attempt++){const list=await(await fetch('http://127.0.0.1:56324/api/v1/search?query='+encodeURIComponent('to:'+email))).json();if(list.messages?.length){message=await(await fetch('http://127.0.0.1:56324/api/v1/message/'+list.messages[0].ID)).json();break;}await new Promise(r=>setTimeout(r,200));}
+ check('Recovery email is captured only in local test mailbox',Boolean(message));
+ const text=(message.Text||'')+' '+(message.HTML||'');
+ const match=text.replaceAll('&amp;','&').match(/http:\/\/127\.0\.0\.1:56321\/auth\/v1\/verify[^\s<>"\]]+/);
+ check('Local recovery email contains Auth verification link',Boolean(match));
+ const verification=await fetch(match[0],{redirect:'manual'});const redirect=verification.headers.get('location');
+ check('Recovery redirects to native app scheme',Boolean(redirect?.startsWith('kafou-members://auth/recovery')));
+ const tokens=new URLSearchParams(redirect.split('#')[1]);const recovered=newClient();const restored=await recovered.auth.setSession({access_token:tokens.get('access_token'),refresh_token:tokens.get('refresh_token')});
+ check('Recovery link establishes verified recovery session',!restored.error&&restored.data.user.id===freshUser);
+ const changedPassword=randomBytes(10).toString('hex');const update=await recovered.auth.updateUser({password:changedPassword});check('Recovery updates password through Auth',!update.error);
+ const newLogin=await newClient().auth.signInWithPassword({email,password:changedPassword});check('New password signs in after recovery',!newLogin.error);
+
+ const refreshToken=refreshed.data.session.refresh_token;await demo.auth.signOut();const invalid=await newClient().auth.refreshSession({refresh_token:refreshToken});check('Logout invalidates refresh session',Boolean(invalid.error));
+ writeFileSync('outputs/member/http-verification.json',JSON.stringify({at:new Date().toISOString(),environment:'local',checks,limitations:['Simulator UI remains separately verified.','Receipt and published-progress consistency checks compare existing academy records.']},null,2));
+ console.log(checks.length+' checks passed.');
+} finally {
+ if(removedGuardian)await admin.from('guardians').upsert({family_id:fixture.familyId,user_id:fixture.userId});
+ if(freshUser)await admin.from('profiles').update({active:false}).eq('id',freshUser);
+}

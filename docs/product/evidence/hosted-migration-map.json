@@ -1,0 +1,401 @@
+{
+  "at": "2026-09-20T17:12:24.565804+00:00",
+  "project": "cwdazidovxqeevmpicng",
+  "mode": "read_only",
+  "comparison": "Remote statements joined with a single newline and boundary whitespace trimmed; local file boundary whitespace trimmed. No inner whitespace/comment/SQL normalization.",
+  "migrations": [
+    {
+      "remoteVersion": "20260919202722",
+      "name": "foundation",
+      "sha256": "76b56f763bbd630a0c3c7abc34aab6905f7d1be70451d4626d2232c151f03b34",
+      "localExactMatches": [
+        "supabase/migrations/20260919202722_foundation.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919204128",
+      "name": "foundation_boundaries",
+      "sha256": "94264f4a2c5f545cc173364b66f526844b7c1fe0c847731881ec8beba68c6463",
+      "localExactMatches": [
+        "supabase/migrations/20260919204128_foundation_boundaries.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919210046",
+      "name": "foundation_hardening",
+      "sha256": "43418ef6bcfda5df0cf996e1a28593e97350f5f32c6dad94744ec7cf63696bb8",
+      "localExactMatches": [
+        "supabase/migrations/20260919210046_foundation_hardening.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919210048",
+      "name": "foundation_access",
+      "sha256": "e17cd083a834c5776255cbe5c36e679ba500b41ec1091d34dc5029477f6e58f4",
+      "localExactMatches": [
+        "supabase/migrations/20260919210048_foundation_access.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919210049",
+      "name": "foundation_review_fixes",
+      "sha256": "5b7de684cf47bbd0766511f8ac02a3d7718d867e96efed0a269f98bf4fc77d6c",
+      "localExactMatches": [
+        "supabase/migrations/20260919210049_foundation_review_fixes.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919210254",
+      "name": "foundation_indexes",
+      "sha256": "55b527e4f63d589464435aac4b6aaba883f1c5635122070aa56ff928ddc2854b",
+      "localExactMatches": [
+        "supabase/migrations/20260919210254_foundation_indexes.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919215239",
+      "name": "scheduling_core",
+      "sha256": "cd0e182932de65049560a43627c26f4a6452528cb06abc91ef6fba19d720ae4d",
+      "localExactMatches": [
+        "supabase/migrations/20260919215239_scheduling_core.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919215251",
+      "name": "scheduling_access",
+      "sha256": "df8401e513b285f60b0f5a37f3689c06286f32c2d57ed4c5a9905446543b426c",
+      "localExactMatches": [
+        "supabase/migrations/20260919215251_scheduling_access.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260919215359",
+      "name": "scheduling_claim_indexes",
+      "sha256": "c93ca55b6f7325badb5de8e39ad5d73e40cca25042e227689540f302693f0124",
+      "localExactMatches": [
+        "supabase/migrations/20260919215359_scheduling_claim_indexes.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011339",
+      "name": "product_shared_core",
+      "sha256": "ec358f3b78235c471d55d823fe6836b93ab714de04fa2444702be74dfb07143c",
+      "localExactMatches": [
+        "supabase/migrations/20260919233807_product_shared_core.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011342",
+      "name": "product_commercial",
+      "sha256": "3022ac609cdc9eb00991e6f385ccec82e62722b957b5f00857c1c5564a702090",
+      "localExactMatches": [
+        "supabase/migrations/20260919233857_product_commercial.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011345",
+      "name": "product_development",
+      "sha256": "a6dd6371c42c9d4aca9d29a1f5c6d6f00f42d802eaaf51e2636722ef5690fdc3",
+      "localExactMatches": [
+        "supabase/migrations/20260919233935_product_development.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011347",
+      "name": "product_academy",
+      "sha256": "1cbf735d44a19bfdbf26b163d4f878d7ddc49ea22aedf40e02091630e9901c67",
+      "localExactMatches": [
+        "supabase/migrations/20260919234250_product_academy.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011351",
+      "name": "product_community",
+      "sha256": "0bf2c749fd4a82f8bda00b31b62047dd0398405c450d766fb8edc83fa9c8c7dc",
+      "localExactMatches": [
+        "supabase/migrations/20260919235028_product_community.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011422",
+      "name": "product_engagement",
+      "sha256": "3fb14dcf917e8a5a8919463751972955051399a6def7819ad1bc361b86bc2b3a",
+      "localExactMatches": [
+        "supabase/migrations/20260919235818_product_engagement.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011424",
+      "name": "product_operations_revised",
+      "sha256": "f906cff8a76eeff3e1593b5db6bc0a2f74f6ccf4771cff3d988c9b2e529d39a4",
+      "localExactMatches": [
+        "supabase/migrations/20260920001903_product_operations_revised.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011426",
+      "name": "product_communications_revised",
+      "sha256": "f498f1dd67db83800ec16e77bbec5616d1105a098862a72e671496aa6523e7c4",
+      "localExactMatches": [
+        "supabase/migrations/20260920001904_product_communications_revised.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011429",
+      "name": "product_private_files",
+      "sha256": "612eb4f6c966cff78bd3c47f3a19d8cbece043211c8d6bff1a2b106facec3464",
+      "localExactMatches": [
+        "supabase/migrations/20260920001905_product_private_files.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011431",
+      "name": "product_policy_validation",
+      "sha256": "fb586debd55b7809d394877e3baaf52e475ec176874ea617f4661af9caddead7",
+      "localExactMatches": [
+        "supabase/migrations/20260920001906_product_policy_validation.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011458",
+      "name": "product_advisor_hardening",
+      "sha256": "ee8fbf5ff242729b1b5197cc884476fe96ffcad32e1df7b0d14d7421dc56a109",
+      "localExactMatches": [
+        "supabase/migrations/20260920003441_product_advisor_hardening.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011501",
+      "name": "product_development_history",
+      "sha256": "72e0ca3909215d0466a326d915469376a0ed8ef924a0bae04bed15172ec3ba94",
+      "localExactMatches": [
+        "supabase/migrations/20260920003746_product_development_history.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011503",
+      "name": "product_events",
+      "sha256": "e6e56f251289b307c520451a08e552e767eace2f8ee7102e0fc89904bc0a30dc",
+      "localExactMatches": [
+        "supabase/migrations/20260920003857_product_events.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011505",
+      "name": "product_training_guidance",
+      "sha256": "3ea61ec6343fdd7a5f4623c53a1d40a277a0cb4291b1addb2144f45262b67d13",
+      "localExactMatches": [
+        "supabase/migrations/20260920004427_product_training_guidance.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920011508",
+      "name": "product_coach_attendance",
+      "sha256": "59bf8674734a77737eec4895cc3ee828a3f425e32cf9d77cd91bcb092e764a94",
+      "localExactMatches": [
+        "supabase/migrations/20260920004925_product_coach_attendance.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920015011",
+      "name": "product_workspace_search",
+      "sha256": "9fad8f3ee11dc20ffaf67215879d19e7d76dbb974449f38924b7075ebfb7579c",
+      "localExactMatches": [
+        "supabase/migrations/20260920012510_product_workspace_search.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920015014",
+      "name": "product_coach_emergency",
+      "sha256": "2f21dd470fd1b4758d4b4b2c342c6767f7cc2fb0d236f349c13b12520841c22e",
+      "localExactMatches": [
+        "supabase/migrations/20260920012626_product_coach_emergency.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920015017",
+      "name": "product_compensation_settlements",
+      "sha256": "a3af88a82afd173fe5684b553d66ba863d4d0cc050c5cc1f368642deba38de4c",
+      "localExactMatches": [
+        "supabase/migrations/20260920012833_product_compensation_settlements.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920015019",
+      "name": "product_training_targets",
+      "sha256": "f624b9c3cde7aed0e59c6aeefb1d2487752d7a9ed53055dff3699d23a560e017",
+      "localExactMatches": [
+        "supabase/migrations/20260920013226_product_training_targets.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920015021",
+      "name": "product_guest_trial_capability",
+      "sha256": "7c2e2c60a64461753293f02128eb4a2ade6bc860c63330ce83623b987bf4034c",
+      "localExactMatches": [
+        "supabase/migrations/20260920014110_product_guest_trial_capability.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920022746",
+      "name": "product_durable_jobs",
+      "sha256": "f8ab2d77e896a4c5b002b271b59ea52b960bab3e3377f52e73bde41a3c60aec9",
+      "localExactMatches": [
+        "supabase/migrations/20260920020648_product_durable_jobs.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920024011",
+      "name": "product_standalone_invoices",
+      "sha256": "e9f9a37a35583fa063209b621bc78ef5576a0174888aa8b423db7fa24fb55123",
+      "localExactMatches": [
+        "supabase/migrations/20260920021233_product_standalone_invoices.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    },
+    {
+      "remoteVersion": "20260920024014",
+      "name": "product_event_camps",
+      "sha256": "2b60150be1f07d937c123ec9dcd16c5ea617ac108358edf10a6a30423f3da796",
+      "localExactMatches": [
+        "supabase/migrations/20260920021338_product_event_camps.sql"
+      ],
+      "status": "equivalent_already_applied",
+      "requiredAction": "Do not reapply or repair history"
+    }
+  ],
+  "pending": [
+    {
+      "file": "supabase/migrations/20260920022143_product_commercial_amendments.sql",
+      "sha256": "25fc1df569e9022372d73edb336e349e0c24057f0ec4130a679cc91fd9b2c8ab",
+      "normalizedSha256": "732b4def12ef68e6b856f234d6a98d2f5eacf107634a696c93aeeaf29ade7bd9",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920030000_product_coach_profile.sql",
+      "sha256": "9f4bbfa81056a22bfaeef193ec8cd657da351b9045adbaf57052f32e52801ade",
+      "normalizedSha256": "72d3de8da2ac301ad68f9dfa1ca8b3170fe95689739fcbe535894f4d08a660bb",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920031000_product_audit_reason.sql",
+      "sha256": "5839baba6a8211bcf1693dfe511a8ad7d7d722bd7e6792b8f33f34a478c5a94d",
+      "normalizedSha256": "c51b0a1138e5ab7b4e2da8bc1fab1d2e3014460a7053868480cfd0c213b0271a",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920032000_product_sibling_payment_allocation.sql",
+      "sha256": "7055cfcf2c07d726829fcdebe1a29ae1ba92729e2b203d3773f2a804cb15afd5",
+      "normalizedSha256": "75dfc3c1d9230aa3e76587f3f9f4bfab3f2603da35b4f4931d964355e4a4e545",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920040000_complete_business_reports.sql",
+      "sha256": "e5f42e67a1b9a563f20d8b0f531e439599148ff1a4853fc8b41beb906c89388d",
+      "normalizedSha256": "120aecbad6a5ea69d49053bc65b1debdd18febad03563db3b4b74b18082b46f8",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920041000_lead_registration_links.sql",
+      "sha256": "c11509e2595bab837e133dd030d9038bcd0ec528e8b4bfb6f9f6e34b690dd235",
+      "normalizedSha256": "7537adc8c50682adbcc32606cfa07d4f3f1429418a0ca97aa54b8dcc78af329a",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920042000_development_automation.sql",
+      "sha256": "49299c629da2dfd710836766a8439cf5a3d333e12677e1380a3cb023f408c211",
+      "normalizedSha256": "bb5db8128a8e2d7ee9777eaa499cae2e751176c3c0fcfc7a5af35be054afdb36",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920043000_coach_conversations.sql",
+      "sha256": "312af50a53d0e21b426d6df15fea4a8b9359b3cf3b94e848ef7d457d8e401c25",
+      "normalizedSha256": "70d079cef3ea7ff0cade38a08f6e70c617beeda9741095aea284adebe33396a4",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920044000_synthetic_migration_executor.sql",
+      "sha256": "99c22d70644148cab6e7a2b8c53692fea948486dd3d217df8b4277c130575606",
+      "normalizedSha256": "53115be78e301c4388f2e03ad169f388ed0bda5d293da5ffd221ed847c326a48",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    },
+    {
+      "file": "supabase/migrations/20260920045000_message_history_guard.sql",
+      "sha256": "045d8ac67359772d6a55b60fe1796d00838adf0cf3a4753dbc2dd8660daa9d3a",
+      "normalizedSha256": "24a3a46b97c38b98e0e276c829dc5a38740a52b0b0ae20926edae6e7a1942a0c",
+      "status": "genuinely_missing",
+      "requiredAction": "Additive apply only after publishing access, mapped upgrade, backup and recovery gates"
+    }
+  ],
+  "remoteWrites": false
+}

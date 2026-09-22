@@ -1,0 +1,166 @@
+begin;
+select no_plan();
+insert into auth.users(id,email,raw_user_meta_data,email_confirmed_at) values
+('fb100000-0000-4000-8000-000000000001','camps-parent@example.test','{"name":"Parent"}',now()),
+('fb100000-0000-4000-8000-000000000002','camps-other@example.test','{"name":"Other"}',now()),
+('fb100000-0000-4000-8000-000000000003','camps-owner@example.test','{"name":"Owner"}',now()),
+('fb100000-0000-4000-8000-000000000004','camps-coach@example.test','{"name":"Coach"}',now()),
+('fb100000-0000-4000-8000-000000000005','camps-branch@example.test','{"name":"Branch"}',now()),
+('fb100000-0000-4000-8000-000000000006','camps-sales@example.test','{"name":"Sales"}',now());
+delete from public.role_assignments where user_id in ('fb100000-0000-4000-8000-000000000004','fb100000-0000-4000-8000-000000000005','fb100000-0000-4000-8000-000000000006');
+insert into public.role_assignments values('fb100000-0000-4000-8000-000000000003','super_admin'),('fb100000-0000-4000-8000-000000000004','coach'),('fb100000-0000-4000-8000-000000000005','branch'),('fb100000-0000-4000-8000-000000000006','sales');
+insert into public.branches(id,slug,name,provisional) values('fb200000-0000-4000-8000-000000000001','camps-test','Synthetic events',false),('fb200000-0000-4000-8000-000000000007','camps-other','Other branch',false);
+insert into public.branch_sports(branch_id,sport) values('fb200000-0000-4000-8000-000000000001','swimming');
+insert into public.branch_permissions(user_id,branch_id) select id,'fb200000-0000-4000-8000-000000000001' from public.profiles where id in ('fb100000-0000-4000-8000-000000000004','fb100000-0000-4000-8000-000000000005','fb100000-0000-4000-8000-000000000006');
+insert into public.product_permissions(user_id,permission,branch_id) select id,'events.manage','fb200000-0000-4000-8000-000000000001' from public.profiles where id in ('fb100000-0000-4000-8000-000000000004','fb100000-0000-4000-8000-000000000005','fb100000-0000-4000-8000-000000000006');
+insert into public.venues(id,branch_id,name,address) values('fb200000-0000-4000-8000-000000000002','fb200000-0000-4000-8000-000000000001','Synthetic pool','Test');
+insert into public.sport_levels(id,sport,name,rank) values('fb200000-0000-4000-8000-000000000003','swimming','Camps level',20);
+insert into public.age_groups(id,name,min_age,max_age) values('fb200000-0000-4000-8000-000000000004','Camps age',5,12);
+insert into public.document_versions(id,title,purpose,version,body,created_by) values('fb200000-0000-4000-8000-000000000005','Synthetic waiver','waiver','camps-v1','Synthetic consent only. No legal activation.','fb100000-0000-4000-8000-000000000003');
+insert into public.families(id,name) values('fb300000-0000-4000-8000-000000000001','Camps family'),('fb300000-0000-4000-8000-000000000002','Other family');
+insert into public.guardians values('fb300000-0000-4000-8000-000000000001','fb100000-0000-4000-8000-000000000001'),('fb300000-0000-4000-8000-000000000002','fb100000-0000-4000-8000-000000000002');
+insert into public.children(id,family_id,name,reported_age,age_captured_on) values
+('fb400000-0000-4000-8000-000000000001','fb300000-0000-4000-8000-000000000001','Sibling A',7,current_date),
+('fb400000-0000-4000-8000-000000000002','fb300000-0000-4000-8000-000000000001','Sibling B',8,current_date),
+('fb400000-0000-4000-8000-000000000003','fb300000-0000-4000-8000-000000000002','Other child',8,current_date);
+insert into public.child_sports(child_id,sport,level_id,status) select id,'swimming','fb200000-0000-4000-8000-000000000003','reviewed' from public.children where id in ('fb400000-0000-4000-8000-000000000001','fb400000-0000-4000-8000-000000000002','fb400000-0000-4000-8000-000000000003');
+insert into public.academy_classes(id,branch_id,venue_id,coach_id,sport,level_id,age_group_id,name,capacity,weekdays,local_time,duration_minutes) values('fb500000-0000-4000-8000-000000000001','fb200000-0000-4000-8000-000000000001','fb200000-0000-4000-8000-000000000002','fb100000-0000-4000-8000-000000000004','swimming','fb200000-0000-4000-8000-000000000003','fb200000-0000-4000-8000-000000000004','Event overlap class',10,array[0],'12:00',60);
+insert into public.class_sessions(id,class_id,starts_at,ends_at,capacity) values('fb500000-0000-4000-8000-000000000002','fb500000-0000-4000-8000-000000000001',(current_date+7)::timestamptz+interval '8 hours',(current_date+7)::timestamptz+interval '9 hours',10);
+insert into public.enrollments(id,child_id,class_id) values('fb500000-0000-4000-8000-000000000003','fb400000-0000-4000-8000-000000000001','fb500000-0000-4000-8000-000000000001');
+insert into public.session_roster(id,session_id,enrollment_id,kind,cancelled) values('fb500000-0000-4000-8000-000000000004','fb500000-0000-4000-8000-000000000002','fb500000-0000-4000-8000-000000000003','enrollment',false);
+
+insert into auth.users(id,email,raw_user_meta_data,email_confirmed_at) values('fb100000-0000-4000-8000-000000000007','camps-unassigned@example.test','{"name":"Other coach"}',now());
+delete from public.role_assignments where user_id='fb100000-0000-4000-8000-000000000007';
+insert into public.role_assignments values('fb100000-0000-4000-8000-000000000007','coach');
+insert into public.branch_permissions values('fb100000-0000-4000-8000-000000000007','fb200000-0000-4000-8000-000000000001');
+insert into public.venues(id,branch_id,name,address) values('fb200000-0000-4000-8000-000000000006','fb200000-0000-4000-8000-000000000001','Other synthetic pool','Test');
+insert into public.academy_classes(id,branch_id,venue_id,coach_id,sport,level_id,age_group_id,name,capacity,weekdays,local_time,duration_minutes) select 'fb500000-0000-4000-8000-000000000005',branch_id,'fb200000-0000-4000-8000-000000000006','fb100000-0000-4000-8000-000000000007',sport,level_id,age_group_id,'Unrelated resources',10,weekdays,local_time,duration_minutes from public.academy_classes where id='fb500000-0000-4000-8000-000000000001';
+insert into public.class_sessions(id,class_id,starts_at,ends_at,capacity) values('fb500000-0000-4000-8000-000000000006','fb500000-0000-4000-8000-000000000005',(current_date+10)::timestamptz+interval '8 hours',(current_date+10)::timestamptz+interval '9 hours',10);
+insert into public.enrollments(id,child_id,class_id) values('fb500000-0000-4000-8000-000000000007','fb400000-0000-4000-8000-000000000001','fb500000-0000-4000-8000-000000000005');
+insert into public.session_roster(id,session_id,enrollment_id,kind,cancelled) values('fb500000-0000-4000-8000-000000000008','fb500000-0000-4000-8000-000000000006','fb500000-0000-4000-8000-000000000007','enrollment',false);
+create function pg_temp.ev(a text,d jsonb) returns jsonb language sql as $$select public.product_command(a,d,gen_random_uuid())$$;
+create function pg_temp.reg() returns jsonb language sql as $$select jsonb_build_object('event_id',current_setting('test.event'),'family_id','fb300000-0000-4000-8000-000000000001','children',jsonb_build_array(jsonb_build_object('child_id','fb400000-0000-4000-8000-000000000001','document_id','fb200000-0000-4000-8000-000000000005','accepted',true),jsonb_build_object('child_id','fb400000-0000-4000-8000-000000000002','document_id','fb200000-0000-4000-8000-000000000005','accepted',true)))$$;
+grant execute on function pg_temp.ev(text,jsonb),pg_temp.reg() to authenticated;
+select set_config('test.create',jsonb_build_object('branch_id','fb200000-0000-4000-8000-000000000001','sport','swimming','level_id','fb200000-0000-4000-8000-000000000003','age_group_id','fb200000-0000-4000-8000-000000000004','document_id','fb200000-0000-4000-8000-000000000005','title','Synthetic dated camp','capacity',2,'policy_acknowledged',true,'occurrences',(select jsonb_agg(jsonb_build_object('venue_id','fb200000-0000-4000-8000-000000000002','coach_id','fb100000-0000-4000-8000-000000000004','starts_at',(current_date+i)::timestamptz+interval '8 hours','ends_at',(current_date+i)::timestamptz+interval '9 hours')) from generate_series(9,10) i))::text,true);
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.camp.create',current_setting('test.create')::jsonb)$$,'42501',null,'Camp creation requires owner MFA');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal2"}',true);
+select throws_ok($$select pg_temp.ev('events.camp.create',current_setting('test.create')::jsonb-'policy_acknowledged')$$,'22023',null,'Synthetic camp policy explicitly acknowledged');
+select throws_ok($$select pg_temp.ev('events.camp.create',jsonb_set(current_setting('test.create')::jsonb,'{occurrences}',jsonb_build_array(current_setting('test.create')::jsonb#>'{occurrences,0}')))$$,'22023',null,'A camp needs at least two dates');
+select throws_ok($$select pg_temp.ev('events.camp.create',jsonb_set(current_setting('test.create')::jsonb,'{occurrences,1}',current_setting('test.create')::jsonb#>'{occurrences,0}'))$$,'P0409',null,'Overlapping camp dates reject whole creation');
+select is((select count(*)::int from public.academy_events),0,'Invalid timeline leaves no parent event');
+select lives_ok($$select pg_temp.ev('events.camp.create',current_setting('test.create')::jsonb)$$,'Owner creates camp with two configured dates');
+select set_config('test.event',(select id::text from public.academy_events where title='Synthetic dated camp'),true);
+select set_config('test.occ1',(select id::text from public.event_occurrences where event_id=current_setting('test.event')::uuid and position=1),true);
+select set_config('test.occ2',(select id::text from public.event_occurrences where event_id=current_setting('test.event')::uuid and position=2),true);
+select is((select count(*)::int from public.event_occurrences),2,'Exactly two immutable occurrences exist');
+select throws_ok($$select pg_temp.ev('events.camp.create',current_setting('test.create')::jsonb)$$,'P0409',null,'Second camp cannot reserve same resources');
+select throws_ok($$select pg_temp.ev('events.camp.create',jsonb_set(current_setting('test.create')::jsonb,'{occurrences,0}',jsonb_build_object('venue_id','fb200000-0000-4000-8000-000000000002','coach_id','fb100000-0000-4000-8000-000000000004','starts_at',(current_date+7)::timestamptz+interval '8 hours','ends_at',(current_date+7)::timestamptz+interval '9 hours')))$$,'P0409',null,'Camp cannot reserve existing class resources');
+select is((select count(*)::int from public.event_coach_directory where branch_id='fb200000-0000-4000-8000-000000000001'),2,'Authorized scheduler gets branch-safe coach choices');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_occurrences),2,'Parent catalogue displays all dated occurrences without RLS recursion');
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.reg())$$,'P0409',null,'Second camp date checks child class conflict on different resources');
+select is((select count(*)::int from public.event_registrations),0,'One conflicting sibling rolls back whole family');
+reset role;
+update public.session_roster set cancelled=true where id='fb500000-0000-4000-8000-000000000008';
+select throws_ok($$update public.event_occurrences set starts_at=starts_at+interval '1 minute' where id=current_setting('test.occ1')::uuid$$,'42501',null,'Timetable cannot change behind accepted schedule');
+select throws_ok($$update public.class_sessions set starts_at=(current_date+10)::timestamptz+interval '8 hours',ends_at=(current_date+10)::timestamptz+interval '9 hours' where id='fb500000-0000-4000-8000-000000000002'$$,'P0409',null,'Later class move cannot take reserved camp resources');
+select throws_ok($$update public.academy_classes set coach_id='fb100000-0000-4000-8000-000000000004' where id='fb500000-0000-4000-8000-000000000005'$$,'P0409',null,'Later class coach reassignment checks camp');
+select throws_ok($$update public.academy_classes set venue_id='fb200000-0000-4000-8000-000000000002' where id='fb500000-0000-4000-8000-000000000005'$$,'P0409',null,'Later class venue reassignment checks camp');
+select throws_ok($$insert into public.coach_substitutions(session_id,coach_id,starts_at,ends_at,reason) values('fb500000-0000-4000-8000-000000000006','fb100000-0000-4000-8000-000000000004',(current_date+10)::timestamptz+interval '8 hours',(current_date+10)::timestamptz+interval '9 hours','Synthetic substitute')$$,'P0409',null,'Later substitute assignment cannot double book camp coach');
+delete from public.branch_permissions where user_id='fb100000-0000-4000-8000-000000000004';
+set local role authenticated;
+select throws_ok($$select pg_temp.ev('events.register',pg_temp.reg())$$,'P0409',null,'Registration rechecks revoked coach assignment');
+reset role;
+insert into public.branch_permissions values('fb100000-0000-4000-8000-000000000004','fb200000-0000-4000-8000-000000000001');
+set local role authenticated;
+select set_config('test.key',gen_random_uuid()::text,true);
+select lives_ok($$select public.product_command('events.register',pg_temp.reg(),current_setting('test.key')::uuid)$$,'Both siblings register across all camp dates');
+select lives_ok($$select public.product_command('events.register',pg_temp.reg(),current_setting('test.key')::uuid)$$,'Camp registration exact retry consumes no seats');
+select is((select count(*)::int from public.event_registrations),2,'One record per sibling is retained');
+select is((select count(*)::int from public.event_consents where jsonb_array_length(occurrence_snapshot)=2),2,'Each sibling waiver snapshots both scheduled dates');
+select is((select count(*)::int from public.event_attendance),0,'Parent cannot read unfinalized attendance');
+select is((select count(*)::int from public.event_attendance_register),0,'Safe register also hides draft attendance from parent');
+reset role;
+select is((select count(*)::int from public.event_attendance),4,'Two siblings generate four distinct unmarked date registers');
+select ok(private.child_conflict('fb400000-0000-4000-8000-000000000001',(current_date+10)::timestamptz+interval '8 hours',(current_date+10)::timestamptz+interval '9 hours'),'Booking availability treats the second camp date as a child conflict');
+select throws_ok($$update public.session_roster set cancelled=false where id='fb500000-0000-4000-8000-000000000008'$$,'P0409',null,'Later child placement cannot overlap second camp date');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.academy_events),1,'Assigned coach sees own camp');
+select is((select count(*)::int from public.event_attendance_register),4,'Assigned coach sees only minimal child/date register');
+select is((select count(*)::int from public.event_registrations),0,'Coach cannot read family-linked registration rows');
+select is((select count(*)::int from public.event_consents),0,'Coach cannot read guardian waiver records');
+select is((select count(*)::int from public.event_coach_directory),0,'Coach cannot enumerate staff directory');
+select throws_ok($$select pg_temp.ev('events.attendance.finalize',jsonb_build_object('occurrence_id',current_setting('test.occ1')))$$,'42501',null,'Coach needs explicit attendance permission');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000007","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Unassigned coach cannot read camp children');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000006","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Sales cannot read camp children');
+select throws_ok($$select pg_temp.ev('events.camp.create',current_setting('test.create')::jsonb)$$,'42501',null,'Sales cannot create camp even with event permission');
+reset role;
+insert into public.product_permissions(user_id,permission,branch_id) values('fb100000-0000-4000-8000-000000000004','attendance.finalize','fb200000-0000-4000-8000-000000000001');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.attendance.finalize',jsonb_build_object('occurrence_id',current_setting('test.occ1')))$$,'P0409',null,'Future occurrence cannot be finalized');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal2"}',true);
+select lives_ok($$select pg_temp.ev('events.occurrence.cancel',jsonb_build_object('occurrence_id',current_setting('test.occ2'),'reason','Synthetic date cancellation'))$$,'Staff can cancel one future date');
+select is((select count(*)::int from public.event_registrations where status='registered'),2,'Individual cancellation retains registrations for remaining dates');
+select is((select count(*)::int from public.event_consents where jsonb_array_length(occurrence_snapshot)=2),2,'Cancellation retains originally accepted timetable evidence');
+reset role;
+select lives_ok($$update public.class_sessions set starts_at=(current_date+10)::timestamptz+interval '8 hours',ends_at=(current_date+10)::timestamptz+interval '9 hours' where id='fb500000-0000-4000-8000-000000000002'$$,'Cancelled date releases its venue and coach resources');
+-- Historical synthetic fixture: immutable dates were created in the past, never altered for testing.
+insert into public.academy_events(id,branch_id,venue_id,sport,level_id,age_group_id,document_id,title,starts_at,ends_at,capacity,event_kind,policy_version,created_by) select 'fb600000-0000-4000-8000-000000000001',branch_id,venue_id,sport,level_id,age_group_id,document_id,'Historical synthetic camp',(current_date-1)::timestamptz+interval '8 hours',(current_date-1)::timestamptz+interval '9 hours',2,'camp','synthetic-camp-v1',created_by from public.academy_events where id=current_setting('test.event')::uuid;
+insert into public.event_occurrences(id,event_id,position,venue_id,coach_id,starts_at,ends_at) values
+('fb600000-0000-4000-8000-000000000002','fb600000-0000-4000-8000-000000000001',1,'fb200000-0000-4000-8000-000000000002','fb100000-0000-4000-8000-000000000004',(current_date-1)::timestamptz+interval '8 hours',(current_date-1)::timestamptz+interval '9 hours'),
+('fb600000-0000-4000-8000-000000000003','fb600000-0000-4000-8000-000000000001',2,'fb200000-0000-4000-8000-000000000002','fb100000-0000-4000-8000-000000000004',(current_date-1)::timestamptz+interval '10 hours',(current_date-1)::timestamptz+interval '11 hours');
+insert into public.event_registration_batches(id,event_id,family_id,guardian_id) values('fb600000-0000-4000-8000-000000000004','fb600000-0000-4000-8000-000000000001','fb300000-0000-4000-8000-000000000001','fb100000-0000-4000-8000-000000000001');
+insert into public.event_registrations(id,batch_id,event_id,family_id,child_id) values
+('fb600000-0000-4000-8000-000000000005','fb600000-0000-4000-8000-000000000004','fb600000-0000-4000-8000-000000000001','fb300000-0000-4000-8000-000000000001','fb400000-0000-4000-8000-000000000001'),
+('fb600000-0000-4000-8000-000000000006','fb600000-0000-4000-8000-000000000004','fb600000-0000-4000-8000-000000000001','fb300000-0000-4000-8000-000000000001','fb400000-0000-4000-8000-000000000002');
+select set_config('test.attendance',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002','entries',jsonb_build_array(jsonb_build_object('registration_id','fb600000-0000-4000-8000-000000000005','attendance','present'),jsonb_build_object('registration_id','fb600000-0000-4000-8000-000000000006','attendance','absent')))::text,true);
+select set_config('test.att',(select id::text from public.event_attendance where occurrence_id='fb600000-0000-4000-8000-000000000002' and registration_id='fb600000-0000-4000-8000-000000000005'),true);
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.ev('events.attendance.finalize',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002'))$$,'P0409',null,'Unmarked register cannot be finalized');
+select throws_ok($$select pg_temp.ev('events.attendance.save',jsonb_set(current_setting('test.attendance')::jsonb,'{entries,1,registration_id}','"fb600000-0000-4000-8000-000000000099"'))$$,'22023',null,'Mixed invalid attendance row aborts whole save');
+select is((select count(*)::int from public.event_attendance_register where attendance is not null),0,'Invalid mixed save leaves first child unchanged');
+select lives_ok($$select pg_temp.ev('events.attendance.save',current_setting('test.attendance')::jsonb)$$,'Assigned coach records dated attendance');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Saved draft marks remain hidden from guardian');
+select throws_ok($$select pg_temp.ev('events.attendance.save',current_setting('test.attendance')::jsonb)$$,'42501',null,'Parent cannot write attendance');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select set_config('test.finalkey',gen_random_uuid()::text,true);
+select lives_ok($$select public.product_command('events.attendance.finalize',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002'),current_setting('test.finalkey')::uuid)$$,'Coach finalizes complete ended occurrence');
+select lives_ok($$select public.product_command('events.attendance.finalize',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002'),current_setting('test.finalkey')::uuid)$$,'Exact finalization retry is safe');
+select throws_ok($$select pg_temp.ev('events.attendance.save',current_setting('test.attendance')::jsonb)$$,'P0409',null,'Finalized marks cannot be silently overwritten');
+select throws_ok($$select pg_temp.ev('events.attendance.correct',jsonb_build_object('id',current_setting('test.att'),'attendance','late','reason','Synthetic correction'))$$,'42501',null,'Coach cannot correct finalized evidence');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),2,'Parent sees only the two finalized marks, not the other camp day');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Other parent cannot read published marks');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal2"}',true);
+select lives_ok($$select pg_temp.ev('events.attendance.correct',jsonb_build_object('id',current_setting('test.att'),'attendance','late','reason','Synthetic correction'))$$,'Authorized staff corrects with attributable reason');
+select is((select previous_attendance from public.event_attendance_corrections where attendance_id=current_setting('test.att')::uuid),'present','Correction preserves prior attendance evidence');
+select lives_ok($$select pg_temp.ev('events.cancel',jsonb_build_object('event_id','fb600000-0000-4000-8000-000000000001','reason','Synthetic remaining dates cancelled'))$$,'Global cancellation works after an earlier finalized date');
+select is((select status from public.event_occurrences where id='fb600000-0000-4000-8000-000000000002'),'scheduled','Finalized occurrence evidence remains intact after cancellation');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.product_command('events.attendance.finalize',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002'),current_setting('test.finalkey')::uuid)$$,'42501',null,'Cancelled camp removes assignment even for an exact cached coach command');
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select attendance from public.event_attendance where id=current_setting('test.att')::uuid),'late','Guardian retains corrected finalized history after event cancellation');
+select throws_ok($$update public.event_attendance set attendance='absent' where id=current_setting('test.att')::uuid$$,'42501',null,'Raw authenticated writes cannot bypass workflow');
+reset role;
+select throws_ok($$delete from public.event_attendance_corrections$$,'42501',null,'Correction evidence cannot be deleted');
+delete from public.branch_permissions where user_id='fb100000-0000-4000-8000-000000000004';
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Branch revocation immediately removes coach register');
+select throws_ok($$select public.product_command('events.attendance.finalize',jsonb_build_object('occurrence_id','fb600000-0000-4000-8000-000000000002'),current_setting('test.finalkey')::uuid)$$,'42501',null,'Cached attendance command cannot bypass revoked branch');
+reset role;
+delete from public.guardians where user_id='fb100000-0000-4000-8000-000000000001';
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"fb100000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::int from public.event_attendance_register),0,'Revoked guardian loses finalized child history');
+select * from finish();
+rollback;

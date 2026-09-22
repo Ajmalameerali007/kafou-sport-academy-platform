@@ -1,0 +1,3189 @@
+{
+  "startedAt": "2026-09-20T17:12:02.383Z",
+  "container": "supabase_db_kafou-local",
+  "source": "postgres",
+  "disposableDatabase": "kafou_restore_1789924322382_78211",
+  "result": "local_full_database_restore_passed",
+  "cleanup": "disposable_database_dropped",
+  "scope": "Full synthetic local PostgreSQL data and schema only. No hosted backup, provider configuration, globals, or uploaded file bytes.",
+  "runnerSha256": "67ee5d51709bf7c1b6e2c96eb81e6e780b4be62c749dd2358e69fcc262729124",
+  "sourceBefore": [
+    {
+      "table": "auth.audit_log_entries",
+      "rows": 270,
+      "sha256": "3a554344daedc1ede88c1af17ff368cb65f8f631d1e49adf082e09ef5c787f08"
+    },
+    {
+      "table": "auth.custom_oauth_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.flow_state",
+      "rows": 21,
+      "sha256": "57573259803568603b87a850223a2ca34feefc82581110db4d5e5f8fcdbe22e2"
+    },
+    {
+      "table": "auth.identities",
+      "rows": 9,
+      "sha256": "16e14d27ee43dbb55f51b99d565e415a7cd8d715d71d038da66751652791abbf"
+    },
+    {
+      "table": "auth.instances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_amr_claims",
+      "rows": 158,
+      "sha256": "a9227857ef2a97eba9f091535a599f3a4e640997642afbc4b925495c18789b84"
+    },
+    {
+      "table": "auth.mfa_challenges",
+      "rows": 1,
+      "sha256": "d98068ae5458cc52388db07b68550e474466fb3eafc86c67e0c1666beab2043c"
+    },
+    {
+      "table": "auth.mfa_factors",
+      "rows": 1,
+      "sha256": "c3ff2bba9f1ccc9a44f52b9aa0f38d4004aa3be330aca0cf854837a64b1b7137"
+    },
+    {
+      "table": "auth.oauth_authorizations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_client_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_clients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.one_time_tokens",
+      "rows": 2,
+      "sha256": "ef42a33b28f0c0908f6f401ef1064a5da8a144df91031e1b822133249a2d5a55"
+    },
+    {
+      "table": "auth.refresh_tokens",
+      "rows": 158,
+      "sha256": "b94927e23a9f8828b9cda184ca1205ded323ef24a18c47e9090e241fd100f01b"
+    },
+    {
+      "table": "auth.saml_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_relay_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.schema_migrations",
+      "rows": 77,
+      "sha256": "22b5f0cb248b92fed4d0f25b42b946acc4c0c7ed4228785e5e06c0e8c29df6b1"
+    },
+    {
+      "table": "auth.sessions",
+      "rows": 157,
+      "sha256": "de364e375f77a44e5c0204103fcc262a467660e76b743caa7fbc5c7397efc24a"
+    },
+    {
+      "table": "auth.sso_domains",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.users",
+      "rows": 9,
+      "sha256": "b5ac52dd98927a855f22aa1d256e9b3ea3c04448373ed289279e03a09d3949fb"
+    },
+    {
+      "table": "auth.webauthn_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.webauthn_credentials",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.development_automation_candidates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.family_claims",
+      "rows": 2,
+      "sha256": "df9309fbaee0c1bda5519d43154e5573ed3d342fd0bc2073064aaf97dea5cbc6"
+    },
+    {
+      "table": "private.guardian_link_origins",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_offers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.lead_registration_links",
+      "rows": 2,
+      "sha256": "a1c7f514b71efc1bd3df156a7d51b3a8a3623328f517a002ec1fe1bb17c2fadf"
+    },
+    {
+      "table": "private.migration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_rows",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_snapshots",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.product_requests",
+      "rows": 22,
+      "sha256": "207a5be5ad35c7f169844643fbc14bc4c2b9177b9e4aad370973b1cf10fc227b"
+    },
+    {
+      "table": "private.rate_limits",
+      "rows": 10,
+      "sha256": "e808ee16dbcd2feb036ed17d9fe778f9848f8550db99b9643b28113583baa5f4"
+    },
+    {
+      "table": "private.request_keys",
+      "rows": 15,
+      "sha256": "9b75aaacf45e2053cc34de4013c06f33d92e68575ecaaf1f3937949384866299"
+    },
+    {
+      "table": "private.scheduled_job_controls",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_effects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_jobs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_classes",
+      "rows": 5,
+      "sha256": "94ec064d103e2a8b48da4d86c128d289e1ed6ae138d146984a40e73f910df7ca"
+    },
+    {
+      "table": "public.academy_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_policies",
+      "rows": 1,
+      "sha256": "88d9cf748596f1f2844c167015c933e5f0818f55317600282dc342e62237f1ee"
+    },
+    {
+      "table": "public.age_groups",
+      "rows": 2,
+      "sha256": "1dfe36bb690deca34bae7711a87944086e8b89d8745cbfac7285f991e4e1d6fa"
+    },
+    {
+      "table": "public.attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.audit_events",
+      "rows": 346,
+      "sha256": "80b7b63b1aa783e564ed47ba2cd2a3be786cf2097cf3d874e43f72c6042057bb"
+    },
+    {
+      "table": "public.branch_permissions",
+      "rows": 3,
+      "sha256": "99cd3d182afeb7a825fa02698d3e4319a83c53cbe7a8cf6bbb172c930072f869"
+    },
+    {
+      "table": "public.branch_sports",
+      "rows": 4,
+      "sha256": "6e6246e3b2eef4f20f0b1d5352a68af07b531827105644304898c525bfae035b"
+    },
+    {
+      "table": "public.branches",
+      "rows": 9,
+      "sha256": "15d432866f2ea35630c258cc5e1abdf213400e4c5d16a333eb1b5c0c9bd9be2f"
+    },
+    {
+      "table": "public.child_sports",
+      "rows": 4,
+      "sha256": "2f985da4870ab4ebac9d77d90127de38504a24286471a6831beb49e93423f193"
+    },
+    {
+      "table": "public.children",
+      "rows": 4,
+      "sha256": "d318fa210b920817b2610f74154b78fc611686652f3c1c9c81dcfaa920a9fa61"
+    },
+    {
+      "table": "public.class_sessions",
+      "rows": 30,
+      "sha256": "c043954948e7fcbdf7ab3212aaea8c5beda920a2f0515f333b29d17d9cbc35f8"
+    },
+    {
+      "table": "public.coach_availability",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.coach_conversations",
+      "rows": 1,
+      "sha256": "928f0088ac645c712b80f9310582dfe71af157c50137993983f68c7ec32f7846"
+    },
+    {
+      "table": "public.coach_message_policies",
+      "rows": 2,
+      "sha256": "c49c6566b379c13941dbadc332b358b1831ede12806fc789818806b266ade5f4"
+    },
+    {
+      "table": "public.coach_message_reads",
+      "rows": 1,
+      "sha256": "7d2588cb081239a452b6d548e9ef240a95c3adab91118b1f803d15ddd1265420"
+    },
+    {
+      "table": "public.coach_messages",
+      "rows": 2,
+      "sha256": "abd43059fd1168a5a88270ccab09f12c56f55daa9a340e4d687c1fb4406edee9"
+    },
+    {
+      "table": "public.coach_substitutions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_adjustments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_allocations",
+      "rows": 2,
+      "sha256": "8410b8d49c71702a8dc8f21e03bafe0a929defcae7b1cb2b66e7bc234c81c3d2"
+    },
+    {
+      "table": "public.commercial_cancellation_previews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_accruals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_rates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_settlements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_credit_approvals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_freezes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_invoice_lines",
+      "rows": 2,
+      "sha256": "ab0c41443d3a0d567ce9d6640c3b524242f2dbce674dadf6a4288501472e3b3b"
+    },
+    {
+      "table": "public.commercial_invoices",
+      "rows": 2,
+      "sha256": "0b514f561a2b6f5039d100eb41845cf3db28ad80db855615021e2e45d4831233"
+    },
+    {
+      "table": "public.commercial_membership_cancellations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_membership_extensions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_memberships",
+      "rows": 2,
+      "sha256": "999d035292487b3ede0324ec55b002d41e4bfa82a55eafb88b6fec48526d01f7"
+    },
+    {
+      "table": "public.commercial_packages",
+      "rows": 1,
+      "sha256": "136fe9ba2c106bd129a43369328aab09d4e28f21dc77e8d8f34ca0564e756ad0"
+    },
+    {
+      "table": "public.commercial_payments",
+      "rows": 2,
+      "sha256": "bbce482bb2d01fa480e76173a7ca56919d01cbd84a99c159a0598fd164df7108"
+    },
+    {
+      "table": "public.commercial_receipts",
+      "rows": 2,
+      "sha256": "a1475bd4403cad3be54785812f779146d1ffdcde25c7b9d8741cc934b1cb03a8"
+    },
+    {
+      "table": "public.commercial_refunds",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_renewal_reminders",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_recipients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_templates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.consent_records",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.delivery_outbox",
+      "rows": 30,
+      "sha256": "7295d8aacaed9e93ff2ca1148a4b58a09508c2c2eb98587e99a716f9240080c8"
+    },
+    {
+      "table": "public.development_assessment_notes",
+      "rows": 2,
+      "sha256": "25d643e8554850012e66dad033bf22b12292a7e4d69d6ab12575920aab80ea72"
+    },
+    {
+      "table": "public.development_assessments",
+      "rows": 2,
+      "sha256": "d00ebe05eb4e1049d35b13898e769b214f788aeb902f4a1b72b1f6725b793469"
+    },
+    {
+      "table": "public.development_automation_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificate_revocations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificates",
+      "rows": 1,
+      "sha256": "7097d522e6fe9db18850de6f81f6178b64356d41291fe3befa91dffd6e194b18"
+    },
+    {
+      "table": "public.development_criteria",
+      "rows": 1,
+      "sha256": "924460423eaf367bb62dea0188a7950764c2b699d174e9256e131333b88a3848"
+    },
+    {
+      "table": "public.development_emergency_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_history",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_reversals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reports",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_results",
+      "rows": 2,
+      "sha256": "ec266ab6a85f63cc69b0dfa9c6fac00f67e8a742259ffcfd9d2e65511f13e63c"
+    },
+    {
+      "table": "public.development_reviews",
+      "rows": 2,
+      "sha256": "14e89538b719833e0c4e1f4ed8169a0998b1016fa99a5836af368ec49b8e125f"
+    },
+    {
+      "table": "public.development_safety_instructions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_session_plans",
+      "rows": 1,
+      "sha256": "e4c019b480c9697697991d57fb07341317940cb68c95c4b8debb71afb6abb4e9"
+    },
+    {
+      "table": "public.development_target_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_targets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_acceptances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_completions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_campaigns",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_codes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_ledger",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_rules",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.enrollments",
+      "rows": 3,
+      "sha256": "863a8679e050d2be76aecf676f6e5f187c0337eedc9917c78765636ef7a709bb"
+    },
+    {
+      "table": "public.entitlement_ledger",
+      "rows": 9,
+      "sha256": "4ff2c731c7bd0a7f22d8c8812d6dc098bc55cae56ab3bbc21a5f480f128a03e2"
+    },
+    {
+      "table": "public.event_attendance",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_occurrences",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.families",
+      "rows": 1,
+      "sha256": "b147902845c15b59d0b7d92f2dd7b2994f0c64d202a913391596189179cc37af"
+    },
+    {
+      "table": "public.family_branches",
+      "rows": 1,
+      "sha256": "90cab28f7755255874a3c7e586038158893a3cc50295eabb8a0961b51a460a33"
+    },
+    {
+      "table": "public.family_emergency_contacts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_files",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.file_access_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.guardians",
+      "rows": 1,
+      "sha256": "40408f255a51a98eebc9ff951e4189505324e0727a2c2b2abad54b22df836f69"
+    },
+    {
+      "table": "public.lead_activities",
+      "rows": 29,
+      "sha256": "8685726378333d40f612131abfbfe4f5ec35b0dea709dff0698e33670e2c12c1"
+    },
+    {
+      "table": "public.leads",
+      "rows": 16,
+      "sha256": "94d835f012af180f456586b0470c414b5b5404015432a520ee0ac3c27a3fdb88"
+    },
+    {
+      "table": "public.makeup_bookings",
+      "rows": 1,
+      "sha256": "65632b91dd59ce5475097cf333ad4e94c9c713f8624f15683105dc6a15a3ba01"
+    },
+    {
+      "table": "public.makeup_credits",
+      "rows": 1,
+      "sha256": "d95b0b63ac89d8a6dea662716dd100efcf69ad11b819db102c4bdf5ea4ca23cd"
+    },
+    {
+      "table": "public.notifications",
+      "rows": 10,
+      "sha256": "96ec01e77b0e6af68a6c6baee5c364f674168288d326a01f009300714e5b6b6a"
+    },
+    {
+      "table": "public.operation_events",
+      "rows": 2,
+      "sha256": "3cd80a9d76f498c8f0e64c868a3241847fa50816a1c689de3f00bfcfa5339ac4"
+    },
+    {
+      "table": "public.operational_acknowledgements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.organizations",
+      "rows": 1,
+      "sha256": "a92d33d358a6e988142db50838ed7b008baf93b81a52ba7b9eff4bb04ec73450"
+    },
+    {
+      "table": "public.product_events",
+      "rows": 10,
+      "sha256": "b63e183e523c9eeb797f86626cb83c2264f64914deb9a1ae047b54b58ed4e238"
+    },
+    {
+      "table": "public.product_permissions",
+      "rows": 23,
+      "sha256": "cb33b5c7937efb62ac6c0d38d77d7aa53c6d06f3b33cdd57f7b502acdc74b20f"
+    },
+    {
+      "table": "public.profiles",
+      "rows": 9,
+      "sha256": "577267d99b9f173873f050d65083a9a7be3f276cfc30d5fc736babb803ab2e41"
+    },
+    {
+      "table": "public.recognition_nominations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.role_assignments",
+      "rows": 9,
+      "sha256": "8e4b5d5da678fb6c8dbebe0e320fdf1d1861f51fa9e1270f208a3fcbd210bdd4"
+    },
+    {
+      "table": "public.session_changes",
+      "rows": 1,
+      "sha256": "55ca543c9c9808296f8fabd13864cdc7b9ad509d6fbb92f8d8096d69ab34bb07"
+    },
+    {
+      "table": "public.session_roster",
+      "rows": 14,
+      "sha256": "a74825771dba56d6d12c8c5b4b2ae3b76098c6d857fb649fc30b1c7aa0deef1c"
+    },
+    {
+      "table": "public.shift_handovers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.sport_levels",
+      "rows": 5,
+      "sha256": "e3b4e5527058bb6e0f934058dc6044c9692377ffa42d1fcdff59471279f374b1"
+    },
+    {
+      "table": "public.staff_invitations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_messages",
+      "rows": 2,
+      "sha256": "7d4ece394b14da508ca20da36059c8426824c69336b6084ce7b9b0efbd53052d"
+    },
+    {
+      "table": "public.support_tickets",
+      "rows": 1,
+      "sha256": "deaa3d722d13fdebbf537c2ce699552a434cbec7a7ee3ee3b38467c2bcba8f02"
+    },
+    {
+      "table": "public.transfer_decisions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_requests",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_bookings",
+      "rows": 2,
+      "sha256": "a9624f52f31e53f3318b75bafb9b1424f876bf2d42c44d65a202082854be8f96"
+    },
+    {
+      "table": "public.trial_enquiries",
+      "rows": 16,
+      "sha256": "5dd511d3def0584bb0852cf1e4eb9d7c177ea38db85ae52e63ea2597dc836c41"
+    },
+    {
+      "table": "public.venues",
+      "rows": 5,
+      "sha256": "08f9457728b2d63e9ace8510799b1f0e46cfb6d321374624de30a8b910452ffc"
+    },
+    {
+      "table": "public.waitlist_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets",
+      "rows": 1,
+      "sha256": "5b271db7589c138cb684a685f0d7510cd2f2713bc2ec3321dfdf5d701c1cb18c"
+    },
+    {
+      "table": "storage.buckets_analytics",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_vectors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_namespaces",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_tables",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.migrations",
+      "rows": 68,
+      "sha256": "b2eee1651196b8f37433acdd31f214941efa8c882e2cb7d8c719c2d311d5cfc3"
+    },
+    {
+      "table": "storage.objects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads_parts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.vector_indexes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "dumpSha256": "bc92d0df970a7e56b8c5fbbecd5b7ad462ad529a9ca2f55947b7672ef91f7144",
+  "dumpBytes": 1959081,
+  "sourceAfterDump": [
+    {
+      "table": "auth.audit_log_entries",
+      "rows": 270,
+      "sha256": "3a554344daedc1ede88c1af17ff368cb65f8f631d1e49adf082e09ef5c787f08"
+    },
+    {
+      "table": "auth.custom_oauth_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.flow_state",
+      "rows": 21,
+      "sha256": "57573259803568603b87a850223a2ca34feefc82581110db4d5e5f8fcdbe22e2"
+    },
+    {
+      "table": "auth.identities",
+      "rows": 9,
+      "sha256": "16e14d27ee43dbb55f51b99d565e415a7cd8d715d71d038da66751652791abbf"
+    },
+    {
+      "table": "auth.instances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_amr_claims",
+      "rows": 158,
+      "sha256": "a9227857ef2a97eba9f091535a599f3a4e640997642afbc4b925495c18789b84"
+    },
+    {
+      "table": "auth.mfa_challenges",
+      "rows": 1,
+      "sha256": "d98068ae5458cc52388db07b68550e474466fb3eafc86c67e0c1666beab2043c"
+    },
+    {
+      "table": "auth.mfa_factors",
+      "rows": 1,
+      "sha256": "c3ff2bba9f1ccc9a44f52b9aa0f38d4004aa3be330aca0cf854837a64b1b7137"
+    },
+    {
+      "table": "auth.oauth_authorizations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_client_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_clients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.one_time_tokens",
+      "rows": 2,
+      "sha256": "ef42a33b28f0c0908f6f401ef1064a5da8a144df91031e1b822133249a2d5a55"
+    },
+    {
+      "table": "auth.refresh_tokens",
+      "rows": 158,
+      "sha256": "b94927e23a9f8828b9cda184ca1205ded323ef24a18c47e9090e241fd100f01b"
+    },
+    {
+      "table": "auth.saml_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_relay_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.schema_migrations",
+      "rows": 77,
+      "sha256": "22b5f0cb248b92fed4d0f25b42b946acc4c0c7ed4228785e5e06c0e8c29df6b1"
+    },
+    {
+      "table": "auth.sessions",
+      "rows": 157,
+      "sha256": "de364e375f77a44e5c0204103fcc262a467660e76b743caa7fbc5c7397efc24a"
+    },
+    {
+      "table": "auth.sso_domains",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.users",
+      "rows": 9,
+      "sha256": "b5ac52dd98927a855f22aa1d256e9b3ea3c04448373ed289279e03a09d3949fb"
+    },
+    {
+      "table": "auth.webauthn_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.webauthn_credentials",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.development_automation_candidates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.family_claims",
+      "rows": 2,
+      "sha256": "df9309fbaee0c1bda5519d43154e5573ed3d342fd0bc2073064aaf97dea5cbc6"
+    },
+    {
+      "table": "private.guardian_link_origins",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_offers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.lead_registration_links",
+      "rows": 2,
+      "sha256": "a1c7f514b71efc1bd3df156a7d51b3a8a3623328f517a002ec1fe1bb17c2fadf"
+    },
+    {
+      "table": "private.migration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_rows",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_snapshots",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.product_requests",
+      "rows": 22,
+      "sha256": "207a5be5ad35c7f169844643fbc14bc4c2b9177b9e4aad370973b1cf10fc227b"
+    },
+    {
+      "table": "private.rate_limits",
+      "rows": 10,
+      "sha256": "e808ee16dbcd2feb036ed17d9fe778f9848f8550db99b9643b28113583baa5f4"
+    },
+    {
+      "table": "private.request_keys",
+      "rows": 15,
+      "sha256": "9b75aaacf45e2053cc34de4013c06f33d92e68575ecaaf1f3937949384866299"
+    },
+    {
+      "table": "private.scheduled_job_controls",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_effects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_jobs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_classes",
+      "rows": 5,
+      "sha256": "94ec064d103e2a8b48da4d86c128d289e1ed6ae138d146984a40e73f910df7ca"
+    },
+    {
+      "table": "public.academy_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_policies",
+      "rows": 1,
+      "sha256": "88d9cf748596f1f2844c167015c933e5f0818f55317600282dc342e62237f1ee"
+    },
+    {
+      "table": "public.age_groups",
+      "rows": 2,
+      "sha256": "1dfe36bb690deca34bae7711a87944086e8b89d8745cbfac7285f991e4e1d6fa"
+    },
+    {
+      "table": "public.attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.audit_events",
+      "rows": 346,
+      "sha256": "80b7b63b1aa783e564ed47ba2cd2a3be786cf2097cf3d874e43f72c6042057bb"
+    },
+    {
+      "table": "public.branch_permissions",
+      "rows": 3,
+      "sha256": "99cd3d182afeb7a825fa02698d3e4319a83c53cbe7a8cf6bbb172c930072f869"
+    },
+    {
+      "table": "public.branch_sports",
+      "rows": 4,
+      "sha256": "6e6246e3b2eef4f20f0b1d5352a68af07b531827105644304898c525bfae035b"
+    },
+    {
+      "table": "public.branches",
+      "rows": 9,
+      "sha256": "15d432866f2ea35630c258cc5e1abdf213400e4c5d16a333eb1b5c0c9bd9be2f"
+    },
+    {
+      "table": "public.child_sports",
+      "rows": 4,
+      "sha256": "2f985da4870ab4ebac9d77d90127de38504a24286471a6831beb49e93423f193"
+    },
+    {
+      "table": "public.children",
+      "rows": 4,
+      "sha256": "d318fa210b920817b2610f74154b78fc611686652f3c1c9c81dcfaa920a9fa61"
+    },
+    {
+      "table": "public.class_sessions",
+      "rows": 30,
+      "sha256": "c043954948e7fcbdf7ab3212aaea8c5beda920a2f0515f333b29d17d9cbc35f8"
+    },
+    {
+      "table": "public.coach_availability",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.coach_conversations",
+      "rows": 1,
+      "sha256": "928f0088ac645c712b80f9310582dfe71af157c50137993983f68c7ec32f7846"
+    },
+    {
+      "table": "public.coach_message_policies",
+      "rows": 2,
+      "sha256": "c49c6566b379c13941dbadc332b358b1831ede12806fc789818806b266ade5f4"
+    },
+    {
+      "table": "public.coach_message_reads",
+      "rows": 1,
+      "sha256": "7d2588cb081239a452b6d548e9ef240a95c3adab91118b1f803d15ddd1265420"
+    },
+    {
+      "table": "public.coach_messages",
+      "rows": 2,
+      "sha256": "abd43059fd1168a5a88270ccab09f12c56f55daa9a340e4d687c1fb4406edee9"
+    },
+    {
+      "table": "public.coach_substitutions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_adjustments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_allocations",
+      "rows": 2,
+      "sha256": "8410b8d49c71702a8dc8f21e03bafe0a929defcae7b1cb2b66e7bc234c81c3d2"
+    },
+    {
+      "table": "public.commercial_cancellation_previews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_accruals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_rates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_settlements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_credit_approvals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_freezes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_invoice_lines",
+      "rows": 2,
+      "sha256": "ab0c41443d3a0d567ce9d6640c3b524242f2dbce674dadf6a4288501472e3b3b"
+    },
+    {
+      "table": "public.commercial_invoices",
+      "rows": 2,
+      "sha256": "0b514f561a2b6f5039d100eb41845cf3db28ad80db855615021e2e45d4831233"
+    },
+    {
+      "table": "public.commercial_membership_cancellations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_membership_extensions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_memberships",
+      "rows": 2,
+      "sha256": "999d035292487b3ede0324ec55b002d41e4bfa82a55eafb88b6fec48526d01f7"
+    },
+    {
+      "table": "public.commercial_packages",
+      "rows": 1,
+      "sha256": "136fe9ba2c106bd129a43369328aab09d4e28f21dc77e8d8f34ca0564e756ad0"
+    },
+    {
+      "table": "public.commercial_payments",
+      "rows": 2,
+      "sha256": "bbce482bb2d01fa480e76173a7ca56919d01cbd84a99c159a0598fd164df7108"
+    },
+    {
+      "table": "public.commercial_receipts",
+      "rows": 2,
+      "sha256": "a1475bd4403cad3be54785812f779146d1ffdcde25c7b9d8741cc934b1cb03a8"
+    },
+    {
+      "table": "public.commercial_refunds",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_renewal_reminders",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_recipients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_templates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.consent_records",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.delivery_outbox",
+      "rows": 30,
+      "sha256": "7295d8aacaed9e93ff2ca1148a4b58a09508c2c2eb98587e99a716f9240080c8"
+    },
+    {
+      "table": "public.development_assessment_notes",
+      "rows": 2,
+      "sha256": "25d643e8554850012e66dad033bf22b12292a7e4d69d6ab12575920aab80ea72"
+    },
+    {
+      "table": "public.development_assessments",
+      "rows": 2,
+      "sha256": "d00ebe05eb4e1049d35b13898e769b214f788aeb902f4a1b72b1f6725b793469"
+    },
+    {
+      "table": "public.development_automation_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificate_revocations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificates",
+      "rows": 1,
+      "sha256": "7097d522e6fe9db18850de6f81f6178b64356d41291fe3befa91dffd6e194b18"
+    },
+    {
+      "table": "public.development_criteria",
+      "rows": 1,
+      "sha256": "924460423eaf367bb62dea0188a7950764c2b699d174e9256e131333b88a3848"
+    },
+    {
+      "table": "public.development_emergency_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_history",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_reversals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reports",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_results",
+      "rows": 2,
+      "sha256": "ec266ab6a85f63cc69b0dfa9c6fac00f67e8a742259ffcfd9d2e65511f13e63c"
+    },
+    {
+      "table": "public.development_reviews",
+      "rows": 2,
+      "sha256": "14e89538b719833e0c4e1f4ed8169a0998b1016fa99a5836af368ec49b8e125f"
+    },
+    {
+      "table": "public.development_safety_instructions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_session_plans",
+      "rows": 1,
+      "sha256": "e4c019b480c9697697991d57fb07341317940cb68c95c4b8debb71afb6abb4e9"
+    },
+    {
+      "table": "public.development_target_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_targets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_acceptances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_completions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_campaigns",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_codes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_ledger",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_rules",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.enrollments",
+      "rows": 3,
+      "sha256": "863a8679e050d2be76aecf676f6e5f187c0337eedc9917c78765636ef7a709bb"
+    },
+    {
+      "table": "public.entitlement_ledger",
+      "rows": 9,
+      "sha256": "4ff2c731c7bd0a7f22d8c8812d6dc098bc55cae56ab3bbc21a5f480f128a03e2"
+    },
+    {
+      "table": "public.event_attendance",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_occurrences",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.families",
+      "rows": 1,
+      "sha256": "b147902845c15b59d0b7d92f2dd7b2994f0c64d202a913391596189179cc37af"
+    },
+    {
+      "table": "public.family_branches",
+      "rows": 1,
+      "sha256": "90cab28f7755255874a3c7e586038158893a3cc50295eabb8a0961b51a460a33"
+    },
+    {
+      "table": "public.family_emergency_contacts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_files",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.file_access_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.guardians",
+      "rows": 1,
+      "sha256": "40408f255a51a98eebc9ff951e4189505324e0727a2c2b2abad54b22df836f69"
+    },
+    {
+      "table": "public.lead_activities",
+      "rows": 29,
+      "sha256": "8685726378333d40f612131abfbfe4f5ec35b0dea709dff0698e33670e2c12c1"
+    },
+    {
+      "table": "public.leads",
+      "rows": 16,
+      "sha256": "94d835f012af180f456586b0470c414b5b5404015432a520ee0ac3c27a3fdb88"
+    },
+    {
+      "table": "public.makeup_bookings",
+      "rows": 1,
+      "sha256": "65632b91dd59ce5475097cf333ad4e94c9c713f8624f15683105dc6a15a3ba01"
+    },
+    {
+      "table": "public.makeup_credits",
+      "rows": 1,
+      "sha256": "d95b0b63ac89d8a6dea662716dd100efcf69ad11b819db102c4bdf5ea4ca23cd"
+    },
+    {
+      "table": "public.notifications",
+      "rows": 10,
+      "sha256": "96ec01e77b0e6af68a6c6baee5c364f674168288d326a01f009300714e5b6b6a"
+    },
+    {
+      "table": "public.operation_events",
+      "rows": 2,
+      "sha256": "3cd80a9d76f498c8f0e64c868a3241847fa50816a1c689de3f00bfcfa5339ac4"
+    },
+    {
+      "table": "public.operational_acknowledgements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.organizations",
+      "rows": 1,
+      "sha256": "a92d33d358a6e988142db50838ed7b008baf93b81a52ba7b9eff4bb04ec73450"
+    },
+    {
+      "table": "public.product_events",
+      "rows": 10,
+      "sha256": "b63e183e523c9eeb797f86626cb83c2264f64914deb9a1ae047b54b58ed4e238"
+    },
+    {
+      "table": "public.product_permissions",
+      "rows": 23,
+      "sha256": "cb33b5c7937efb62ac6c0d38d77d7aa53c6d06f3b33cdd57f7b502acdc74b20f"
+    },
+    {
+      "table": "public.profiles",
+      "rows": 9,
+      "sha256": "577267d99b9f173873f050d65083a9a7be3f276cfc30d5fc736babb803ab2e41"
+    },
+    {
+      "table": "public.recognition_nominations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.role_assignments",
+      "rows": 9,
+      "sha256": "8e4b5d5da678fb6c8dbebe0e320fdf1d1861f51fa9e1270f208a3fcbd210bdd4"
+    },
+    {
+      "table": "public.session_changes",
+      "rows": 1,
+      "sha256": "55ca543c9c9808296f8fabd13864cdc7b9ad509d6fbb92f8d8096d69ab34bb07"
+    },
+    {
+      "table": "public.session_roster",
+      "rows": 14,
+      "sha256": "a74825771dba56d6d12c8c5b4b2ae3b76098c6d857fb649fc30b1c7aa0deef1c"
+    },
+    {
+      "table": "public.shift_handovers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.sport_levels",
+      "rows": 5,
+      "sha256": "e3b4e5527058bb6e0f934058dc6044c9692377ffa42d1fcdff59471279f374b1"
+    },
+    {
+      "table": "public.staff_invitations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_messages",
+      "rows": 2,
+      "sha256": "7d4ece394b14da508ca20da36059c8426824c69336b6084ce7b9b0efbd53052d"
+    },
+    {
+      "table": "public.support_tickets",
+      "rows": 1,
+      "sha256": "deaa3d722d13fdebbf537c2ce699552a434cbec7a7ee3ee3b38467c2bcba8f02"
+    },
+    {
+      "table": "public.transfer_decisions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_requests",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_bookings",
+      "rows": 2,
+      "sha256": "a9624f52f31e53f3318b75bafb9b1424f876bf2d42c44d65a202082854be8f96"
+    },
+    {
+      "table": "public.trial_enquiries",
+      "rows": 16,
+      "sha256": "5dd511d3def0584bb0852cf1e4eb9d7c177ea38db85ae52e63ea2597dc836c41"
+    },
+    {
+      "table": "public.venues",
+      "rows": 5,
+      "sha256": "08f9457728b2d63e9ace8510799b1f0e46cfb6d321374624de30a8b910452ffc"
+    },
+    {
+      "table": "public.waitlist_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets",
+      "rows": 1,
+      "sha256": "5b271db7589c138cb684a685f0d7510cd2f2713bc2ec3321dfdf5d701c1cb18c"
+    },
+    {
+      "table": "storage.buckets_analytics",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_vectors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_namespaces",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_tables",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.migrations",
+      "rows": 68,
+      "sha256": "b2eee1651196b8f37433acdd31f214941efa8c882e2cb7d8c719c2d311d5cfc3"
+    },
+    {
+      "table": "storage.objects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads_parts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.vector_indexes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "restored": [
+    {
+      "table": "auth.audit_log_entries",
+      "rows": 270,
+      "sha256": "3a554344daedc1ede88c1af17ff368cb65f8f631d1e49adf082e09ef5c787f08"
+    },
+    {
+      "table": "auth.custom_oauth_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.flow_state",
+      "rows": 21,
+      "sha256": "57573259803568603b87a850223a2ca34feefc82581110db4d5e5f8fcdbe22e2"
+    },
+    {
+      "table": "auth.identities",
+      "rows": 9,
+      "sha256": "16e14d27ee43dbb55f51b99d565e415a7cd8d715d71d038da66751652791abbf"
+    },
+    {
+      "table": "auth.instances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_amr_claims",
+      "rows": 158,
+      "sha256": "a9227857ef2a97eba9f091535a599f3a4e640997642afbc4b925495c18789b84"
+    },
+    {
+      "table": "auth.mfa_challenges",
+      "rows": 1,
+      "sha256": "d98068ae5458cc52388db07b68550e474466fb3eafc86c67e0c1666beab2043c"
+    },
+    {
+      "table": "auth.mfa_factors",
+      "rows": 1,
+      "sha256": "c3ff2bba9f1ccc9a44f52b9aa0f38d4004aa3be330aca0cf854837a64b1b7137"
+    },
+    {
+      "table": "auth.oauth_authorizations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_client_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_clients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.one_time_tokens",
+      "rows": 2,
+      "sha256": "ef42a33b28f0c0908f6f401ef1064a5da8a144df91031e1b822133249a2d5a55"
+    },
+    {
+      "table": "auth.refresh_tokens",
+      "rows": 158,
+      "sha256": "b94927e23a9f8828b9cda184ca1205ded323ef24a18c47e9090e241fd100f01b"
+    },
+    {
+      "table": "auth.saml_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_relay_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.schema_migrations",
+      "rows": 77,
+      "sha256": "22b5f0cb248b92fed4d0f25b42b946acc4c0c7ed4228785e5e06c0e8c29df6b1"
+    },
+    {
+      "table": "auth.sessions",
+      "rows": 157,
+      "sha256": "de364e375f77a44e5c0204103fcc262a467660e76b743caa7fbc5c7397efc24a"
+    },
+    {
+      "table": "auth.sso_domains",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.users",
+      "rows": 9,
+      "sha256": "b5ac52dd98927a855f22aa1d256e9b3ea3c04448373ed289279e03a09d3949fb"
+    },
+    {
+      "table": "auth.webauthn_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.webauthn_credentials",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.development_automation_candidates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.family_claims",
+      "rows": 2,
+      "sha256": "df9309fbaee0c1bda5519d43154e5573ed3d342fd0bc2073064aaf97dea5cbc6"
+    },
+    {
+      "table": "private.guardian_link_origins",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_offers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.lead_registration_links",
+      "rows": 2,
+      "sha256": "a1c7f514b71efc1bd3df156a7d51b3a8a3623328f517a002ec1fe1bb17c2fadf"
+    },
+    {
+      "table": "private.migration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_rows",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_snapshots",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.product_requests",
+      "rows": 22,
+      "sha256": "207a5be5ad35c7f169844643fbc14bc4c2b9177b9e4aad370973b1cf10fc227b"
+    },
+    {
+      "table": "private.rate_limits",
+      "rows": 10,
+      "sha256": "e808ee16dbcd2feb036ed17d9fe778f9848f8550db99b9643b28113583baa5f4"
+    },
+    {
+      "table": "private.request_keys",
+      "rows": 15,
+      "sha256": "9b75aaacf45e2053cc34de4013c06f33d92e68575ecaaf1f3937949384866299"
+    },
+    {
+      "table": "private.scheduled_job_controls",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_effects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_jobs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_classes",
+      "rows": 5,
+      "sha256": "94ec064d103e2a8b48da4d86c128d289e1ed6ae138d146984a40e73f910df7ca"
+    },
+    {
+      "table": "public.academy_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_policies",
+      "rows": 1,
+      "sha256": "88d9cf748596f1f2844c167015c933e5f0818f55317600282dc342e62237f1ee"
+    },
+    {
+      "table": "public.age_groups",
+      "rows": 2,
+      "sha256": "1dfe36bb690deca34bae7711a87944086e8b89d8745cbfac7285f991e4e1d6fa"
+    },
+    {
+      "table": "public.attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.audit_events",
+      "rows": 346,
+      "sha256": "80b7b63b1aa783e564ed47ba2cd2a3be786cf2097cf3d874e43f72c6042057bb"
+    },
+    {
+      "table": "public.branch_permissions",
+      "rows": 3,
+      "sha256": "99cd3d182afeb7a825fa02698d3e4319a83c53cbe7a8cf6bbb172c930072f869"
+    },
+    {
+      "table": "public.branch_sports",
+      "rows": 4,
+      "sha256": "6e6246e3b2eef4f20f0b1d5352a68af07b531827105644304898c525bfae035b"
+    },
+    {
+      "table": "public.branches",
+      "rows": 9,
+      "sha256": "15d432866f2ea35630c258cc5e1abdf213400e4c5d16a333eb1b5c0c9bd9be2f"
+    },
+    {
+      "table": "public.child_sports",
+      "rows": 4,
+      "sha256": "2f985da4870ab4ebac9d77d90127de38504a24286471a6831beb49e93423f193"
+    },
+    {
+      "table": "public.children",
+      "rows": 4,
+      "sha256": "d318fa210b920817b2610f74154b78fc611686652f3c1c9c81dcfaa920a9fa61"
+    },
+    {
+      "table": "public.class_sessions",
+      "rows": 30,
+      "sha256": "c043954948e7fcbdf7ab3212aaea8c5beda920a2f0515f333b29d17d9cbc35f8"
+    },
+    {
+      "table": "public.coach_availability",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.coach_conversations",
+      "rows": 1,
+      "sha256": "928f0088ac645c712b80f9310582dfe71af157c50137993983f68c7ec32f7846"
+    },
+    {
+      "table": "public.coach_message_policies",
+      "rows": 2,
+      "sha256": "c49c6566b379c13941dbadc332b358b1831ede12806fc789818806b266ade5f4"
+    },
+    {
+      "table": "public.coach_message_reads",
+      "rows": 1,
+      "sha256": "7d2588cb081239a452b6d548e9ef240a95c3adab91118b1f803d15ddd1265420"
+    },
+    {
+      "table": "public.coach_messages",
+      "rows": 2,
+      "sha256": "abd43059fd1168a5a88270ccab09f12c56f55daa9a340e4d687c1fb4406edee9"
+    },
+    {
+      "table": "public.coach_substitutions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_adjustments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_allocations",
+      "rows": 2,
+      "sha256": "8410b8d49c71702a8dc8f21e03bafe0a929defcae7b1cb2b66e7bc234c81c3d2"
+    },
+    {
+      "table": "public.commercial_cancellation_previews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_accruals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_rates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_settlements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_credit_approvals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_freezes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_invoice_lines",
+      "rows": 2,
+      "sha256": "ab0c41443d3a0d567ce9d6640c3b524242f2dbce674dadf6a4288501472e3b3b"
+    },
+    {
+      "table": "public.commercial_invoices",
+      "rows": 2,
+      "sha256": "0b514f561a2b6f5039d100eb41845cf3db28ad80db855615021e2e45d4831233"
+    },
+    {
+      "table": "public.commercial_membership_cancellations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_membership_extensions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_memberships",
+      "rows": 2,
+      "sha256": "999d035292487b3ede0324ec55b002d41e4bfa82a55eafb88b6fec48526d01f7"
+    },
+    {
+      "table": "public.commercial_packages",
+      "rows": 1,
+      "sha256": "136fe9ba2c106bd129a43369328aab09d4e28f21dc77e8d8f34ca0564e756ad0"
+    },
+    {
+      "table": "public.commercial_payments",
+      "rows": 2,
+      "sha256": "bbce482bb2d01fa480e76173a7ca56919d01cbd84a99c159a0598fd164df7108"
+    },
+    {
+      "table": "public.commercial_receipts",
+      "rows": 2,
+      "sha256": "a1475bd4403cad3be54785812f779146d1ffdcde25c7b9d8741cc934b1cb03a8"
+    },
+    {
+      "table": "public.commercial_refunds",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_renewal_reminders",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_recipients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_templates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.consent_records",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.delivery_outbox",
+      "rows": 30,
+      "sha256": "7295d8aacaed9e93ff2ca1148a4b58a09508c2c2eb98587e99a716f9240080c8"
+    },
+    {
+      "table": "public.development_assessment_notes",
+      "rows": 2,
+      "sha256": "25d643e8554850012e66dad033bf22b12292a7e4d69d6ab12575920aab80ea72"
+    },
+    {
+      "table": "public.development_assessments",
+      "rows": 2,
+      "sha256": "d00ebe05eb4e1049d35b13898e769b214f788aeb902f4a1b72b1f6725b793469"
+    },
+    {
+      "table": "public.development_automation_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificate_revocations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificates",
+      "rows": 1,
+      "sha256": "7097d522e6fe9db18850de6f81f6178b64356d41291fe3befa91dffd6e194b18"
+    },
+    {
+      "table": "public.development_criteria",
+      "rows": 1,
+      "sha256": "924460423eaf367bb62dea0188a7950764c2b699d174e9256e131333b88a3848"
+    },
+    {
+      "table": "public.development_emergency_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_history",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_reversals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reports",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_results",
+      "rows": 2,
+      "sha256": "ec266ab6a85f63cc69b0dfa9c6fac00f67e8a742259ffcfd9d2e65511f13e63c"
+    },
+    {
+      "table": "public.development_reviews",
+      "rows": 2,
+      "sha256": "14e89538b719833e0c4e1f4ed8169a0998b1016fa99a5836af368ec49b8e125f"
+    },
+    {
+      "table": "public.development_safety_instructions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_session_plans",
+      "rows": 1,
+      "sha256": "e4c019b480c9697697991d57fb07341317940cb68c95c4b8debb71afb6abb4e9"
+    },
+    {
+      "table": "public.development_target_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_targets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_acceptances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_completions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_campaigns",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_codes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_ledger",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_rules",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.enrollments",
+      "rows": 3,
+      "sha256": "863a8679e050d2be76aecf676f6e5f187c0337eedc9917c78765636ef7a709bb"
+    },
+    {
+      "table": "public.entitlement_ledger",
+      "rows": 9,
+      "sha256": "4ff2c731c7bd0a7f22d8c8812d6dc098bc55cae56ab3bbc21a5f480f128a03e2"
+    },
+    {
+      "table": "public.event_attendance",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_occurrences",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.families",
+      "rows": 1,
+      "sha256": "b147902845c15b59d0b7d92f2dd7b2994f0c64d202a913391596189179cc37af"
+    },
+    {
+      "table": "public.family_branches",
+      "rows": 1,
+      "sha256": "90cab28f7755255874a3c7e586038158893a3cc50295eabb8a0961b51a460a33"
+    },
+    {
+      "table": "public.family_emergency_contacts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_files",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.file_access_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.guardians",
+      "rows": 1,
+      "sha256": "40408f255a51a98eebc9ff951e4189505324e0727a2c2b2abad54b22df836f69"
+    },
+    {
+      "table": "public.lead_activities",
+      "rows": 29,
+      "sha256": "8685726378333d40f612131abfbfe4f5ec35b0dea709dff0698e33670e2c12c1"
+    },
+    {
+      "table": "public.leads",
+      "rows": 16,
+      "sha256": "94d835f012af180f456586b0470c414b5b5404015432a520ee0ac3c27a3fdb88"
+    },
+    {
+      "table": "public.makeup_bookings",
+      "rows": 1,
+      "sha256": "65632b91dd59ce5475097cf333ad4e94c9c713f8624f15683105dc6a15a3ba01"
+    },
+    {
+      "table": "public.makeup_credits",
+      "rows": 1,
+      "sha256": "d95b0b63ac89d8a6dea662716dd100efcf69ad11b819db102c4bdf5ea4ca23cd"
+    },
+    {
+      "table": "public.notifications",
+      "rows": 10,
+      "sha256": "96ec01e77b0e6af68a6c6baee5c364f674168288d326a01f009300714e5b6b6a"
+    },
+    {
+      "table": "public.operation_events",
+      "rows": 2,
+      "sha256": "3cd80a9d76f498c8f0e64c868a3241847fa50816a1c689de3f00bfcfa5339ac4"
+    },
+    {
+      "table": "public.operational_acknowledgements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.organizations",
+      "rows": 1,
+      "sha256": "a92d33d358a6e988142db50838ed7b008baf93b81a52ba7b9eff4bb04ec73450"
+    },
+    {
+      "table": "public.product_events",
+      "rows": 10,
+      "sha256": "b63e183e523c9eeb797f86626cb83c2264f64914deb9a1ae047b54b58ed4e238"
+    },
+    {
+      "table": "public.product_permissions",
+      "rows": 23,
+      "sha256": "cb33b5c7937efb62ac6c0d38d77d7aa53c6d06f3b33cdd57f7b502acdc74b20f"
+    },
+    {
+      "table": "public.profiles",
+      "rows": 9,
+      "sha256": "577267d99b9f173873f050d65083a9a7be3f276cfc30d5fc736babb803ab2e41"
+    },
+    {
+      "table": "public.recognition_nominations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.role_assignments",
+      "rows": 9,
+      "sha256": "8e4b5d5da678fb6c8dbebe0e320fdf1d1861f51fa9e1270f208a3fcbd210bdd4"
+    },
+    {
+      "table": "public.session_changes",
+      "rows": 1,
+      "sha256": "55ca543c9c9808296f8fabd13864cdc7b9ad509d6fbb92f8d8096d69ab34bb07"
+    },
+    {
+      "table": "public.session_roster",
+      "rows": 14,
+      "sha256": "a74825771dba56d6d12c8c5b4b2ae3b76098c6d857fb649fc30b1c7aa0deef1c"
+    },
+    {
+      "table": "public.shift_handovers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.sport_levels",
+      "rows": 5,
+      "sha256": "e3b4e5527058bb6e0f934058dc6044c9692377ffa42d1fcdff59471279f374b1"
+    },
+    {
+      "table": "public.staff_invitations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_messages",
+      "rows": 2,
+      "sha256": "7d4ece394b14da508ca20da36059c8426824c69336b6084ce7b9b0efbd53052d"
+    },
+    {
+      "table": "public.support_tickets",
+      "rows": 1,
+      "sha256": "deaa3d722d13fdebbf537c2ce699552a434cbec7a7ee3ee3b38467c2bcba8f02"
+    },
+    {
+      "table": "public.transfer_decisions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_requests",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_bookings",
+      "rows": 2,
+      "sha256": "a9624f52f31e53f3318b75bafb9b1424f876bf2d42c44d65a202082854be8f96"
+    },
+    {
+      "table": "public.trial_enquiries",
+      "rows": 16,
+      "sha256": "5dd511d3def0584bb0852cf1e4eb9d7c177ea38db85ae52e63ea2597dc836c41"
+    },
+    {
+      "table": "public.venues",
+      "rows": 5,
+      "sha256": "08f9457728b2d63e9ace8510799b1f0e46cfb6d321374624de30a8b910452ffc"
+    },
+    {
+      "table": "public.waitlist_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets",
+      "rows": 1,
+      "sha256": "5b271db7589c138cb684a685f0d7510cd2f2713bc2ec3321dfdf5d701c1cb18c"
+    },
+    {
+      "table": "storage.buckets_analytics",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_vectors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_namespaces",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_tables",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.migrations",
+      "rows": 68,
+      "sha256": "b2eee1651196b8f37433acdd31f214941efa8c882e2cb7d8c719c2d311d5cfc3"
+    },
+    {
+      "table": "storage.objects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads_parts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.vector_indexes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "tablesCompared": 158,
+  "rowsCompared": 1623,
+  "fingerprintsMatch": true,
+  "sourceSequences": "auth|refresh_tokens_id_seq|197\npublic|audit_events_id_seq|4301",
+  "restoredSequences": "auth|refresh_tokens_id_seq|197\npublic|audit_events_id_seq|4301",
+  "sequencesMatch": true,
+  "sourceAtEnd": [
+    {
+      "table": "auth.audit_log_entries",
+      "rows": 270,
+      "sha256": "3a554344daedc1ede88c1af17ff368cb65f8f631d1e49adf082e09ef5c787f08"
+    },
+    {
+      "table": "auth.custom_oauth_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.flow_state",
+      "rows": 21,
+      "sha256": "57573259803568603b87a850223a2ca34feefc82581110db4d5e5f8fcdbe22e2"
+    },
+    {
+      "table": "auth.identities",
+      "rows": 9,
+      "sha256": "16e14d27ee43dbb55f51b99d565e415a7cd8d715d71d038da66751652791abbf"
+    },
+    {
+      "table": "auth.instances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.mfa_amr_claims",
+      "rows": 158,
+      "sha256": "a9227857ef2a97eba9f091535a599f3a4e640997642afbc4b925495c18789b84"
+    },
+    {
+      "table": "auth.mfa_challenges",
+      "rows": 1,
+      "sha256": "d98068ae5458cc52388db07b68550e474466fb3eafc86c67e0c1666beab2043c"
+    },
+    {
+      "table": "auth.mfa_factors",
+      "rows": 1,
+      "sha256": "c3ff2bba9f1ccc9a44f52b9aa0f38d4004aa3be330aca0cf854837a64b1b7137"
+    },
+    {
+      "table": "auth.oauth_authorizations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_client_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_clients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.oauth_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.one_time_tokens",
+      "rows": 2,
+      "sha256": "ef42a33b28f0c0908f6f401ef1064a5da8a144df91031e1b822133249a2d5a55"
+    },
+    {
+      "table": "auth.refresh_tokens",
+      "rows": 158,
+      "sha256": "b94927e23a9f8828b9cda184ca1205ded323ef24a18c47e9090e241fd100f01b"
+    },
+    {
+      "table": "auth.saml_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.saml_relay_states",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.schema_migrations",
+      "rows": 77,
+      "sha256": "22b5f0cb248b92fed4d0f25b42b946acc4c0c7ed4228785e5e06c0e8c29df6b1"
+    },
+    {
+      "table": "auth.sessions",
+      "rows": 157,
+      "sha256": "de364e375f77a44e5c0204103fcc262a467660e76b743caa7fbc5c7397efc24a"
+    },
+    {
+      "table": "auth.sso_domains",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.sso_providers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.users",
+      "rows": 9,
+      "sha256": "b5ac52dd98927a855f22aa1d256e9b3ea3c04448373ed289279e03a09d3949fb"
+    },
+    {
+      "table": "auth.webauthn_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "auth.webauthn_credentials",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.development_automation_candidates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.family_claims",
+      "rows": 2,
+      "sha256": "df9309fbaee0c1bda5519d43154e5573ed3d342fd0bc2073064aaf97dea5cbc6"
+    },
+    {
+      "table": "private.guardian_link_origins",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.guardian_offers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.lead_registration_links",
+      "rows": 2,
+      "sha256": "a1c7f514b71efc1bd3df156a7d51b3a8a3623328f517a002ec1fe1bb17c2fadf"
+    },
+    {
+      "table": "private.migration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_rows",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.migration_snapshots",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.product_requests",
+      "rows": 22,
+      "sha256": "207a5be5ad35c7f169844643fbc14bc4c2b9177b9e4aad370973b1cf10fc227b"
+    },
+    {
+      "table": "private.rate_limits",
+      "rows": 10,
+      "sha256": "e808ee16dbcd2feb036ed17d9fe778f9848f8550db99b9643b28113583baa5f4"
+    },
+    {
+      "table": "private.request_keys",
+      "rows": 15,
+      "sha256": "9b75aaacf45e2053cc34de4013c06f33d92e68575ecaaf1f3937949384866299"
+    },
+    {
+      "table": "private.scheduled_job_controls",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_effects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_job_runs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "private.scheduled_jobs",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_classes",
+      "rows": 5,
+      "sha256": "94ec064d103e2a8b48da4d86c128d289e1ed6ae138d146984a40e73f910df7ca"
+    },
+    {
+      "table": "public.academy_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.academy_policies",
+      "rows": 1,
+      "sha256": "88d9cf748596f1f2844c167015c933e5f0818f55317600282dc342e62237f1ee"
+    },
+    {
+      "table": "public.age_groups",
+      "rows": 2,
+      "sha256": "1dfe36bb690deca34bae7711a87944086e8b89d8745cbfac7285f991e4e1d6fa"
+    },
+    {
+      "table": "public.attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.audit_events",
+      "rows": 346,
+      "sha256": "80b7b63b1aa783e564ed47ba2cd2a3be786cf2097cf3d874e43f72c6042057bb"
+    },
+    {
+      "table": "public.branch_permissions",
+      "rows": 3,
+      "sha256": "99cd3d182afeb7a825fa02698d3e4319a83c53cbe7a8cf6bbb172c930072f869"
+    },
+    {
+      "table": "public.branch_sports",
+      "rows": 4,
+      "sha256": "6e6246e3b2eef4f20f0b1d5352a68af07b531827105644304898c525bfae035b"
+    },
+    {
+      "table": "public.branches",
+      "rows": 9,
+      "sha256": "15d432866f2ea35630c258cc5e1abdf213400e4c5d16a333eb1b5c0c9bd9be2f"
+    },
+    {
+      "table": "public.child_sports",
+      "rows": 4,
+      "sha256": "2f985da4870ab4ebac9d77d90127de38504a24286471a6831beb49e93423f193"
+    },
+    {
+      "table": "public.children",
+      "rows": 4,
+      "sha256": "d318fa210b920817b2610f74154b78fc611686652f3c1c9c81dcfaa920a9fa61"
+    },
+    {
+      "table": "public.class_sessions",
+      "rows": 30,
+      "sha256": "c043954948e7fcbdf7ab3212aaea8c5beda920a2f0515f333b29d17d9cbc35f8"
+    },
+    {
+      "table": "public.coach_availability",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.coach_conversations",
+      "rows": 1,
+      "sha256": "928f0088ac645c712b80f9310582dfe71af157c50137993983f68c7ec32f7846"
+    },
+    {
+      "table": "public.coach_message_policies",
+      "rows": 2,
+      "sha256": "c49c6566b379c13941dbadc332b358b1831ede12806fc789818806b266ade5f4"
+    },
+    {
+      "table": "public.coach_message_reads",
+      "rows": 1,
+      "sha256": "7d2588cb081239a452b6d548e9ef240a95c3adab91118b1f803d15ddd1265420"
+    },
+    {
+      "table": "public.coach_messages",
+      "rows": 2,
+      "sha256": "abd43059fd1168a5a88270ccab09f12c56f55daa9a340e4d687c1fb4406edee9"
+    },
+    {
+      "table": "public.coach_substitutions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_adjustments",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_allocations",
+      "rows": 2,
+      "sha256": "8410b8d49c71702a8dc8f21e03bafe0a929defcae7b1cb2b66e7bc234c81c3d2"
+    },
+    {
+      "table": "public.commercial_cancellation_previews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_accruals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_rates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_compensation_settlements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_credit_approvals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_freezes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_invoice_lines",
+      "rows": 2,
+      "sha256": "ab0c41443d3a0d567ce9d6640c3b524242f2dbce674dadf6a4288501472e3b3b"
+    },
+    {
+      "table": "public.commercial_invoices",
+      "rows": 2,
+      "sha256": "0b514f561a2b6f5039d100eb41845cf3db28ad80db855615021e2e45d4831233"
+    },
+    {
+      "table": "public.commercial_membership_cancellations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_membership_extensions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_memberships",
+      "rows": 2,
+      "sha256": "999d035292487b3ede0324ec55b002d41e4bfa82a55eafb88b6fec48526d01f7"
+    },
+    {
+      "table": "public.commercial_packages",
+      "rows": 1,
+      "sha256": "136fe9ba2c106bd129a43369328aab09d4e28f21dc77e8d8f34ca0564e756ad0"
+    },
+    {
+      "table": "public.commercial_payments",
+      "rows": 2,
+      "sha256": "bbce482bb2d01fa480e76173a7ca56919d01cbd84a99c159a0598fd164df7108"
+    },
+    {
+      "table": "public.commercial_receipts",
+      "rows": 2,
+      "sha256": "a1475bd4403cad3be54785812f779146d1ffdcde25c7b9d8741cc934b1cb03a8"
+    },
+    {
+      "table": "public.commercial_refunds",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.commercial_renewal_reminders",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_recipients",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.communication_templates",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.consent_records",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.delivery_outbox",
+      "rows": 30,
+      "sha256": "7295d8aacaed9e93ff2ca1148a4b58a09508c2c2eb98587e99a716f9240080c8"
+    },
+    {
+      "table": "public.development_assessment_notes",
+      "rows": 2,
+      "sha256": "25d643e8554850012e66dad033bf22b12292a7e4d69d6ab12575920aab80ea72"
+    },
+    {
+      "table": "public.development_assessments",
+      "rows": 2,
+      "sha256": "d00ebe05eb4e1049d35b13898e769b214f788aeb902f4a1b72b1f6725b793469"
+    },
+    {
+      "table": "public.development_automation_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificate_revocations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_certificates",
+      "rows": 1,
+      "sha256": "7097d522e6fe9db18850de6f81f6178b64356d41291fe3befa91dffd6e194b18"
+    },
+    {
+      "table": "public.development_criteria",
+      "rows": 1,
+      "sha256": "924460423eaf367bb62dea0188a7950764c2b699d174e9256e131333b88a3848"
+    },
+    {
+      "table": "public.development_emergency_policies",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_history",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_level_reversals",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_reports",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_results",
+      "rows": 2,
+      "sha256": "ec266ab6a85f63cc69b0dfa9c6fac00f67e8a742259ffcfd9d2e65511f13e63c"
+    },
+    {
+      "table": "public.development_reviews",
+      "rows": 2,
+      "sha256": "14e89538b719833e0c4e1f4ed8169a0998b1016fa99a5836af368ec49b8e125f"
+    },
+    {
+      "table": "public.development_safety_instructions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_session_plans",
+      "rows": 1,
+      "sha256": "e4c019b480c9697697991d57fb07341317940cb68c95c4b8debb71afb6abb4e9"
+    },
+    {
+      "table": "public.development_target_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_target_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.development_targets",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_acceptances",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.document_versions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_challenges",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_completions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_campaigns",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_claims",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_referral_codes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reviews",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_ledger",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.engagement_reward_rules",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.enrollments",
+      "rows": 3,
+      "sha256": "863a8679e050d2be76aecf676f6e5f187c0337eedc9917c78765636ef7a709bb"
+    },
+    {
+      "table": "public.entitlement_ledger",
+      "rows": 9,
+      "sha256": "4ff2c731c7bd0a7f22d8c8812d6dc098bc55cae56ab3bbc21a5f480f128a03e2"
+    },
+    {
+      "table": "public.event_attendance",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_attendance_corrections",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_consents",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_occurrences",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registration_batches",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.event_registrations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.families",
+      "rows": 1,
+      "sha256": "b147902845c15b59d0b7d92f2dd7b2994f0c64d202a913391596189179cc37af"
+    },
+    {
+      "table": "public.family_branches",
+      "rows": 1,
+      "sha256": "90cab28f7755255874a3c7e586038158893a3cc50295eabb8a0961b51a460a33"
+    },
+    {
+      "table": "public.family_emergency_contacts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.family_files",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.file_access_events",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.guardians",
+      "rows": 1,
+      "sha256": "40408f255a51a98eebc9ff951e4189505324e0727a2c2b2abad54b22df836f69"
+    },
+    {
+      "table": "public.lead_activities",
+      "rows": 29,
+      "sha256": "8685726378333d40f612131abfbfe4f5ec35b0dea709dff0698e33670e2c12c1"
+    },
+    {
+      "table": "public.leads",
+      "rows": 16,
+      "sha256": "94d835f012af180f456586b0470c414b5b5404015432a520ee0ac3c27a3fdb88"
+    },
+    {
+      "table": "public.makeup_bookings",
+      "rows": 1,
+      "sha256": "65632b91dd59ce5475097cf333ad4e94c9c713f8624f15683105dc6a15a3ba01"
+    },
+    {
+      "table": "public.makeup_credits",
+      "rows": 1,
+      "sha256": "d95b0b63ac89d8a6dea662716dd100efcf69ad11b819db102c4bdf5ea4ca23cd"
+    },
+    {
+      "table": "public.notifications",
+      "rows": 10,
+      "sha256": "96ec01e77b0e6af68a6c6baee5c364f674168288d326a01f009300714e5b6b6a"
+    },
+    {
+      "table": "public.operation_events",
+      "rows": 2,
+      "sha256": "3cd80a9d76f498c8f0e64c868a3241847fa50816a1c689de3f00bfcfa5339ac4"
+    },
+    {
+      "table": "public.operational_acknowledgements",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.organizations",
+      "rows": 1,
+      "sha256": "a92d33d358a6e988142db50838ed7b008baf93b81a52ba7b9eff4bb04ec73450"
+    },
+    {
+      "table": "public.product_events",
+      "rows": 10,
+      "sha256": "b63e183e523c9eeb797f86626cb83c2264f64914deb9a1ae047b54b58ed4e238"
+    },
+    {
+      "table": "public.product_permissions",
+      "rows": 23,
+      "sha256": "cb33b5c7937efb62ac6c0d38d77d7aa53c6d06f3b33cdd57f7b502acdc74b20f"
+    },
+    {
+      "table": "public.profiles",
+      "rows": 9,
+      "sha256": "577267d99b9f173873f050d65083a9a7be3f276cfc30d5fc736babb803ab2e41"
+    },
+    {
+      "table": "public.recognition_nominations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.role_assignments",
+      "rows": 9,
+      "sha256": "8e4b5d5da678fb6c8dbebe0e320fdf1d1861f51fa9e1270f208a3fcbd210bdd4"
+    },
+    {
+      "table": "public.session_changes",
+      "rows": 1,
+      "sha256": "55ca543c9c9808296f8fabd13864cdc7b9ad509d6fbb92f8d8096d69ab34bb07"
+    },
+    {
+      "table": "public.session_roster",
+      "rows": 14,
+      "sha256": "a74825771dba56d6d12c8c5b4b2ae3b76098c6d857fb649fc30b1c7aa0deef1c"
+    },
+    {
+      "table": "public.shift_handovers",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.sport_levels",
+      "rows": 5,
+      "sha256": "e3b4e5527058bb6e0f934058dc6044c9692377ffa42d1fcdff59471279f374b1"
+    },
+    {
+      "table": "public.staff_invitations",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.support_messages",
+      "rows": 2,
+      "sha256": "7d4ece394b14da508ca20da36059c8426824c69336b6084ce7b9b0efbd53052d"
+    },
+    {
+      "table": "public.support_tickets",
+      "rows": 1,
+      "sha256": "deaa3d722d13fdebbf537c2ce699552a434cbec7a7ee3ee3b38467c2bcba8f02"
+    },
+    {
+      "table": "public.transfer_decisions",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.transfer_requests",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "public.trial_bookings",
+      "rows": 2,
+      "sha256": "a9624f52f31e53f3318b75bafb9b1424f876bf2d42c44d65a202082854be8f96"
+    },
+    {
+      "table": "public.trial_enquiries",
+      "rows": 16,
+      "sha256": "5dd511d3def0584bb0852cf1e4eb9d7c177ea38db85ae52e63ea2597dc836c41"
+    },
+    {
+      "table": "public.venues",
+      "rows": 5,
+      "sha256": "08f9457728b2d63e9ace8510799b1f0e46cfb6d321374624de30a8b910452ffc"
+    },
+    {
+      "table": "public.waitlist_entries",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets",
+      "rows": 1,
+      "sha256": "5b271db7589c138cb684a685f0d7510cd2f2713bc2ec3321dfdf5d701c1cb18c"
+    },
+    {
+      "table": "storage.buckets_analytics",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.buckets_vectors",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_namespaces",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.iceberg_tables",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.migrations",
+      "rows": 68,
+      "sha256": "b2eee1651196b8f37433acdd31f214941efa8c882e2cb7d8c719c2d311d5cfc3"
+    },
+    {
+      "table": "storage.objects",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.s3_multipart_uploads_parts",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "table": "storage.vector_indexes",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sourceUnchanged": true,
+  "privateDumpDeleted": true,
+  "finishedAt": "2026-09-20T17:12:04.039Z"
+}

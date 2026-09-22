@@ -1,0 +1,33 @@
+begin;
+select no_plan();
+insert into auth.users(id,email,raw_user_meta_data,email_confirmed_at) values
+('a1100000-0000-4000-a000-000000000001','member-v1-a@example.test','{"name":"Synthetic member A","role":"super_admin"}',now()),
+('a1100000-0000-4000-a000-000000000002','member-v1-b@example.test','{"name":"Synthetic member B"}',now());
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"a1100000-0000-4000-a000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is(public.account_context()->'roles','["parent"]'::jsonb,'Signup cannot self-select staff authority');
+select is(jsonb_array_length(public.member_v1_read('children')->'items'),0,'New parent has no attached children');
+select set_config('member.family',(public.member_v1_command('family.create','{"name":"Member test family","mobile":"+971500000000","email":"shared@example.test"}','a1200000-0000-4000-a000-000000000001')->>'id'),true);
+select is(public.member_v1_command('family.create','{"name":"Member test family","mobile":"+971500000000","email":"shared@example.test"}','a1200000-0000-4000-a000-000000000001')->>'id',current_setting('member.family'),'Family creation replay is exact');
+select throws_ok($$select public.member_v1_command('family.create','{"name":"Different payload"}','a1200000-0000-4000-a000-000000000001')$$,'P0409',null,'Reused key cannot change payload');
+select set_config('member.child',(public.member_v1_command('child.save',jsonb_build_object('family_id',current_setting('member.family'),'name','Synthetic child','reported_age',7),'a1200000-0000-4000-a000-000000000002')->>'id'),true);
+select is(public.member_v1_command('child.save',jsonb_build_object('family_id',current_setting('member.family'),'name','Synthetic child','reported_age',7),'a1200000-0000-4000-a000-000000000002')->>'id',current_setting('member.child'),'Child retries do not duplicate');
+select is(jsonb_array_length(public.member_v1_read('children')->'items'),1,'Only one child exists');
+select throws_ok($$select public.member_v1_command('attendance.finalize','{}',gen_random_uuid())$$,'42501',null,'Parent attendance writes denied');
+select throws_ok($$select public.member_v1_command('commercial.payment.record','{}',gen_random_uuid())$$,'42501',null,'Parent financial posting denied');
+select throws_ok($$select public.member_v1_command('development.assessment.publish','{}',gen_random_uuid())$$,'42501',null,'Parent assessment publication denied');
+select throws_ok($$select public.member_v1_command('child.sport',jsonb_build_object('child_id',current_setting('member.child'),'sport','swimming','level','Expert'),gen_random_uuid())$$,'42501',null,'Parent cannot self-assign assessed level');
+select throws_ok($$select public.member_v1_read('children',null,0,101)$$,'22023',null,'Page size bounded');
+select throws_ok($$select public.member_v1_read('profiles')$$,'22023',null,'Unknown resource rejected');
+select set_config('request.jwt.claims','{"sub":"a1100000-0000-4000-a000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select is(jsonb_array_length(public.member_v1_read('children')->'items'),0,'Separate account has no leaked child');
+select throws_ok($$select public.member_v1_read('sessions',current_setting('member.child')::uuid)$$,'42501',null,'Cross-family child scope rejected');
+select throws_ok($$select public.member_v1_command('child.save',jsonb_build_object('family_id',current_setting('member.family'),'name','Denied child','reported_age',7),gen_random_uuid())$$,'42501',null,'Cross-family mutation denied');
+reset role;
+delete from public.guardians where user_id='a1100000-0000-4000-a000-000000000001';
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"a1100000-0000-4000-a000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.member_v1_read('sessions',current_setting('member.child')::uuid)$$,'42501',null,'Revoked guardian immediately denied');
+select throws_ok($$select public.member_v1_command('child.save',jsonb_build_object('family_id',current_setting('member.family'),'name','Synthetic child','reported_age',7),'a1200000-0000-4000-a000-000000000002')$$,'P0409',null,'Replay cannot recover revoked guardian data');
+select * from finish();
+rollback;

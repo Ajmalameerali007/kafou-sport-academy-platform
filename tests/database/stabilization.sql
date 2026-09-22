@@ -1,0 +1,86 @@
+begin;
+set local timezone='Asia/Dubai';
+select no_plan();
+insert into auth.users(id,email,raw_user_meta_data,email_confirmed_at) values
+('71000000-0000-4000-8000-000000000001','commercial-owner@example.test','{"name":"Commercial owner"}',now()),
+('71000000-0000-4000-8000-000000000002','commercial-parent@example.test','{"name":"Commercial parent"}',now()),
+('71000000-0000-4000-8000-000000000003','commercial-coach@example.test','{"name":"Commercial coach"}',now()),
+('71000000-0000-4000-8000-000000000004','commercial-admin@example.test','{"name":"Commercial admin"}',now()),
+('71000000-0000-4000-8000-000000000005','commercial-other@example.test','{"name":"Other parent"}',now()),
+('71000000-0000-4000-8000-000000000006','commercial-sales@example.test','{"name":"Commercial sales"}',now());
+delete from public.role_assignments where user_id::text like '71000000-%' and user_id<>'71000000-0000-4000-8000-000000000002';
+insert into public.role_assignments values ('71000000-0000-4000-8000-000000000001','super_admin'),('71000000-0000-4000-8000-000000000003','coach'),('71000000-0000-4000-8000-000000000004','admin'),('71000000-0000-4000-8000-000000000006','sales');
+insert into public.branches(id,slug,name,provisional) values('72000000-0000-4000-8000-000000000001','commercial-test','Commercial test',false);
+insert into public.branch_sports values('72000000-0000-4000-8000-000000000001','swimming');
+insert into public.families(id,name) values('73000000-0000-4000-8000-000000000001','Commercial family');
+insert into public.guardians values('73000000-0000-4000-8000-000000000001','71000000-0000-4000-8000-000000000002');
+insert into public.children(id,family_id,name,dob) values('74000000-0000-4000-8000-000000000001','73000000-0000-4000-8000-000000000001','Commercial child','2018-01-01');
+insert into public.child_sports(child_id,sport) values('74000000-0000-4000-8000-000000000001','swimming');
+insert into public.branch_permissions values('71000000-0000-4000-8000-000000000003','72000000-0000-4000-8000-000000000001');
+insert into public.venues(id,branch_id,name,address) values('76000000-0000-4000-8000-000000000001','72000000-0000-4000-8000-000000000001','Commercial pool','Synthetic');
+insert into public.sport_levels(id,sport,name,rank) values('76000000-0000-4000-8000-000000000002','swimming','Commercial level',99);
+insert into public.age_groups(id,name,min_age,max_age) values('76000000-0000-4000-8000-000000000003','Commercial ages',1,17);
+insert into public.academy_classes(id,branch_id,venue_id,coach_id,sport,level_id,age_group_id,name,capacity,weekdays,local_time,duration_minutes) values('76000000-0000-4000-8000-000000000004','72000000-0000-4000-8000-000000000001','76000000-0000-4000-8000-000000000001','71000000-0000-4000-8000-000000000003','swimming','76000000-0000-4000-8000-000000000002','76000000-0000-4000-8000-000000000003','Commercial swim',10,array[0],'16:00',60);
+insert into public.class_sessions(id,class_id,starts_at,ends_at,capacity) values('76000000-0000-4000-8000-000000000005','76000000-0000-4000-8000-000000000004',now()+interval '2 days',now()+interval '2 days 1 hour',10);
+insert into public.enrollments(id,child_id,class_id) values('76000000-0000-4000-8000-000000000006','74000000-0000-4000-8000-000000000001','76000000-0000-4000-8000-000000000004');
+insert into public.session_roster(id,session_id,enrollment_id,kind) values('76000000-0000-4000-8000-000000000007','76000000-0000-4000-8000-000000000005','76000000-0000-4000-8000-000000000006','enrollment');
+insert into public.family_branches values('73000000-0000-4000-8000-000000000001','72000000-0000-4000-8000-000000000001');
+insert into public.branches(id,slug,name,provisional) values('72000000-0000-4000-8000-000000000002','central-test-b','Second branch',false);
+insert into public.branch_sports values('72000000-0000-4000-8000-000000000002','swimming');
+insert into public.role_assignments values('71000000-0000-4000-8000-000000000005','branch');
+insert into public.branch_permissions values('71000000-0000-4000-8000-000000000005','72000000-0000-4000-8000-000000000002');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"71000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal2"}',true);
+select set_config('test.catalogue',(public.product_command('commercial.catalogue.save',jsonb_build_object('name','Central swimming','sport','swimming','price_minor',12000,'duration_months',2,'session_allowance',8,'min_age',6,'max_age',12,'terms','Synthetic agreed package terms','offers',jsonb_build_array(jsonb_build_object('branch_id','72000000-0000-4000-8000-000000000001','enabled',true),jsonb_build_object('branch_id','72000000-0000-4000-8000-000000000002','enabled',false))),gen_random_uuid())->>'id'),true);
+select is((select count(*)::int from public.commercial_packages where catalogue_id=current_setting('test.catalogue')::uuid),2,'One central catalogue owns two branch offers');
+select set_config('test.offer',(select id::text from public.commercial_packages where catalogue_id=current_setting('test.catalogue')::uuid and active),true);
+select set_config('test.member',(public.product_command('commercial.membership.start',jsonb_build_object('child_id','74000000-0000-4000-8000-000000000001','package_id',current_setting('test.offer'),'starts_on',current_date,'accepted',true),gen_random_uuid())->>'id'),true);
+select is((select expires_on from public.commercial_memberships where id=current_setting('test.member')::uuid),(current_date+interval '2 months')::date,'Configured duration becomes the purchased contract');
+select set_config('test.invoice',(select id::text from public.commercial_invoices where membership_id=current_setting('test.member')::uuid),true);
+
+select is((public.portal_packages('Central swimming')->'items'->0->>'assigned_count')::int,2,'Package summary counts all assigned branches');
+select is((public.portal_packages('Central swimming')->'items'->0->>'enabled_count')::int,1,'Disabled branch differs from unassigned');
+select is((public.portal_packages('Central swimming')->'items'->0->>'min_sessions')::int,8,'Allowance survives catalogue join');
+select is((public.portal_package_branches(current_setting('test.catalogue')::uuid,'swimming','Commercial test')->'items'->0->'offer'->>'price_minor')::int,12000,'Branch editor includes complete immutable offer');
+select lives_ok($$select public.portal_revision()$$,'Revision executes with authenticated owner permissions');
+reset role;
+insert into public.package_catalogue(name,sport,created_by) select 'Synthetic pagination '||lpad(n::text,3,'0'),'swimming','71000000-0000-4000-8000-000000000001' from generate_series(1,205) n;
+insert into public.class_sessions(class_id,starts_at,ends_at,capacity) select '76000000-0000-4000-8000-000000000004',current_date+interval '1000 days'+n*interval '2 hours',current_date+interval '1000 days'+n*interval '2 hours'+interval '1 hour',10 from generate_series(1,205) n;
+set local role authenticated;
+select is((public.portal_packages('Synthetic pagination')->>'total')::int,205,'Search total independent of package page');
+select is(jsonb_array_length(public.portal_packages('Synthetic pagination')->'items'),20,'Package page bounded');
+select is((public.portal_packages('Synthetic pagination',null,200)->>'total')::int,205,'Next page keeps complete count');
+select is(jsonb_array_length(public.portal_packages('Synthetic pagination 205')->'items'),1,'Server search finds record outside first page');
+select is((public.portal_calendar(current_date+1000,current_date+1018,'72000000-0000-4000-8000-000000000001')->>'total')::int,205,'Calendar queries requested period beyond initial workspace page');
+select is(jsonb_array_length(public.portal_calendar(current_date+1000,current_date+1018,'72000000-0000-4000-8000-000000000001')->'items'),100,'Calendar is bounded');
+select is((public.portal_calendar(current_date+1000,current_date+1018,'72000000-0000-4000-8000-000000000001','',200)->>'total')::int,205,'Calendar count independent of pagination');
+select set_config('request.jwt.claims','{"sub":"71000000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select is((public.portal_memberships('74000000-0000-4000-8000-000000000001')->'items'->0->>'due_minor')::int,12000,'Parent sees complete invoice amount');
+select is((public.portal_memberships('74000000-0000-4000-8000-000000000001')->'items'->0->>'available')::int,0,'Unpaid membership is not granted sessions');
+select is((public.portal_children()->'items'->0->'memberships'->0->>'status'),'pending','Family profile shows persisted membership state');
+select lives_ok($$select public.portal_revision()$$,'Parent revision uses RLS-visible records');
+select throws_ok($$select public.portal_package_branches(current_setting('test.catalogue')::uuid,'swimming')$$,'42501',null,'Parent cannot open package configuration');
+select throws_ok($$select public.product_command('commercial.membership.renew',jsonb_build_object('id',current_setting('test.member'),'accepted',true,'expected_expires_on',current_date+1,'expected_package_id',current_setting('test.offer')),gen_random_uuid())$$,'P0409',null,'Changed renewal review rejected');
+select set_config('test.renewal',(public.product_command('commercial.membership.renew',jsonb_build_object('id',current_setting('test.member'),'accepted',true,'expected_expires_on',(current_date+interval '2 months')::date,'expected_package_id',current_setting('test.offer')),gen_random_uuid())->>'id'),true);
+select is(public.product_command('commercial.membership.renew',jsonb_build_object('id',current_setting('test.member'),'accepted',true),gen_random_uuid())->>'id',current_setting('test.renewal'),'New-key retry reuses same renewal obligation');
+select is((select count(*)::int from public.commercial_invoices where membership_id=current_setting('test.renewal')::uuid),1,'Exactly one renewal invoice');
+select is((select status from public.commercial_memberships where id=current_setting('test.renewal')::uuid),'pending','Creating renewal invoice does not activate membership');
+select set_config('request.jwt.claims','{"sub":"71000000-0000-4000-8000-000000000005","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.portal_memberships('74000000-0000-4000-8000-000000000001')$$,'42501',null,'Other account cannot read child memberships');
+select throws_ok($$select public.portal_calendar(current_date,current_date+7,'72000000-0000-4000-8000-000000000001')$$,'42501',null,'Other branch cannot query calendar');
+select lives_ok($$select public.portal_revision('72000000-0000-4000-8000-000000000002')$$,'Branch revision retains branch grant');
+select throws_ok($$select public.portal_revision('72000000-0000-4000-8000-000000000001')$$,'42501',null,'Revision cannot bypass branch access');
+reset role;
+update public.commercial_memberships set status='active' where id=current_setting('test.member')::uuid;
+insert into public.commercial_credit_approvals(invoice_id,amount_minor,expires_on,reason,approved_by,created_at) values(current_setting('test.invoice')::uuid,12000,current_date-1,'Expired synthetic credit fixture','71000000-0000-4000-8000-000000000001',now()-interval '3 days');
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"71000000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select is(public.portal_membership_status(current_setting('test.member')::uuid),'suspended','Expired credit suspends displayed eligibility without a later write');
+select is((select e->>'effective_status' from jsonb_array_elements(public.portal_memberships()->'items') e where e->>'id'=current_setting('test.member')),'suspended','Parent membership projection uses effective status');
+select set_config('test.authority',public.portal_authority(),true);
+reset role;
+delete from public.guardians where user_id='71000000-0000-4000-8000-000000000002';
+set local role authenticated;
+select isnt(public.portal_authority(),current_setting('test.authority'),'Guardian revocation changes separate authority identity');
+select throws_ok($$select public.portal_memberships('74000000-0000-4000-8000-000000000001')$$,'42501',null,'Revoked guardian cannot reload membership');
+select * from finish();rollback;

@@ -1,0 +1,94 @@
+{
+  "at": "2026-09-20T17:17:59.433Z",
+  "environment": "http://127.0.0.1:3101",
+  "synthetic": true,
+  "ownerAssurance": "actual_auth_totp_aal2",
+  "policyAfterTest": "disabled",
+  "verificationActorAfterTest": "inactive",
+  "checks": [
+    {
+      "name": "New synthetic owner authenticates normally",
+      "result": "pass"
+    },
+    {
+      "name": "Policy activation denied at AAL1",
+      "result": "pass"
+    },
+    {
+      "name": "Real Auth TOTP enrollment",
+      "result": "pass"
+    },
+    {
+      "name": "Auth verifies actual TOTP",
+      "result": "pass"
+    },
+    {
+      "name": "Owner has genuine AAL2 without demo exemption",
+      "result": "pass"
+    },
+    {
+      "name": "Owner enables synthetic reviewed policy",
+      "result": "pass"
+    },
+    {
+      "name": "parent separate authenticated session",
+      "result": "pass"
+    },
+    {
+      "name": "coach separate authenticated session",
+      "result": "pass"
+    },
+    {
+      "name": "Parent sees eligible own-child option",
+      "result": "pass"
+    },
+    {
+      "name": "Selected enrollment assigned to this coach",
+      "result": "pass"
+    },
+    {
+      "name": "Parent opens persisted enrollment conversation",
+      "result": "pass"
+    },
+    {
+      "name": "Parent message persisted",
+      "result": "pass"
+    },
+    {
+      "name": "Assigned coach drafts reply",
+      "result": "pass"
+    },
+    {
+      "name": "Repeated reply produces one message",
+      "result": "pass"
+    },
+    {
+      "name": "Parent cannot see draft",
+      "result": "pass"
+    },
+    {
+      "name": "Authorized oversight publishes reply",
+      "result": "pass"
+    },
+    {
+      "name": "Published reply persists across logout/login",
+      "result": "pass"
+    },
+    {
+      "name": "Parent explicitly marks displayed reply read",
+      "result": "pass"
+    },
+    {
+      "name": "Coach sees actual parent read receipt",
+      "result": "pass"
+    },
+    {
+      "name": "Parent escalation is persisted",
+      "result": "pass"
+    },
+    {
+      "name": "Synthetic chat policy disabled after rehearsal",
+      "result": "pass"
+    }
+  ]
+}

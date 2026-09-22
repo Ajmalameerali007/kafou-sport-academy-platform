@@ -1,0 +1,628 @@
+{
+  "startedAt": "2026-09-20T17:16:40.885Z",
+  "container": "supabase_db_kafou-local",
+  "sourceDatabase": "[REDACTED]",
+  "disposableDatabase": "kafou_replay_1789924600884_81245",
+  "gitHead": "ac9ef030c660fb08a1c5789cfa9c32f27f278492",
+  "migrations": [
+    {
+      "name": "20260919202722_foundation.sql",
+      "sha256": "f6327b7dde5f643f3a22307caab36359bac24cd0afcd0aef4ad347098842fdef",
+      "bytes": 27355,
+      "applied": true
+    },
+    {
+      "name": "20260919204128_foundation_boundaries.sql",
+      "sha256": "117e7492d82979bb7f60b7f21356350ee8db9d7108c2da60061f10e24e8527a5",
+      "bytes": 2547,
+      "applied": true
+    },
+    {
+      "name": "20260919210046_foundation_hardening.sql",
+      "sha256": "146d1721c98db3e9a5908c0006c9bdffae9b9baa2c6882fa79dc6cf688e8845e",
+      "bytes": 11007,
+      "applied": true
+    },
+    {
+      "name": "20260919210048_foundation_access.sql",
+      "sha256": "db3e4cb36eec9974bca4f97655529f8125d8e3aafa036170f20ef02ec8c4823e",
+      "bytes": 3445,
+      "applied": true
+    },
+    {
+      "name": "20260919210049_foundation_review_fixes.sql",
+      "sha256": "6ae322688339037577c041db8525146d24de6b7331d230b7a2e27298170518fa",
+      "bytes": 9750,
+      "applied": true
+    },
+    {
+      "name": "20260919210254_foundation_indexes.sql",
+      "sha256": "d8f499e7fcda6d757aedbd4cdfc8f5fdfa16540fcdda72d5da1e8af363690f1e",
+      "bytes": 1580,
+      "applied": true
+    },
+    {
+      "name": "20260919215239_scheduling_core.sql",
+      "sha256": "d303bf5f49c3babebadd3555b64c7f2e7ce3101ec779d60c4107a9f6486cb074",
+      "bytes": 42208,
+      "applied": true
+    },
+    {
+      "name": "20260919215251_scheduling_access.sql",
+      "sha256": "88d59906cd0d07d7dfbc9d61ca740c4ac267fc400b5b18d77f9449fba895f0c3",
+      "bytes": 4944,
+      "applied": true
+    },
+    {
+      "name": "20260919215359_scheduling_claim_indexes.sql",
+      "sha256": "6474f1edf7f814e78324ce3bacc67836bead385b69ce5186f27eebbda63aa757",
+      "bytes": 136,
+      "applied": true
+    },
+    {
+      "name": "20260919233807_product_shared_core.sql",
+      "sha256": "0c8044e9820e54592169f7269805c410217dc6110abb2dd67189f862c1f2c933",
+      "bytes": 9437,
+      "applied": true
+    },
+    {
+      "name": "20260919233857_product_commercial.sql",
+      "sha256": "8a03aea1a33726abbfe26bcdf09c5116544dabe45be7f6b8e6054847932e3c19",
+      "bytes": 46611,
+      "applied": true
+    },
+    {
+      "name": "20260919233935_product_development.sql",
+      "sha256": "c485a936f180c7812c3840be7fd253e597eb942c8656987cbe82677670d66194",
+      "bytes": 31719,
+      "applied": true
+    },
+    {
+      "name": "20260919234250_product_academy.sql",
+      "sha256": "43dc0d65f8ab8e99e8592fdc3cfaa259d80c949ff4219dab87456fff877c2b61",
+      "bytes": 28326,
+      "applied": true
+    },
+    {
+      "name": "20260919235028_product_community.sql",
+      "sha256": "17b406a10445684bfde3a2b0acd5d0b46de562976e6cc94f001be2d4f8e77ff8",
+      "bytes": 18757,
+      "applied": true
+    },
+    {
+      "name": "20260919235818_product_engagement.sql",
+      "sha256": "cd2cf7feb273a8192db73636b4a7f91f380eb83b31d904621b449c2610c8cc49",
+      "bytes": 39505,
+      "applied": true
+    },
+    {
+      "name": "20260920001903_product_operations_revised.sql",
+      "sha256": "2e71980cf13718ec022d850f483555814cc50c01ed0dda6b568945ccd2420171",
+      "bytes": 12392,
+      "applied": true
+    },
+    {
+      "name": "20260920001904_product_communications_revised.sql",
+      "sha256": "0b33033ed719abf2eff1644353f54e2e2937e3a7cf12dc6a0381779f083106ae",
+      "bytes": 12579,
+      "applied": true
+    },
+    {
+      "name": "20260920001905_product_private_files.sql",
+      "sha256": "f2d7b1589a85eb6b29163aca44aaccee621c8bf2ef902df37d674ab429233252",
+      "bytes": 5172,
+      "applied": true
+    },
+    {
+      "name": "20260920001906_product_policy_validation.sql",
+      "sha256": "78d4fc9ccaa1fbe4e3360393dea3ef5589e4df66733876e572cef6e62621430c",
+      "bytes": 4337,
+      "applied": true
+    },
+    {
+      "name": "20260920003441_product_advisor_hardening.sql",
+      "sha256": "ff8703e4e7107803ef6bafb71a4044f70869d42a4fd91a13660f4489d59f8015",
+      "bytes": 5586,
+      "applied": true
+    },
+    {
+      "name": "20260920003746_product_development_history.sql",
+      "sha256": "9e96ff32310d86c07807ef54fd527e0440202c0ff07ece021f110358d73ed31f",
+      "bytes": 9558,
+      "applied": true
+    },
+    {
+      "name": "20260920003857_product_events.sql",
+      "sha256": "d6b49991255dceb6d8d3950bdb7f1471e2aaa9b441599c14f05ee0859fbf76da",
+      "bytes": 16855,
+      "applied": true
+    },
+    {
+      "name": "20260920004427_product_training_guidance.sql",
+      "sha256": "584918047adbf5167477ebbc0e2781d46c37d95cd4a622a560d56a23e03de6a7",
+      "bytes": 5684,
+      "applied": true
+    },
+    {
+      "name": "20260920004925_product_coach_attendance.sql",
+      "sha256": "a4015a95c4aa2919d84701b4d91bcb81b5b9a757b5eb9c2749c7009e7adb68d5",
+      "bytes": 5599,
+      "applied": true
+    },
+    {
+      "name": "20260920012510_product_workspace_search.sql",
+      "sha256": "0140d2c411c0bbc538343c92076e8aa279ac0ca058b5c479f593dc8baab55d4b",
+      "bytes": 7017,
+      "applied": true
+    },
+    {
+      "name": "20260920012626_product_coach_emergency.sql",
+      "sha256": "c4f8189f236a68b29d5a0f6c54dc4da6e0659041ce2856244c27aae86628f9f8",
+      "bytes": 5122,
+      "applied": true
+    },
+    {
+      "name": "20260920012833_product_compensation_settlements.sql",
+      "sha256": "e93109d4db131606f1e83dd53ee68548bf2ec6c7ca33967f227ffa531042b8a8",
+      "bytes": 5097,
+      "applied": true
+    },
+    {
+      "name": "20260920013226_product_training_targets.sql",
+      "sha256": "65200b55c28419642de21272b7bc5b113d845466171ed462498df1ec1e417d3a",
+      "bytes": 17744,
+      "applied": true
+    },
+    {
+      "name": "20260920014110_product_guest_trial_capability.sql",
+      "sha256": "bb7171e193ad477549539c13fcde8d0ba6cedbbd23aee158b6376590cc30eee7",
+      "bytes": 1349,
+      "applied": true
+    },
+    {
+      "name": "20260920020648_product_durable_jobs.sql",
+      "sha256": "00fd8af2ec150413ab78243de98e48431bdb071e6840b408fce8aeb264fab551",
+      "bytes": 19760,
+      "applied": true
+    },
+    {
+      "name": "20260920021233_product_standalone_invoices.sql",
+      "sha256": "07426fa52416e8ab0a7c06768c7b5601d53b673bec81e81e4048f2acb55f552b",
+      "bytes": 5813,
+      "applied": true
+    },
+    {
+      "name": "20260920021338_product_event_camps.sql",
+      "sha256": "b27ae87cd200d06ae1b60558457535bed210c9350186d9ca6c19f0bbc4a56d59",
+      "bytes": 34766,
+      "applied": true
+    },
+    {
+      "name": "20260920022143_product_commercial_amendments.sql",
+      "sha256": "25fc1df569e9022372d73edb336e349e0c24057f0ec4130a679cc91fd9b2c8ab",
+      "bytes": 26613,
+      "applied": true
+    },
+    {
+      "name": "20260920030000_product_coach_profile.sql",
+      "sha256": "9f4bbfa81056a22bfaeef193ec8cd657da351b9045adbaf57052f32e52801ade",
+      "bytes": 8836,
+      "applied": true
+    },
+    {
+      "name": "20260920031000_product_audit_reason.sql",
+      "sha256": "5839baba6a8211bcf1693dfe511a8ad7d7d722bd7e6792b8f33f34a478c5a94d",
+      "bytes": 6090,
+      "applied": true
+    },
+    {
+      "name": "20260920032000_product_sibling_payment_allocation.sql",
+      "sha256": "7055cfcf2c07d726829fcdebe1a29ae1ba92729e2b203d3773f2a804cb15afd5",
+      "bytes": 2092,
+      "applied": true
+    },
+    {
+      "name": "20260920040000_complete_business_reports.sql",
+      "sha256": "e5f42e67a1b9a563f20d8b0f531e439599148ff1a4853fc8b41beb906c89388d",
+      "bytes": 9109,
+      "applied": true
+    },
+    {
+      "name": "20260920041000_lead_registration_links.sql",
+      "sha256": "c11509e2595bab837e133dd030d9038bcd0ec528e8b4bfb6f9f6e34b690dd235",
+      "bytes": 6087,
+      "applied": true
+    },
+    {
+      "name": "20260920042000_development_automation.sql",
+      "sha256": "49299c629da2dfd710836766a8439cf5a3d333e12677e1380a3cb023f408c211",
+      "bytes": 21768,
+      "applied": true
+    },
+    {
+      "name": "20260920043000_coach_conversations.sql",
+      "sha256": "312af50a53d0e21b426d6df15fea4a8b9359b3cf3b94e848ef7d457d8e401c25",
+      "bytes": 11108,
+      "applied": true
+    },
+    {
+      "name": "20260920044000_synthetic_migration_executor.sql",
+      "sha256": "99c22d70644148cab6e7a2b8c53692fea948486dd3d217df8b4277c130575606",
+      "bytes": 12495,
+      "applied": true
+    },
+    {
+      "name": "20260920045000_message_history_guard.sql",
+      "sha256": "045d8ac67359772d6a55b60fe1796d00838adf0cf3a4753dbc2dd8660daa9d3a",
+      "bytes": 904,
+      "applied": true
+    }
+  ],
+  "tests": [
+    {
+      "name": "academy-product.sql",
+      "sha256": "7983868989f053851c76f546f962d2e91e969d94b6f121f2f785ddfa6217bad2",
+      "bytes": 23339
+    },
+    {
+      "name": "advisor-hardening.sql",
+      "sha256": "a225a0254ce81da3de031c4da7ee14f0a951b92f4b55cdb44cadf951afc057f4",
+      "bytes": 1947
+    },
+    {
+      "name": "age-allocation.sql",
+      "sha256": "eb53b7c80fb7857db3f9da49da42de7f79060a1b8c9d2be67929c0a6fa5b8a74",
+      "bytes": 4157
+    },
+    {
+      "name": "audit-reason.sql",
+      "sha256": "59bec3cc2f4f89d53de7d3700f4bf81b7a735568274162eb06ee1511f0fa6406",
+      "bytes": 3423
+    },
+    {
+      "name": "boundaries.sql",
+      "sha256": "43700b4ca3078fff4f2075827004e1afad02a0821665077f1c9dee18a0d17221",
+      "bytes": 495
+    },
+    {
+      "name": "coach-attendance.sql",
+      "sha256": "b658126898e93c8f87c499b2bf92cf04c411172a1e20cff1b0fe21d487fd6bd5",
+      "bytes": 20728
+    },
+    {
+      "name": "coach-conversations.sql",
+      "sha256": "df782b39eaf1ad565ca61a8026088fd8dfcb2a515e900be68f9d599a5114c68a",
+      "bytes": 7698
+    },
+    {
+      "name": "coach-emergency.sql",
+      "sha256": "3830fa25f117f59efd7ae4204b6c3d6580efd5059339fdad27c2a53f36e0bc78",
+      "bytes": 15422
+    },
+    {
+      "name": "coach-profile.sql",
+      "sha256": "6c89be93b016a5ae3a644eb5d80453ca9d717e4927d1007321fbf323249bd845",
+      "bytes": 7362
+    },
+    {
+      "name": "commercial-amendments.sql",
+      "sha256": "d5548078293a4c3fc3bd24aaf57096866aaee5e166007e0885f5313b9f66926b",
+      "bytes": 43240
+    },
+    {
+      "name": "commercial-invoices.sql",
+      "sha256": "c00ef517ba9df3b7dcc3d58142d4197ea27d540a1ed43013649f4292ff3ec05d",
+      "bytes": 17060
+    },
+    {
+      "name": "commercial-scope.sql",
+      "sha256": "6453cc6fb9e6fe7b5cff82f5f45b509ed1ea0c496f6132589db124bb7c895d67",
+      "bytes": 23183
+    },
+    {
+      "name": "commercial.sql",
+      "sha256": "f695bf9294876deb840967e659ecc391c86a4d4489ab89737150de027ed497a5",
+      "bytes": 24186
+    },
+    {
+      "name": "communications.sql",
+      "sha256": "bda7740f6235bd231c48c21e73ae35c6c178dcbf2976a7a284b454e3031a887c",
+      "bytes": 33597
+    },
+    {
+      "name": "community-product.sql",
+      "sha256": "92d09bd2778d501a6121f986b1067dba14ced657c48955753c8590ea47d39035",
+      "bytes": 23900
+    },
+    {
+      "name": "compensation-settlements.sql",
+      "sha256": "c96b8cd1a42cd8112c3ab1a1df4cfe08ea798c4c8801f3a516b6e4fcf69c3785",
+      "bytes": 9611
+    },
+    {
+      "name": "complete-reports.sql",
+      "sha256": "51233adf2deb9249409bf8a4435c0760821581d925a513b67d2b0536d8fb259c",
+      "bytes": 7033
+    },
+    {
+      "name": "development-automation.sql",
+      "sha256": "ceae0f7ce864f036fd830af1c48166e63a2b6df6d04e3ad9b983ee3613ae327e",
+      "bytes": 13833
+    },
+    {
+      "name": "development.sql",
+      "sha256": "32bb9c05f27ff0863d36d834890c4600d02d92a30abdce00b160837636b2d2e6",
+      "bytes": 25044
+    },
+    {
+      "name": "durable-jobs.sql",
+      "sha256": "cdb5f8d241cafdd5aacca5a7ac8d8107b0af1c740da2b08c028afbf3b2548f37",
+      "bytes": 23947
+    },
+    {
+      "name": "engagement.sql",
+      "sha256": "30b110a29e4af01a8d85542e2847c664dcb6a56c32a04eeb58cb1ca210d82645",
+      "bytes": 23098
+    },
+    {
+      "name": "event-camps.sql",
+      "sha256": "84107a6bede7d1dcf7434c073d82eb560e553d500cab3b876a6994a4ad04ae7a",
+      "bytes": 26072
+    },
+    {
+      "name": "events.sql",
+      "sha256": "58eeecc02b7c10e45eba9f47a0395c7bbbf13412a07b501bfe940d9864b8a869",
+      "bytes": 16609
+    },
+    {
+      "name": "files.sql",
+      "sha256": "2ffecbed39614ee63e552838f754b028fc5c1ba8d3b9cd3d5e663513cabe4db7",
+      "bytes": 13096
+    },
+    {
+      "name": "foundation.sql",
+      "sha256": "b5c7a204930d8bd0da45431ca9400ffd79fc22432f34f06591bbdbf5e9e2cb4e",
+      "bytes": 431
+    },
+    {
+      "name": "guardian-provenance.sql",
+      "sha256": "ee60f3bd1ac8bbfc75b850724c37a508620eb69c75ea0db335e271710c769dbc",
+      "bytes": 6869
+    },
+    {
+      "name": "guest-trial-capability.sql",
+      "sha256": "edaa8d63c1ea0e1487e2a3d7babc486cd5df66f006f543e1e30f91002cad8380",
+      "bytes": 6795
+    },
+    {
+      "name": "journey.sql",
+      "sha256": "7e9e14a5bd06e55ba71b02f9d00894d7a64076804be84fd5578da0611c87ac2b",
+      "bytes": 6805
+    },
+    {
+      "name": "migration-executor.sql",
+      "sha256": "797800f0be613a3e79e1ade49befd321f896f9ef6a8dc36d8f0eda426ac0384a",
+      "bytes": 11465
+    },
+    {
+      "name": "operations-review.sql",
+      "sha256": "72fd6cc0faaf42fe3afe42f739b255111b8937880716b3aba030d5cc5755cdf9",
+      "bytes": 8732
+    },
+    {
+      "name": "privileges.sql",
+      "sha256": "b4efa6cd296d779ca6562687eb51690afe0e72527370431a1aeb466539e1c475",
+      "bytes": 471
+    },
+    {
+      "name": "product-core.sql",
+      "sha256": "17ab5a352b7bda3ce9c6a5fcf4eb8dbb5342415ae62714e43d2876f163b06a87",
+      "bytes": 5135
+    },
+    {
+      "name": "registration-links.sql",
+      "sha256": "5dbe4601d5c4195b7e3ed7ebdaab79db76b423099b5c53e1e7c4e0f2faa800e7",
+      "bytes": 6757
+    },
+    {
+      "name": "report-session-totals.sql",
+      "sha256": "10423fd39dc754b0c756708122dd68b5db8d953db59b6db5f5ede1e2c34cc4df",
+      "bytes": 5653
+    },
+    {
+      "name": "schedule-extension.sql",
+      "sha256": "bac6e7ac8a6aab653146c1d78e4640bc26d3b8007863f06c12e053372352732d",
+      "bytes": 24543
+    },
+    {
+      "name": "scheduling.sql",
+      "sha256": "42fa9dad12a3be0c5cd01ff17c678e414819925b04e94a2851c0d00e14703184",
+      "bytes": 381
+    },
+    {
+      "name": "search.sql",
+      "sha256": "d2aa59633cd7b0b1593e32ad123a71f258beee5a7973db544f2c2cb39a2b29b1",
+      "bytes": 12498
+    },
+    {
+      "name": "security.sql",
+      "sha256": "e92750fb8f148b3fe2ce8aa5b8e3acd00e95f90b4ccffb7e058763bea1e7759d",
+      "bytes": 10282
+    },
+    {
+      "name": "sibling-payment-allocation.sql",
+      "sha256": "8469bd0560a5c18eed97a58ad51787468068a210893147a82cc280ab9e1faf36",
+      "bytes": 6429
+    },
+    {
+      "name": "training-guidance.sql",
+      "sha256": "428ab49a251d5b07dfe5f9419f03c5e40a33ed04376c1b99d84f3199999068ef",
+      "bytes": 14650
+    },
+    {
+      "name": "training-targets.sql",
+      "sha256": "d29594db333d4f5797fd56c1923db3bb5eb475543b1bc55115c60b86a99ae781",
+      "bytes": 21291
+    }
+  ],
+  "seed": {
+    "path": "supabase/seed.sql",
+    "sha256": "5b600b4df404cb81c839361058e93d1d091e1abc834edefcfc5bed78a10c3230",
+    "bytes": 611
+  },
+  "checks": [
+    {
+      "check": "pgTAP snapshot suite",
+      "exitCode": 0,
+      "log": "pgtap.log"
+    },
+    {
+      "check": "CLI advisors all/info",
+      "exitCode": 0,
+      "log": "advisors.log"
+    },
+    {
+      "check": "CLI database lint",
+      "exitCode": 0,
+      "log": "database-lint.log"
+    },
+    {
+      "check": "Bidirectional camp/class resource contention with observed advisory wait",
+      "exitCode": 0,
+      "log": "camp-resource-races.log"
+    },
+    {
+      "check": "Competing partial reversals and refunds never exceed the received payment",
+      "exitCode": 0,
+      "log": "commercial-correction-races.log"
+    },
+    {
+      "check": "Trial versus makeup races in both orders with observed advisory wait",
+      "exitCode": 0,
+      "log": "trial-makeup-capacity-races.log"
+    }
+  ],
+  "drift": [],
+  "result": "replay_and_checks_passed",
+  "cleanup": "disposable_database_dropped",
+  "limitations": [
+    "Schema-only infrastructure bootstrap plus empty application-schema replay; not a data backup/restore rehearsal.",
+    "No HTTP/Auth/Storage services point at the disposable database; browser/Worker/provider behavior is outside this check."
+  ],
+  "runnerSha256": "f0f0a4de327ad04d214f9bb70e54848eb69b6503af55e1f1215273bbf808927a",
+  "infrastructureSchemaSha256": "ed3927d2fe7ab78e6eac9d758358ba5480b5037e2513a7c2fe6a379a12f963f8",
+  "emptyApplication": "0|0|0",
+  "privateBucketConfiguration": {
+    "source": "scripts/configure-private-storage.mjs",
+    "sourceSha256": "8b674bd582e19110ff8971fef86001b586236ba4e0cc07e9283bd24173e542f6",
+    "mode": "disposable_database_metadata_fixture_only",
+    "bucket": "kafou-private-documents",
+    "public": false,
+    "fileSizeLimit": 524288,
+    "allowedMimeTypes": [
+      "application/pdf",
+      "image/png",
+      "image/jpeg"
+    ]
+  },
+  "advisorSummary": {
+    "total": 188,
+    "byLevel": {
+      "WARN": 1,
+      "INFO": 187
+    },
+    "byName": {
+      "auth_rls_initplan": 1,
+      "unused_index": 176,
+      "rls_enabled_no_policy": 11
+    }
+  },
+  "lintSummary": {
+    "functions": 7,
+    "issues": 11,
+    "byLevel": {
+      "warning": 10,
+      "warning extra": 1
+    }
+  },
+  "eventCapacityRace": {
+    "exitCodes": [
+      0,
+      3
+    ],
+    "activeRegistrationsBatchesConsents": "1|1|1",
+    "oneCapacityFailure": true
+  },
+  "campRaceSources": {
+    "fixtureSha256": "901bc509e515b92cd1604f16bc0372de69b14eb19f65c9f7d22df11e04090937",
+    "runnerSha256": "e5ef7a69ca8050d244638fb6450a33dee79e9f3285682ee1ee87df451ce596e5"
+  },
+  "campResourceRaces": [
+    {
+      "winner": "camp",
+      "loser": "class",
+      "observed_advisory_wait": true,
+      "live_camp_occurrences_class_sessions": "2|0",
+      "loser_error": "ERROR:  Class venue or coach overlaps a camp occurrence"
+    },
+    {
+      "winner": "class",
+      "loser": "camp",
+      "observed_advisory_wait": true,
+      "live_camp_occurrences_class_sessions": "0|1",
+      "loser_error": "ERROR:  Camp venue or coach overlaps a class session"
+    },
+    {
+      "race": "camp_last_place",
+      "observed_advisory_wait": true,
+      "registrations_batches_attendance_full_consents": "1|1|2|1",
+      "loser_error": "ERROR:  Event capacity unavailable for the whole family selection"
+    }
+  ],
+  "commercialRaceSources": {
+    "fixtureSha256": "f73a96c2e42b933e56f20e79d193378b3ff68875e069e922f97b3732479d38c9",
+    "runnerSha256": "7057b0bea8b8947d3c8821de13c25e1ada186ef9b47a1abef51d6c2e3295296b"
+  },
+  "commercialCorrectionRaces": [
+    {
+      "race": "partial_reversal",
+      "observed_advisory_wait": true,
+      "allocated_refunded_available_minor": "5010|0|20000",
+      "loser_error": "ERROR:  Reversal exceeds remaining allocation"
+    },
+    {
+      "race": "refund",
+      "observed_advisory_wait": true,
+      "allocated_refunded_available_minor": "5010|15000|5000",
+      "loser_error": "ERROR:  Refund exceeds unallocated payment"
+    }
+  ],
+  "scheduleRaceSources": {
+    "fixtureSha256": "9d8a8ab190ad784fe1a7726b6b3924f398b9c40b9cf5a71ffe1c507fc6366785",
+    "runnerSha256": "57dbfb6fca63051883ab5cb47cf9de84e2a24ff86a7f21db06d653f48c38b1ad"
+  },
+  "trialMakeupCapacityRaces": [
+    {
+      "winner": "trial",
+      "loser": "makeup",
+      "observed_advisory_wait": true,
+      "occupied_seats": 1,
+      "loser_error": "ERROR:  Session full"
+    },
+    {
+      "winner": "makeup",
+      "loser": "trial",
+      "observed_advisory_wait": true,
+      "occupied_seats": 1,
+      "loser_error": "ERROR:  Session is full"
+    },
+    {
+      "live_roster": 1,
+      "live_trials": 0,
+      "live_makeups": 1,
+      "credit_status": "reserved"
+    }
+  ],
+  "postTestCounts": "{\"auth_users\" : 26, \"families\" : 7, \"children\" : 10, \"branches\" : 14, \"storage_objects\" : 0}",
+  "finishedAt": "2026-09-20T17:17:11.809Z"
+}
